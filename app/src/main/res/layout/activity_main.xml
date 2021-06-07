@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F4F4"
+    tools:context="com.muhammedmercan.ykshelper.MainActivity">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/counterCardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        app:cardBackgroundColor="#ADBAFF"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineMainRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineMainLeft"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/counterConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progressBarDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:indicatorSize="70dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/progressBarHours"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtCounterName" />
+
+            <TextView
+                android:id="@+id/txtCounterDays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gün"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/progressBarDay"
+                app:layout_constraintEnd_toEndOf="@+id/progressBarDay"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toStartOf="@+id/progressBarDay"
+                app:layout_constraintTop_toTopOf="@+id/progressBarDay" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progressBarHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:indicatorSize="70dp"
+                app:layout_constraintEnd_toStartOf="@+id/progressBarMinutes"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/progressBarDay"
+                app:layout_constraintTop_toBottomOf="@+id/txtCounterName" />
+
+            <TextView
+                android:id="@+id/txtCounterHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saat"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/progressBarHours"
+                app:layout_constraintEnd_toEndOf="@+id/progressBarHours"
+                app:layout_constraintStart_toStartOf="@+id/progressBarHours"
+                app:layout_constraintTop_toTopOf="@+id/progressBarHours" />
+
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progressBarMinutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:indicatorSize="70dp"
+                app:layout_constraintEnd_toStartOf="@+id/progressBarSeconds"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/progressBarHours"
+                app:layout_constraintTop_toBottomOf="@+id/txtCounterName" />
+
+            <TextView
+                android:id="@+id/txtCounterMinutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dakika"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/progressBarMinutes"
+                app:layout_constraintEnd_toEndOf="@+id/progressBarMinutes"
+                app:layout_constraintStart_toStartOf="@+id/progressBarMinutes"
+                app:layout_constraintTop_toTopOf="@+id/progressBarMinutes"
+                app:layout_constraintVertical_bias="0.523" />
+
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progressBarSeconds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:indicatorSize="70dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/progressBarMinutes"
+                app:layout_constraintTop_toBottomOf="@+id/txtCounterName" />
+
+            <TextView
+                android:id="@+id/txtCounterSeconds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saniye"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/progressBarMinutes"
+                app:layout_constraintEnd_toEndOf="@+id/progressBarSeconds"
+                app:layout_constraintStart_toStartOf="@+id/progressBarSeconds"
+                app:layout_constraintTop_toTopOf="@+id/progressBarSeconds" />
+
+            <TextView
+                android:id="@+id/txtCounterName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="YKS Geri Sayım"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/robotCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineMainRight"
+        app:layout_constraintTop_toBottomOf="@+id/counterCardView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/robotConstraintLayout"
+            android:layout_width="150dp"
+            android:layout_height="170dp">
+
+            <ImageView
+                android:id="@+id/ımgRobot"
+                android:layout_width="140dp"
+                android:layout_height="110dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/tercih_robotu" />
+
+            <TextView
+                android:id="@+id/txtRobot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Tercih Robotu"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ımgRobot" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/subjectCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineMainRight"
+        app:layout_constraintTop_toBottomOf="@+id/robotCardView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/subjectConstraintLayout"
+            android:layout_width="150dp"
+            android:layout_height="170dp">
+
+            <ImageView
+                android:id="@+id/imgSubject"
+                android:layout_width="140dp"
+                android:layout_height="110dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/konu_takip" />
+
+            <TextView
+                android:id="@+id/txtSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Konu Takip"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgSubject" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/calculateCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        app:layout_constraintStart_toStartOf="@+id/guidelineMainLeft"
+        app:layout_constraintTop_toBottomOf="@+id/counterCardView">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/calculateConstraintLayout"
+            android:layout_width="150dp"
+            android:layout_height="170dp">
+
+            <TextView
+                android:id="@+id/txtCalculate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Puan ve Sıralamala Hesaplama"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgCalculate" />
+
+            <ImageView
+                android:id="@+id/imgCalculate"
+                android:layout_width="140dp"
+                android:layout_height="110dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/hesaplama" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/examCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        app:layout_constraintStart_toStartOf="@+id/guidelineMainLeft"
+        app:layout_constraintTop_toBottomOf="@+id/calculateCardView">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/examConstraintLayout"
+            android:layout_width="150dp"
+            android:layout_height="170dp">
+
+            <TextView
+                android:id="@+id/txtExam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Deneme Takip"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgExam" />
+
+            <ImageView
+                android:id="@+id/imgExam"
+                android:layout_width="140dp"
+                android:layout_height="110dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/development" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/txtSaying"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="Başarı için erken kalk, spor yap, ve yazılım çalış!"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineMainRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineMainLeft" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMainLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="30dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMainRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="30dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

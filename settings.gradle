@@ -1,0 +1,2 @@
+rootProject.name = "YKS Helper"
+include ':app'

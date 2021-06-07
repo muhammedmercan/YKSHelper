@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.muhammedmercan.ykshelper.CalculatedResults">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.cardview.widget.CardView
+        style="@style/Widget.MaterialComponents.CardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/clearScienceCorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:text="Fen Bilimleri Net:"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/txtClearScienceCorrect"
+                app:layout_constraintTop_toBottomOf="@+id/clearSocialStudiesCorrect"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/clearSocialStudiesCorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Sosyal Bilimler Net:"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/txtClearSocialStudiesCorrect"
+                app:layout_constraintTop_toBottomOf="@+id/tytResults" />
+
+            <TextView
+                android:id="@+id/tytResults"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TYT Sonuçları"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/clearTurkishCorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Türkçe Net:"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/clearBasicMathCorrect"
+                app:layout_constraintTop_toBottomOf="@+id/tytResults" />
+
+            <TextView
+                android:id="@+id/clearBasicMathCorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Matematik Net:"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clearTurkishCorrect" />
+
+            <TextView
+                android:id="@+id/txtClearTurkishCorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="0"
+                app:layout_constraintBaseline_toBaselineOf="@+id/clearTurkishCorrect"
+                app:layout_constraintStart_toEndOf="@+id/clearTurkishCorrect" />
+
+            <TextView
+                android:id="@+id/txtClearBasicMathCorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="0"
+                app:layout_constraintBaseline_toBaselineOf="@+id/clearBasicMathCorrect"
+                app:layout_constraintStart_toEndOf="@+id/clearBasicMathCorrect" />
+
+            <TextView
+                android:id="@+id/txtClearSocialStudiesCorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="0"
+                app:layout_constraintBaseline_toBaselineOf="@+id/clearSocialStudiesCorrect"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/txtClearScienceCorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="0"
+                app:layout_constraintBaseline_toBaselineOf="@+id/clearScienceCorrect"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/rawScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Ham Puan:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/view3" />
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtClearBasicMathCorrect" />
+
+            <TextView
+                android:id="@+id/placementScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Yer. Puan:"
+                app:layout_constraintEnd_toEndOf="@+id/rawScore"
+                app:layout_constraintTop_toBottomOf="@+id/rawScore" />
+
+            <TextView
+                android:id="@+id/txtRawScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="0"
+                app:layout_constraintBaseline_toBaselineOf="@+id/rawScore"
+                app:layout_constraintStart_toEndOf="@+id/rawScore" />
+
+            <TextView
+                android:id="@+id/txtPlacementScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="0"
+                app:layout_constraintBaseline_toBaselineOf="@+id/placementScore"
+                app:layout_constraintStart_toEndOf="@+id/placementScore" />
+
+            <TextView
+                android:id="@+id/txtRawRanking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="0"
+                app:layout_constraintBaseline_toBaselineOf="@+id/rawRanking"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/txtPlacementRanking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="0"
+                app:layout_constraintBaseline_toBaselineOf="@+id/placementRanking"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/rawRanking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Ham Sıra:"
+                app:layout_constraintEnd_toStartOf="@+id/txtRawRanking"
+                app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+            <TextView
+                android:id="@+id/placementRanking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Yer. Sıra:"
+                app:layout_constraintEnd_toStartOf="@+id/txtPlacementRanking"
+                app:layout_constraintTop_toBottomOf="@+id/rawRanking" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

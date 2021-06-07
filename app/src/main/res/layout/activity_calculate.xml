@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.muhammedmercan.ykshelper.CalculateActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCalculateLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCalculeteRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutTurkıshCorrect"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/inputLayoutTurkıshWrong"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guidelineCalculateLeft"
+        app:layout_constraintTop_toBottomOf="@+id/txtTurkısh">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtInputEditTextTurkıshCorrect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Doğru"
+            android:imeOptions="normal"
+            android:inputType="number"
+            android:maxLength="2" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutTurkıshWrong"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/inputLayoutTurkıshCorrect"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineCalculeteRight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/inputLayoutTurkıshCorrect">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtInputEditTextTurkıshWrong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Yanlış"
+            android:imeOptions="normal"
+            android:inputType="number"
+            android:maxLength="2" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/txtTurkısh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TYT Türkçe - 40 Soru"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineCalculateLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineCalculateTop" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCalculateTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <TextView
+        android:id="@+id/txtSocialStudies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="TYT Sosyal Bilimler - 20 Soru"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineCalculateLeft"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutTurkıshCorrect" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutSocialStudiesCorrect"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/inputLayoutSocialStudiesWrong"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guidelineCalculateLeft"
+        app:layout_constraintTop_toBottomOf="@+id/txtSocialStudies">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtInputEditTextSocialStudiesCorrect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Doğru"
+            android:imeOptions="normal"
+            android:inputType="number"
+            android:maxLength="2" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutSocialStudiesWrong"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/inputLayoutSocialStudiesCorrect"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineCalculeteRight"
+        app:layout_constraintStart_toEndOf="@+id/inputLayoutSocialStudiesCorrect">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtInputEditTextSocialStudiesWrong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Yanlış"
+            android:imeOptions="normal"
+            android:inputType="number"
+            android:maxLength="2" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/txtBasicMath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="TYT Temel Matematik - 40 Soru"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineCalculateLeft"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutSocialStudiesCorrect" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutBasicMathCorrect"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/inputLayoutBasicMathWrong"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guidelineCalculateLeft"
+        app:layout_constraintTop_toBottomOf="@+id/txtBasicMath">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtInputEditTextBasicMathCorrect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Doğru"
+            android:imeOptions="normal"
+            android:inputType="number"
+            android:maxLength="2" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutBasicMathWrong"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/inputLayoutBasicMathCorrect"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineCalculeteRight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/inputLayoutBasicMathCorrect">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtInputEditTextBasicMathWrong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Yanlış"
+            android:imeOptions="normal"
+            android:inputType="number"
+            android:maxLength="2" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/txtScience"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="TYT Fen Bilimleri - 20 Soru"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineCalculateLeft"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutBasicMathCorrect" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutScienceCorrect"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/inputLayoutScienceWrong"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guidelineCalculateLeft"
+        app:layout_constraintTop_toBottomOf="@+id/txtScience">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtInputEditTextScienceCorrect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Doğru"
+            android:imeOptions="normal"
+            android:inputType="number"
+            android:maxLength="2" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutScienceWrong"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/inputLayoutScienceCorrect"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineCalculeteRight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/inputLayoutScienceCorrect">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtInputEditTextScienceWrong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Yanlış"
+            android:imeOptions="normal"
+            android:inputType="number"
+            android:maxLength="2" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:text="Hesapla"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineCalculeteRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineCalculateLeft" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
