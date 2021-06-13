@@ -6,18 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import com.google.android.material.textfield.TextInputLayout;
-import com.muhammedmercan.ykshelper.R;
-
-import static java.lang.String.valueOf;
 
 public class CalculateActivity extends AppCompatActivity implements View.OnClickListener,View.OnFocusChangeListener  {
 
-    private TextInputLayout inputLayoutTurkıshCorrect, inputLayoutTurkıshWrong, inputLayoutSocialStudiesCorrect, inputLayoutSocialStudiesWrong, inputLayoutBasicMathCorrect, inputLayoutBasicMathWrong, inputLayoutScienceCorrect, inputLayoutScienceWrong;
+    private TextInputLayout inputLayoutTurkıshCorrect, inputLayoutTurkıshWrong, inputLayoutSocialStudiesCorrect, inputLayoutSocialStudiesWrong, inputLayoutBasicMathCorrect, inputLayoutBasicMathWrong, inputLayoutScienceCorrect, inputLayoutScienceWrong, inputLayoutDiplomaGrade;
     private Button btnCalculate;
     private float clearTurkıshCorrect, clearSocialStudiesCorrect, clearBasicMathCorrect, clearScienceCorrect;
-
+    private double rawScore;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,15 +34,10 @@ public class CalculateActivity extends AppCompatActivity implements View.OnClick
         inputLayoutBasicMathWrong.getEditText().setOnFocusChangeListener(this);
         inputLayoutScienceCorrect.getEditText().setOnFocusChangeListener(this);
         inputLayoutScienceWrong.getEditText().setOnFocusChangeListener(this);
-
-
-
-
-
+        inputLayoutDiplomaGrade.getEditText().setOnFocusChangeListener(this);
 
     }
 
-//TODO onfocuslistener i araştır
 
     public void onFocusChange(View view, boolean b) {
 
@@ -73,6 +65,9 @@ public class CalculateActivity extends AppCompatActivity implements View.OnClick
 
             case R.id.txtInputEditTextScienceWrong:
                 checkValue(inputLayoutScienceWrong,b,20, "20'den büyük");
+
+            case R.id.txtInputEditTextDiplomaGrade:
+                checkValue(inputLayoutDiplomaGrade,b,100, "100'den büyük");
         }
     }
 
@@ -97,14 +92,19 @@ public class CalculateActivity extends AppCompatActivity implements View.OnClick
 
         switch (view.getId()) {
             case R.id.btnCalculate:
-                    calculatePoint();
+                    calculateResults();
 
-                    Intent intent = new Intent(this,CalculatedResults.class);
-                    intent.putExtra("clearTurkishCorrect",clearTurkıshCorrect);
-                    intent.putExtra("clearSocialStudiesCorrect",clearTurkıshCorrect);
-                    intent.putExtra("clearBasicMathCorrect",clearTurkıshCorrect);
-                    intent.putExtra("clearScienceCorrect",clearTurkıshCorrect);
-                    this.startActivity(intent);
+                    intent = new Intent(this,CalculatedResults.class);
+                    intent.putExtra("rawScore",rawScore);
+                    intent.putExtra("clearTurkıshCorrect",clearTurkıshCorrect);
+                    intent.putExtra("clearSocialStudiesCorrect",clearSocialStudiesCorrect);
+                    intent.putExtra("clearBasicMathCorrect",clearBasicMathCorrect);
+                    intent.putExtra("clearScienceCorrect",clearScienceCorrect);
+                    intent.putExtra("diplomaGrade",Double.valueOf(inputLayoutDiplomaGrade.getEditText().getText().toString()));
+
+
+
+                this.startActivity(intent);
                     break;
 
         }
@@ -113,15 +113,14 @@ public class CalculateActivity extends AppCompatActivity implements View.OnClick
 
 
 
-    private void calculatePoint() {
+    private void calculateResults() {
 
          clearTurkıshCorrect = Float.valueOf(inputLayoutTurkıshCorrect.getEditText().getText().toString()) - Float.valueOf(inputLayoutTurkıshWrong.getEditText().getText().toString()) / 4;
          clearSocialStudiesCorrect = Float.valueOf(inputLayoutSocialStudiesCorrect.getEditText().getText().toString()) - Float.valueOf(inputLayoutSocialStudiesWrong.getEditText().getText().toString()) / 4;
          clearBasicMathCorrect = Float.valueOf(inputLayoutBasicMathCorrect.getEditText().getText().toString()) - Float.valueOf(inputLayoutBasicMathWrong.getEditText().getText().toString()) / 4;
          clearScienceCorrect = Float.valueOf(inputLayoutScienceCorrect.getEditText().getText().toString()) - Float.valueOf(inputLayoutScienceWrong.getEditText().getText().toString()) / 4;
 
-        System.out.println(String.format("Türkçe net = %.2f\nSosyal net = %.2f\nTemel Matematik net = %.2f\nFen Bilimleri net=%.2f",clearTurkıshCorrect,clearSocialStudiesCorrect,clearBasicMathCorrect,clearScienceCorrect));
-
+         rawScore = (clearTurkıshCorrect * 3.2 + clearSocialStudiesCorrect * 3.6 + clearBasicMathCorrect * 3.2  + clearScienceCorrect * 3.6 + 100);
 
 
 
@@ -140,6 +139,7 @@ public class CalculateActivity extends AppCompatActivity implements View.OnClick
         inputLayoutBasicMathWrong = findViewById(R.id.inputLayoutBasicMathWrong);
         inputLayoutScienceCorrect = findViewById(R.id.inputLayoutScienceCorrect);
         inputLayoutScienceWrong = findViewById(R.id.inputLayoutScienceWrong);
+        inputLayoutDiplomaGrade = findViewById(R.id.inputLayoutDiplomaGrade);
 
 
 

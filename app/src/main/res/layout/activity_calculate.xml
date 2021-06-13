@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.muhammedmercan.ykshelper.CalculateActivity">
 
@@ -38,7 +43,7 @@
             android:layout_height="wrap_content"
             android:hint="Doğru"
             android:imeOptions="normal"
-            android:inputType="number"
+            android:inputType="number|textAutoComplete"
             android:maxLength="2" />
 
 
@@ -60,8 +65,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Yanlış"
-            android:imeOptions="normal"
-            android:inputType="number"
+            android:imeOptions="actionNext"
+            android:inputType="number|textAutoComplete"
             android:maxLength="2" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,10 +74,11 @@
         android:id="@+id/txtTurkısh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="TYT Türkçe - 40 Soru"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/guidelineCalculateLeft"
-        app:layout_constraintTop_toTopOf="@+id/guidelineCalculateTop" />
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutDiplomaGrade" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineCalculateTop"
@@ -107,8 +113,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Doğru"
-            android:imeOptions="normal"
-            android:inputType="number"
+            android:imeOptions="actionNext"
+            android:inputType="number|textAutoComplete"
             android:maxLength="2" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -127,8 +133,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Yanlış"
-            android:imeOptions="normal"
-            android:inputType="number"
+            android:imeOptions="actionNext"
+            android:inputType="number|textAutoComplete"
             android:maxLength="2" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -159,8 +165,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Doğru"
-            android:imeOptions="normal"
-            android:inputType="number"
+            android:imeOptions="actionNext"
+            android:inputType="number|textAutoComplete"
             android:maxLength="2" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -180,8 +186,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Yanlış"
-            android:imeOptions="normal"
-            android:inputType="number"
+            android:imeOptions="actionNext"
+            android:inputType="number|textAutoComplete"
             android:maxLength="2" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -212,8 +218,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Doğru"
-            android:imeOptions="normal"
-            android:inputType="number"
+            android:imeOptions="actionNext"
+            android:inputType="number|textAutoComplete"
             android:maxLength="2" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -233,19 +239,50 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Yanlış"
-            android:imeOptions="normal"
-            android:inputType="number"
+            android:imeOptions="actionDone"
+            android:inputType="number|textAutoComplete"
             android:maxLength="2" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/btnCalculate"
+        <Button
+            android:id="@+id/btnCalculate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:imeOptions="actionNext"
+            android:text="Hesapla"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineCalculeteRight"
+            app:layout_constraintStart_toStartOf="@+id/guidelineCalculateLeft"
+            app:layout_constraintTop_toBottomOf="@+id/inputLayoutScienceCorrect" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutDiplomaGrade"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineCalculeteRight"
+        app:layout_constraintStart_toEndOf="@+id/txtDiplomaGrade"
+        app:layout_constraintTop_toTopOf="@+id/guidelineCalculateTop">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtInputEditTextDiplomaGrade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:inputType="textNoSuggestions|number"
+            android:maxLength="3" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/txtDiplomaGrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:text="Hesapla"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineCalculeteRight"
-        app:layout_constraintStart_toStartOf="@+id/guidelineCalculateLeft" />
+        android:text="Diploma Notu"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/inputLayoutDiplomaGrade"
+        app:layout_constraintEnd_toEndOf="@+id/inputLayoutTurkıshCorrect"
+        app:layout_constraintTop_toTopOf="@+id/inputLayoutDiplomaGrade" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
