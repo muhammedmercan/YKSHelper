@@ -80,13 +80,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         city.put("dil", dil);
 
 
-        db.collection("rawRankings").document(String.valueOf(puan))
+        db.collection("placementRankings").document(String.valueOf(puan))
                 .set(city)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Log.d(TAG, "DocumentSnapshot successfully written!");
-                        System.out.println("deneme4");
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

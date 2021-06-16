@@ -16,7 +16,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class CalculatedResults extends AppCompatActivity {
 
     private Intent intent;
-    private float clearTurkıshCorrect, clearSocialStudiesCorrect, clearBasicMathCorrect, clearScienceCorrect;
     private TextView txtClearTurkishCorrect,txtClearSocialStudiesCorrect, txtClearBasicMathCorrect,txtClearScienceCorrect, txtRawScore, txtPlacementScore, txtRawRanking, txtPlacementRanking;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static final String TAG = "DocSnippets";
@@ -71,12 +70,12 @@ public class CalculatedResults extends AppCompatActivity {
 
     private void setDataFromIntent() {
         intent = getIntent();
-        txtClearTurkishCorrect.setText(String.valueOf(intent.getFloatExtra("clearTurkıshCorrect",0)));
+        txtClearTurkishCorrect.setText(String.valueOf(intent.getFloatExtra("clearTurkishCorrect",0)));
         txtClearSocialStudiesCorrect.setText(String.valueOf(intent.getFloatExtra("clearSocialStudiesCorrect",0)));
         txtClearBasicMathCorrect.setText(String.valueOf(intent.getFloatExtra("clearBasicMathCorrect",0)));
         txtClearScienceCorrect.setText(String.valueOf(intent.getFloatExtra("clearScienceCorrect",0)));
-        txtRawScore.setText(String.format("%.2f",intent.getDoubleExtra("rawScore",0)));
-        txtPlacementScore.setText(String.format("%.2f",intent.getDoubleExtra("rawScore",0)+((intent.getDoubleExtra("diplomaGrade",0)*0.6) )));
+        txtRawScore.setText(String.format("%.2f",intent.getDoubleExtra("rawTytScore",0)));
+        txtPlacementScore.setText(String.format("%.2f",intent.getDoubleExtra("rawTytScore",0)+((intent.getDoubleExtra("diplomaGrade",0)*0.6) )));
 
 
 
