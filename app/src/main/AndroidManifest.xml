@@ -8,21 +8,23 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.YKSHelper">
-        <activity android:name="com.muhammedmercan.ykshelper.CalculatedResults"></activity>
+        android:theme="@style/Theme.YKSHelper"
+       
+        >
+        <activity android:name=".CalculatedResults" />
         <activity
-            android:name="com.muhammedmercan.ykshelper.ExamActivity"
+            android:name=".ExamActivity"
             android:label="Deneme Takip" />
         <activity
-            android:name="com.muhammedmercan.ykshelper.SubjectActivity"
+            android:name=".SubjectTrackerActivity"
             android:label="Konu Takip" />
         <activity
-            android:name="com.muhammedmercan.ykshelper.RobotActivity"
+            android:name=".RobotActivity"
             android:label="Tercih Robotu" />
         <activity
-            android:name="com.muhammedmercan.ykshelper.CalculateActivity"
+            android:name=".CalculateActivity"
             android:label="Puan ve Sıralama Hesaplama" />
-        <activity android:name="com.muhammedmercan.ykshelper.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

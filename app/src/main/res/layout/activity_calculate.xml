@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:hint="Yanlış"
-                android:imeOptions="actionDone"
+                android:imeOptions="actionNext"
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -261,7 +261,7 @@
             android:id="@+id/textView2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:background="#36BDB1"
             android:text="TEMEL YETERLİLİK SINAVI (TYT)"
             android:textAlignment="center"
@@ -270,7 +270,7 @@
             app:layout_constraintEnd_toStartOf="@+id/guidelineCalculeteRight"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/guidelineCalculateLeft"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxIWonBefore" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineCalculateLeft"
@@ -305,7 +305,7 @@
                 android:gravity="center_horizontal"
                 android:hint="Doğru"
                 android:imeOptions="normal"
-                android:inputType="number|textAutoComplete"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -330,7 +330,7 @@
                 android:gravity="center_horizontal"
                 android:hint="Yanlış"
                 android:imeOptions="actionNext"
-                android:inputType="number|textAutoComplete"
+                android:inputType="number"
                 android:maxLength="2" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -339,7 +339,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Türkçe - 40 Soru"
+            android:text="Türkçe (40)"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/guidelineCalculateLeft"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -355,7 +355,7 @@
             android:id="@+id/txtSocialStudies"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sosyal Bilimler - 20 "
+            android:text="Sosyal Bilimler  (40)"
             android:textSize="16sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/txtTurkısh"
             app:layout_constraintStart_toStartOf="@+id/inputLayoutSocialStudiesCorrect" />
@@ -379,7 +379,7 @@
                 android:gravity="center_horizontal"
                 android:hint="Doğru"
                 android:imeOptions="actionNext"
-                android:inputType="number|textAutoComplete"
+                android:inputType="number"
                 android:maxLength="2" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -401,7 +401,7 @@
                 android:gravity="center_horizontal"
                 android:hint="Yanlış"
                 android:imeOptions="actionNext"
-                android:inputType="number|textAutoComplete"
+                android:inputType="number"
                 android:maxLength="2" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -434,7 +434,7 @@
                 android:gravity="center_horizontal"
                 android:hint="Doğru"
                 android:imeOptions="actionNext"
-                android:inputType="number|textAutoComplete"
+                android:inputType="number"
                 android:maxLength="2" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -457,7 +457,7 @@
                 android:gravity="center_horizontal"
                 android:hint="Yanlış"
                 android:imeOptions="actionNext"
-                android:inputType="number|textAutoComplete"
+                android:inputType="number"
                 android:maxLength="2" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -489,7 +489,7 @@
                 android:gravity="center_horizontal"
                 android:hint="Doğru"
                 android:imeOptions="actionNext"
-                android:inputType="number|textAutoComplete"
+                android:inputType="number"
                 android:maxLength="2" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -511,7 +511,7 @@
                 android:gravity="center_horizontal"
                 android:hint="Yanlış"
                 android:imeOptions="actionNext"
-                android:inputType="number|textAutoComplete"
+                android:inputType="number"
                 android:maxLength="2" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -534,10 +534,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/checkBox2"
+            app:layout_constraintBaseline_toBaselineOf="@+id/checkBoxIWonBefore"
             app:layout_constraintEnd_toStartOf="@+id/guidelineCalculeteRight"
-            app:layout_constraintStart_toEndOf="@+id/checkBox"
-            app:layout_constraintTop_toTopOf="@+id/checkBox">
+            app:layout_constraintStart_toEndOf="@+id/checkBoxIWonBefore">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtInputEditTextDiplomaGrade"
@@ -546,7 +545,7 @@
                 android:gravity="center_horizontal"
                 android:hint="Diploma Notu"
                 android:imeOptions="actionNext"
-                android:inputType="textNoSuggestions|number"
+                android:inputType="number"
                 android:maxLength="3" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -565,21 +564,13 @@
             app:layout_constraintTop_toBottomOf="@+id/inputLayoutBasicMathCorrect" />
 
         <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/checkBoxIWonBefore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layoutDirection="inherit"
-            android:text="Geçen sene  yerleştim"
+            android:text="Geçen sene yerleştim"
             app:layout_constraintStart_toStartOf="@+id/guidelineCalculateLeft"
             app:layout_constraintTop_toTopOf="@+id/guidelineCalculateTop" />
-
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ek puanım var"
-            app:layout_constraintStart_toStartOf="@+id/guidelineCalculateLeft"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputLayoutHistoryWrong"
@@ -713,6 +704,7 @@
                 android:id="@+id/txtInputEditTextTurkishLanguageAndLiteratureWrong"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
                 android:hint="Yanlış"
                 android:imeOptions="actionNext"
                 android:inputType="number" />
@@ -734,6 +726,7 @@
                 android:id="@+id/txtInputEditTextTurkishLanguageAndLiteratureCorrect"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
                 android:hint="Doğru"
                 android:imeOptions="actionNext"
                 android:inputType="number" />
@@ -994,6 +987,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:hint="Doğru"
+                android:imeOptions="actionNext"
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 

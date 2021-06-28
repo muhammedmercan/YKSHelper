@@ -1,222 +1,971 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="com.muhammedmercan.ykshelper.CalculatedResults">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        style="@style/Widget.MaterialComponents.CardView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="352dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/cardView5">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtPlacementDilScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/placementDilScore"
+                    app:layout_constraintStart_toEndOf="@+id/placementDilScore" />
+
+                <TextView
+                    android:id="@+id/txtRawDilRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/rawDilRanking"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtPlacementDilRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/placementDilRanking"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtRawDilScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/rawDilScore"
+                    app:layout_constraintStart_toEndOf="@+id/rawDilScore" />
+
+                <TextView
+                    android:id="@+id/placementDilRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Ham Puan:"
+                    app:layout_constraintEnd_toStartOf="@+id/txtPlacementDilRanking"
+                    app:layout_constraintTop_toBottomOf="@+id/rawDilRanking" />
+
+                <TextView
+                    android:id="@+id/rawDilRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Ham Puan:"
+                    app:layout_constraintEnd_toStartOf="@+id/txtRawDilRanking"
+                    app:layout_constraintTop_toBottomOf="@+id/view6" />
+
+                <TextView
+                    android:id="@+id/placementDilScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Ham Puan:"
+                    app:layout_constraintEnd_toEndOf="@+id/rawDilScore"
+                    app:layout_constraintTop_toBottomOf="@+id/rawDilScore" />
+
+                <TextView
+                    android:id="@+id/rawDilScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Ham Puan:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view6" />
+
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="352dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clearDilCorrect" />
+
+                <TextView
+                    android:id="@+id/txtClearDilCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearDilCorrect"
+                    app:layout_constraintStart_toEndOf="@+id/clearDilCorrect" />
+
+                <TextView
+                    android:id="@+id/clearDilCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Dil Net:"
+                    app:layout_constraintEnd_toStartOf="@+id/textView27"
+                    app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dil Sonuçları"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView5"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtPlacementSozelRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/placementSozelRanking"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtRawSozelScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/rawSozelScore"
+                    app:layout_constraintStart_toEndOf="@+id/rawSozelScore" />
+
+                <TextView
+                    android:id="@+id/txtPlacementSozelScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/placementSozelScore"
+                    app:layout_constraintStart_toEndOf="@+id/placementSozelScore" />
+
+                <TextView
+                    android:id="@+id/txtRawSozelRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/rawSozelRanking"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/rawSozelRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Ham Sıra:"
+                    app:layout_constraintEnd_toStartOf="@+id/txtRawSozelRanking"
+                    app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+                <TextView
+                    android:id="@+id/placementSozelRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Yer. Sıra:"
+                    app:layout_constraintEnd_toStartOf="@+id/txtPlacementSozelRanking"
+                    app:layout_constraintTop_toBottomOf="@+id/rawSozelRanking" />
+
+                <TextView
+                    android:id="@+id/placementSozelScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Yer. Puan:"
+                    app:layout_constraintEnd_toEndOf="@+id/rawSozelScore"
+                    app:layout_constraintTop_toBottomOf="@+id/rawSozelScore" />
+
+                <TextView
+                    android:id="@+id/rawSozelScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Ham Puan:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="352dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clearSozelReligionCultureCorrect" />
+
+                <TextView
+                    android:id="@+id/txtClearSozelReligionCultureCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearSozelReligionCultureCorrect"
+                    app:layout_constraintStart_toEndOf="@+id/clearSozelReligionCultureCorrect" />
+
+                <TextView
+                    android:id="@+id/txtClearSozelGeography2Correct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearSozelGeography2Correct"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtClearSozelPhilosophyCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearSozelPhilosophyCorrect"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtClearSozelGeographyCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearSozelGeographyCorrect"
+                    app:layout_constraintStart_toEndOf="@+id/clearSozelGeographyCorrect" />
+
+                <TextView
+                    android:id="@+id/txtClearSozelHistoryCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearSozelHistoryCorrect"
+                    app:layout_constraintStart_toEndOf="@+id/clearSozelHistoryCorrect" />
+
+                <TextView
+                    android:id="@+id/txtClearSozelTurkishLanguageAndLiteratureCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearSozelTurkishLanguageAndLiteratureCorrect"
+                    app:layout_constraintStart_toEndOf="@+id/clearSozelTurkishLanguageAndLiteratureCorrect" />
+
+                <TextView
+                    android:id="@+id/txtClearSozelHistory2Correct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearSozelHistory2Correct"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/clearSozelHistoryCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Tarih-1 Net:"
+                    app:layout_constraintEnd_toEndOf="@+id/clearSozelTurkishLanguageAndLiteratureCorrect"
+                    app:layout_constraintTop_toBottomOf="@+id/clearSozelTurkishLanguageAndLiteratureCorrect" />
+
+                <TextView
+                    android:id="@+id/clearSozelGeographyCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Coğrafya-1 Net:"
+                    app:layout_constraintEnd_toEndOf="@+id/clearSozelHistoryCorrect"
+                    app:layout_constraintTop_toBottomOf="@+id/clearSozelHistoryCorrect" />
+
+                <TextView
+                    android:id="@+id/clearSozelHistory2Correct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Tarih-2 Net:"
+                    app:layout_constraintEnd_toStartOf="@+id/txtClearSozelHistory2Correct"
+                    app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+                <TextView
+                    android:id="@+id/clearSozelGeography2Correct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Coğrafya-2 Net:"
+                    app:layout_constraintEnd_toStartOf="@+id/txtClearSozelGeography2Correct"
+                    app:layout_constraintTop_toBottomOf="@+id/clearSozelHistory2Correct" />
+
+                <TextView
+                    android:id="@+id/clearSozelPhilosophyCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Felsefe Net:"
+                    app:layout_constraintEnd_toStartOf="@+id/txtClearSozelPhilosophyCorrect"
+                    app:layout_constraintTop_toBottomOf="@+id/clearSozelGeography2Correct" />
+
+                <TextView
+                    android:id="@+id/clearSozelTurkishLanguageAndLiteratureCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Edebiyat Net:"
+                    app:layout_constraintEnd_toStartOf="@+id/textView16"
+                    app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sözel Sonuçları"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/clearSozelReligionCultureCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Din Kültürü"
+                    app:layout_constraintEnd_toEndOf="@+id/clearSozelGeographyCorrect"
+                    app:layout_constraintTop_toBottomOf="@+id/clearSozelGeographyCorrect" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtPlacementEsitAgirlikRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/placementEsitAgirlikRanking"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtRawEsitAgirlikRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/rawEsitAgirlikRanking"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/placementEsitAgirlikRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Yer. Sıra:"
+                    app:layout_constraintEnd_toStartOf="@+id/txtPlacementEsitAgirlikRanking"
+                    app:layout_constraintTop_toBottomOf="@+id/rawEsitAgirlikRanking" />
+
+                <TextView
+                    android:id="@+id/rawEsitAgirlikRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Ham Sıra:"
+                    app:layout_constraintEnd_toStartOf="@+id/txtRawEsitAgirlikRanking"
+                    app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+                <TextView
+                    android:id="@+id/txtPlacementEsitAgirlikScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/placementEsitAgirlikScore"
+                    app:layout_constraintStart_toEndOf="@+id/placementEsitAgirlikScore" />
+
+                <TextView
+                    android:id="@+id/txtRawEsitAgirlikScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/rawEsitAgirlikScore"
+                    app:layout_constraintStart_toEndOf="@+id/rawEsitAgirlikScore" />
+
+                <TextView
+                    android:id="@+id/placementEsitAgirlikScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Yer. Puan:"
+                    app:layout_constraintEnd_toEndOf="@+id/rawEsitAgirlikScore"
+                    app:layout_constraintTop_toBottomOf="@+id/rawEsitAgirlikScore" />
+
+                <TextView
+                    android:id="@+id/rawEsitAgirlikScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Ham Puan:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="352dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clearEsitAgirlikTurkishLanguageAndLiteratureCorrect" />
+
+                <TextView
+                    android:id="@+id/esitAgirlikResults"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eşit Ağırlık Sonuçları"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/clearEsitAgirlikMathCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Matematik Net:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/esitAgirlikResults" />
+
+                <TextView
+                    android:id="@+id/txtClearEsitAgirlikMathCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearEsitAgirlikMathCorrect"
+                    app:layout_constraintStart_toEndOf="@+id/clearEsitAgirlikMathCorrect" />
+
+                <TextView
+                    android:id="@+id/clearEsitAgirlikTurkishLanguageAndLiteratureCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Edebiyat Net:"
+                    app:layout_constraintEnd_toEndOf="@+id/clearEsitAgirlikMathCorrect"
+                    app:layout_constraintTop_toBottomOf="@+id/clearEsitAgirlikMathCorrect" />
+
+                <TextView
+                    android:id="@+id/txtClearEsitAgirlikTurkishLanguageAndLiteratureCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearEsitAgirlikTurkishLanguageAndLiteratureCorrect"
+                    app:layout_constraintStart_toEndOf="@+id/clearEsitAgirlikTurkishLanguageAndLiteratureCorrect" />
+
+                <TextView
+                    android:id="@+id/clearEsitAgirlikHistoryCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Tarih-1 Net:"
+                    app:layout_constraintEnd_toStartOf="@+id/txtClearEsitAgirlikHistoryCorrect"
+                    app:layout_constraintTop_toBottomOf="@+id/esitAgirlikResults" />
+
+                <TextView
+                    android:id="@+id/txtClearEsitAgirlikHistoryCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearEsitAgirlikHistoryCorrect"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/clearEsitAgirlikGeographyCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Coğrafya-1 Net:"
+                    app:layout_constraintEnd_toStartOf="@+id/txtClearEsitAgirlikGeographyCorrect"
+                    app:layout_constraintTop_toBottomOf="@+id/clearEsitAgirlikHistoryCorrect" />
+
+                <TextView
+                    android:id="@+id/txtClearEsitAgirlikGeographyCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearEsitAgirlikGeographyCorrect"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            style="@style/Widget.MaterialComponents.CardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/clearScienceCorrect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp"
-                android:text="Fen Bilimleri Net:"
-                android:textSize="16sp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/txtClearScienceCorrect"
-                app:layout_constraintTop_toBottomOf="@+id/clearSocialStudiesCorrect"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/clearSocialStudiesCorrect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:text="Sosyal Bilimler Net:"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toStartOf="@+id/txtClearSocialStudiesCorrect"
-                app:layout_constraintTop_toBottomOf="@+id/tytResults" />
+                <TextView
+                    android:id="@+id/clearScienceCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Fen Bilimleri Net:"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/txtClearScienceCorrect"
+                    app:layout_constraintTop_toBottomOf="@+id/clearSocialStudiesCorrect" />
 
-            <TextView
-                android:id="@+id/tytResults"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TYT Sonuçları"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/clearSocialStudiesCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Sosyal Bilimler Net:"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/txtClearSocialStudiesCorrect"
+                    app:layout_constraintTop_toBottomOf="@+id/tytResults" />
 
-            <TextView
-                android:id="@+id/clearTurkishCorrect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Türkçe Net:"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@+id/clearBasicMathCorrect"
-                app:layout_constraintTop_toBottomOf="@+id/tytResults" />
+                <TextView
+                    android:id="@+id/tytResults"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TYT Sonuçları"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/clearBasicMathCorrect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:text="Matematik Net:"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/clearTurkishCorrect" />
+                <TextView
+                    android:id="@+id/clearTurkishCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Türkçe Net:"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="@+id/clearBasicMathCorrect"
+                    app:layout_constraintTop_toBottomOf="@+id/tytResults" />
 
-            <TextView
-                android:id="@+id/txtClearTurkishCorrect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="0"
-                app:layout_constraintBaseline_toBaselineOf="@+id/clearTurkishCorrect"
-                app:layout_constraintStart_toEndOf="@+id/clearTurkishCorrect" />
+                <TextView
+                    android:id="@+id/clearBasicMathCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Matematik Net:"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clearTurkishCorrect" />
 
-            <TextView
-                android:id="@+id/txtClearBasicMathCorrect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="0"
-                app:layout_constraintBaseline_toBaselineOf="@+id/clearBasicMathCorrect"
-                app:layout_constraintStart_toEndOf="@+id/clearBasicMathCorrect" />
+                <TextView
+                    android:id="@+id/txtClearTurkishCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearTurkishCorrect"
+                    app:layout_constraintStart_toEndOf="@+id/clearTurkishCorrect" />
 
-            <TextView
-                android:id="@+id/txtClearSocialStudiesCorrect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:text="0"
-                app:layout_constraintBaseline_toBaselineOf="@+id/clearSocialStudiesCorrect"
-                app:layout_constraintEnd_toEndOf="parent" />
+                <TextView
+                    android:id="@+id/txtClearBasicMathCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearBasicMathCorrect"
+                    app:layout_constraintStart_toEndOf="@+id/clearBasicMathCorrect" />
 
-            <TextView
-                android:id="@+id/txtClearScienceCorrect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:text="0"
-                app:layout_constraintBaseline_toBaselineOf="@+id/clearScienceCorrect"
-                app:layout_constraintEnd_toEndOf="parent" />
+                <TextView
+                    android:id="@+id/txtClearSocialStudiesCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearSocialStudiesCorrect"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
-            <TextView
-                android:id="@+id/rawScore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:text="Ham Puan:"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/view3" />
+                <TextView
+                    android:id="@+id/txtClearScienceCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearScienceCorrect"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
-            <View
-                android:id="@+id/view3"
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="#000000"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtClearBasicMathCorrect" />
+                <TextView
+                    android:id="@+id/rawTytScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Ham Puan:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/view3" />
 
-            <TextView
-                android:id="@+id/placementScore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Yer. Puan:"
-                app:layout_constraintEnd_toEndOf="@+id/rawScore"
-                app:layout_constraintTop_toBottomOf="@+id/rawScore" />
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtClearBasicMathCorrect" />
 
-            <TextView
-                android:id="@+id/txtRawScore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="0"
-                app:layout_constraintBaseline_toBaselineOf="@+id/rawScore"
-                app:layout_constraintStart_toEndOf="@+id/rawScore" />
+                <TextView
+                    android:id="@+id/placementTytScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Yer. Puan:"
+                    app:layout_constraintEnd_toEndOf="@+id/rawTytScore"
+                    app:layout_constraintTop_toBottomOf="@+id/rawTytScore" />
 
-            <TextView
-                android:id="@+id/txtPlacementScore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="0"
-                app:layout_constraintBaseline_toBaselineOf="@+id/placementScore"
-                app:layout_constraintStart_toEndOf="@+id/placementScore" />
+                <TextView
+                    android:id="@+id/txtRawTytScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/rawTytScore"
+                    app:layout_constraintStart_toEndOf="@+id/rawTytScore" />
 
-            <TextView
-                android:id="@+id/txtRawRanking"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:text="0"
-                app:layout_constraintBaseline_toBaselineOf="@+id/rawRanking"
-                app:layout_constraintEnd_toEndOf="parent" />
+                <TextView
+                    android:id="@+id/txtPlacementTytScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/placementTytScore"
+                    app:layout_constraintStart_toEndOf="@+id/placementTytScore" />
 
-            <TextView
-                android:id="@+id/txtPlacementRanking"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:text="0"
-                app:layout_constraintBaseline_toBaselineOf="@+id/placementRanking"
-                app:layout_constraintEnd_toEndOf="parent" />
+                <TextView
+                    android:id="@+id/txtRawTytRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/rawTytRanking"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
-            <TextView
-                android:id="@+id/rawRanking"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:text="Ham Sıra:"
-                app:layout_constraintEnd_toStartOf="@+id/txtRawRanking"
-                app:layout_constraintTop_toBottomOf="@+id/view3" />
+                <TextView
+                    android:id="@+id/txtPlacementTytRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/placementTytRanking"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
-            <TextView
-                android:id="@+id/placementRanking"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:text="Yer. Sıra:"
-                app:layout_constraintEnd_toStartOf="@+id/txtPlacementRanking"
-                app:layout_constraintTop_toBottomOf="@+id/rawRanking" />
+                <TextView
+                    android:id="@+id/rawTytRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Ham Sıra:"
+                    app:layout_constraintEnd_toStartOf="@+id/txtRawTytRanking"
+                    app:layout_constraintTop_toBottomOf="@+id/view3" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/placementTytRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Yer. Sıra:"
+                    app:layout_constraintEnd_toStartOf="@+id/txtPlacementTytRanking"
+                    app:layout_constraintTop_toBottomOf="@+id/rawTytRanking" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="20dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="20dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            style="@style/Widget.MaterialComponents.CardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtPlacementSayisalRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/placementSayisalRanking"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtRawSayisalRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/rawSayisalRanking"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/placementSayisalRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Yer. Sıra:"
+                    app:layout_constraintEnd_toStartOf="@+id/txtPlacementSayisalRanking"
+                    app:layout_constraintTop_toBottomOf="@+id/rawSayisalRanking" />
+
+                <TextView
+                    android:id="@+id/rawSayisalRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Ham Sıra:"
+                    app:layout_constraintEnd_toStartOf="@+id/txtRawSayisalRanking"
+                    app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+                <TextView
+                    android:id="@+id/txtPlacementSayisalScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/placementSayisalScore"
+                    app:layout_constraintStart_toEndOf="@+id/placementSayisalScore" />
+
+                <TextView
+                    android:id="@+id/txtRawSayisalScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/rawSayisalScore"
+                    app:layout_constraintStart_toEndOf="@+id/rawSayisalScore" />
+
+                <TextView
+                    android:id="@+id/placementSayisalScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Yer. Puan:"
+                    app:layout_constraintEnd_toEndOf="@+id/rawSayisalScore"
+                    app:layout_constraintTop_toBottomOf="@+id/rawSayisalScore" />
+
+                <TextView
+                    android:id="@+id/rawSayisalScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Ham Puan:"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="352dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clearSayisalPhysicsCorrect" />
+
+                <TextView
+                    android:id="@+id/sayisalResults"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sayısal Sonuçları"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/clearSayisalMathCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Matematik Net:"
+                    app:layout_constraintEnd_toStartOf="@+id/sayisalResults"
+                    app:layout_constraintTop_toBottomOf="@+id/sayisalResults" />
+
+                <TextView
+                    android:id="@+id/txtClearSayisalMathCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearSayisalMathCorrect"
+                    app:layout_constraintStart_toEndOf="@+id/clearSayisalMathCorrect" />
+
+                <TextView
+                    android:id="@+id/clearSayisalPhysicsCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Fizik Net:"
+                    app:layout_constraintEnd_toEndOf="@+id/clearSayisalMathCorrect"
+                    app:layout_constraintTop_toBottomOf="@+id/clearSayisalMathCorrect" />
+
+                <TextView
+                    android:id="@+id/txtClearSayisalPhysicsCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearSayisalPhysicsCorrect"
+                    app:layout_constraintStart_toEndOf="@+id/clearSayisalPhysicsCorrect" />
+
+                <TextView
+                    android:id="@+id/clearSayisalChemistryCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Kimya Net:"
+                    app:layout_constraintEnd_toStartOf="@+id/txtClearSayisalChemistryCorrect"
+                    app:layout_constraintTop_toBottomOf="@+id/sayisalResults" />
+
+                <TextView
+                    android:id="@+id/txtClearSayisalChemistryCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearSayisalChemistryCorrect"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/clearSayisalBiologyCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Biyoloji Net:"
+                    app:layout_constraintEnd_toStartOf="@+id/txtClearSayisalBiologyCorrect"
+                    app:layout_constraintTop_toBottomOf="@+id/clearSayisalChemistryCorrect" />
+
+                <TextView
+                    android:id="@+id/txtClearSayisalBiologyCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="0"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/clearSayisalBiologyCorrect"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

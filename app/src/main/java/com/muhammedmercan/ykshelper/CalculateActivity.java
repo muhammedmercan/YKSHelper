@@ -6,20 +6,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+
 import com.google.android.material.textfield.TextInputLayout;
+
+import org.w3c.dom.Text;
 
 public class CalculateActivity extends AppCompatActivity implements View.OnClickListener,View.OnFocusChangeListener  {
 
     private TextInputLayout inputLayoutTurkishCorrect, inputLayoutTurkishWrong, inputLayoutSocialStudiesCorrect, inputLayoutSocialStudiesWrong, inputLayoutBasicMathCorrect, inputLayoutBasicMathWrong, inputLayoutScienceCorrect, inputLayoutScienceWrong, inputLayoutDiplomaGrade, inputLayoutTurkishLanguageAndLiteratureCorrect, inputLayoutTurkishLanguageAndLiteratureWrong, inputLayoutHistoryCorrect, inputLayoutHistoryWrong, inputLayoutGeographyCorrect, inputLayoutGeographyWrong, inputLayoutHistory2Correct, inputLayoutHistory2Wrong, inputLayoutGeography2Correct, inputLayoutGeography2Wrong, inputLayoutPhilosophyCorrect, inputLayoutPhilosophyWrong, inputLayoutReligionCultureCorrect, inputLayoutReligionCultureWrong, inputLayoutMathCorrect, inputLayoutMathWrong, inputLayoutPhysicsCorrect, inputLayoutPhysicsWrong, inputLayoutChemistryCorrect, inputLayoutChemistryWrong, inputLayoutBiologyCorrect, inputLayoutBiologyWrong, inputLayoutForeignLanguageCorrect, inputLayoutForeignLanguageWrong;
     private Button btnCalculate;
-    private float clearTurkıshCorrect, clearSocialStudiesCorrect, clearBasicMathCorrect, clearScienceCorrect, clearTurkishLanguageAndLiteratureCorrect, clearHistoryCorrect, clearGeographyCorrect, clearHistory2Correct, clearGeography2Correct, clearPhilosophyorrect, clearReligionCultureCorrect, clearMathCorrect, clearPhysicsCorrect, clearChemistryCorrect, clearBiologyCorrect, clearForeignLanguage ;
-    private double rawTytScore, rawEsitAgirlikScore, rawSozelScore, rawSayisalScore, rawForeignLanguageScore;
+    private float clearTurkıshCorrect, clearSocialStudiesCorrect, clearBasicMathCorrect, clearScienceCorrect, clearTurkishLanguageAndLiteratureCorrect, clearHistoryCorrect, clearGeographyCorrect, clearHistory2Correct, clearGeography2Correct, clearPhilosophyorrect, clearReligionCultureCorrect, clearMathCorrect, clearPhysicsCorrect, clearChemistryCorrect, clearBiologyCorrect, clearForeignLanguageCorrect, diplomaGrade ;
+    private double rawTytScore, rawEsitAgirlikScore, rawSozelScore, rawSayisalScore, rawForeignLanguageScore, placementTytScore, placementSayisalScore, placementEsitAgirlikScore, placementForeignLanguageScore, placementSozelScore;
     private Intent intent;
+    private CheckBox checkBoxIWonBefore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculate);
+
 
 
         initViews();
@@ -195,14 +201,38 @@ public class CalculateActivity extends AppCompatActivity implements View.OnClick
                     calculateResults();
 
                     intent = new Intent(this,CalculatedResults.class);
-                    intent.putExtra("diplomaGrade",Double.valueOf(inputLayoutDiplomaGrade.getEditText().getText().toString()));
+                    intent.putExtra("diplomaGrade",diplomaGrade);
                     intent.putExtra("clearTurkishCorrect",clearTurkıshCorrect);
+
                     intent.putExtra("clearSocialStudiesCorrect",clearSocialStudiesCorrect);
                     intent.putExtra("clearBasicMathCorrect",clearBasicMathCorrect);
                     intent.putExtra("clearScienceCorrect",clearScienceCorrect);
                     intent.putExtra("rawTytScore",rawTytScore);
+                    intent.putExtra("placementTytScore",placementTytScore);
 
+                    intent.putExtra("clearMathCorrect",clearMathCorrect);
+                    intent.putExtra("clearPhysicsCorrect",clearPhysicsCorrect);
+                    intent.putExtra("clearChemistryCorrect",clearChemistryCorrect);
+                    intent.putExtra("clearBiologyCorrect",clearBiologyCorrect);
+                    intent.putExtra("rawSayisalScore",rawSayisalScore);
+                    intent.putExtra("placementSayisalScore",placementSayisalScore);
 
+                    intent.putExtra("clearTurkishLanguageAndLiteratureCorrect",clearTurkishLanguageAndLiteratureCorrect);
+                    intent.putExtra("clearHistoryCorrect",clearHistoryCorrect);
+                    intent.putExtra("clearGeographyCorrect",clearGeographyCorrect);
+                    intent.putExtra("rawEsitAgirlikScore",rawEsitAgirlikScore);
+                    intent.putExtra("placementEsitAgirlikScore",placementEsitAgirlikScore);
+
+                    intent.putExtra("clearHistory2Correct",clearHistory2Correct);
+                    intent.putExtra("clearGeography2Correct",clearGeography2Correct);
+                    intent.putExtra("clearPhilosophyorrect",clearPhilosophyorrect);
+                    intent.putExtra("clearReligionCultureCorrect",clearReligionCultureCorrect);
+                    intent.putExtra("rawSozelScore",rawSozelScore);
+                    intent.putExtra("placementSozelScore",placementSozelScore);
+
+                    intent.putExtra("clearForeignLanguageCorrect",clearForeignLanguageCorrect);
+                    intent.putExtra("rawForeignLanguageScore",rawForeignLanguageScore);
+                    intent.putExtra("placementForeignLanguageScore",placementForeignLanguageScore);
 
                 this.startActivity(intent);
                     break;
@@ -212,36 +242,77 @@ public class CalculateActivity extends AppCompatActivity implements View.OnClick
     //TODO Kullanıcı girdilerini kontrol et
 
 
+    private float calculateClearCorrect(TextInputLayout correctLayout, TextInputLayout wrongLayout) {
+
+        if (correctLayout.getEditText().getText().toString().isEmpty() && wrongLayout.getEditText().getText().toString().isEmpty()) {
+            return 0.0f;
+
+        }
+
+        else if (wrongLayout.getEditText().getText().toString().isEmpty()) {
+            return Float.valueOf(correctLayout.getEditText().getText().toString());
+        }
+
+        else {
+            return Float.valueOf(correctLayout.getEditText().getText().toString()) - Float.valueOf(wrongLayout.getEditText().getText().toString()) / 4;
+        }
+    }
+
+
+
 
     private void calculateResults() {
 
-         clearTurkıshCorrect = Float.valueOf(inputLayoutTurkishCorrect.getEditText().getText().toString()) - Float.valueOf(inputLayoutTurkishWrong.getEditText().getText().toString()) / 4;
-         clearSocialStudiesCorrect = Float.valueOf(inputLayoutSocialStudiesCorrect.getEditText().getText().toString()) - Float.valueOf(inputLayoutSocialStudiesWrong.getEditText().getText().toString()) / 4;
-         clearBasicMathCorrect = Float.valueOf(inputLayoutBasicMathCorrect.getEditText().getText().toString()) - Float.valueOf(inputLayoutBasicMathWrong.getEditText().getText().toString()) / 4;
-         clearScienceCorrect = Float.valueOf(inputLayoutScienceCorrect.getEditText().getText().toString()) - Float.valueOf(inputLayoutScienceWrong.getEditText().getText().toString()) / 4;
-
-         rawTytScore = (clearTurkıshCorrect * 3.2 + clearSocialStudiesCorrect * 3.6 + clearBasicMathCorrect * 3.2  + clearScienceCorrect * 3.6 + 100);
-
-        clearTurkishLanguageAndLiteratureCorrect = Float.valueOf(inputLayoutTurkishLanguageAndLiteratureCorrect.getEditText().getText().toString()) - Float.valueOf(inputLayoutTurkishLanguageAndLiteratureWrong.getEditText().getText().toString()) / 4;
-        clearHistoryCorrect = Float.valueOf(inputLayoutHistoryCorrect.getEditText().getText().toString()) - Float.valueOf(inputLayoutHistoryWrong.getEditText().getText().toString()) / 4;
-        clearGeographyCorrect = Float.valueOf(inputLayoutGeographyCorrect.getEditText().getText().toString()) - Float.valueOf(inputLayoutGeographyWrong.getEditText().getText().toString()) / 4;
-        clearHistory2Correct = Float.valueOf(inputLayoutHistory2Correct.getEditText().getText().toString()) - Float.valueOf(inputLayoutHistory2Wrong.getEditText().getText().toString()) / 4;
-        clearGeography2Correct = Float.valueOf(inputLayoutGeography2Correct.getEditText().getText().toString()) - Float.valueOf(inputLayoutGeography2Wrong.getEditText().getText().toString()) / 4;
-        clearPhilosophyorrect = Float.valueOf(inputLayoutPhilosophyCorrect.getEditText().getText().toString()) - Float.valueOf(inputLayoutPhilosophyWrong.getEditText().getText().toString()) / 4;
-        clearReligionCultureCorrect = Float.valueOf(inputLayoutReligionCultureCorrect.getEditText().getText().toString()) - Float.valueOf(inputLayoutReligionCultureWrong.getEditText().getText().toString()) / 4;
-        clearMathCorrect = Float.valueOf(inputLayoutMathCorrect.getEditText().getText().toString()) - Float.valueOf(inputLayoutMathWrong.getEditText().getText().toString()) / 4;
-        clearPhysicsCorrect = Float.valueOf(inputLayoutPhysicsCorrect.getEditText().getText().toString()) - Float.valueOf(inputLayoutPhysicsWrong.getEditText().getText().toString()) / 4;
-        clearChemistryCorrect = Float.valueOf(inputLayoutChemistryCorrect.getEditText().getText().toString()) - Float.valueOf(inputLayoutChemistryWrong.getEditText().getText().toString()) / 4;
-        clearBiologyCorrect = Float.valueOf(inputLayoutBiologyCorrect.getEditText().getText().toString()) - Float.valueOf(inputLayoutBiologyWrong.getEditText().getText().toString()) / 4;
-        clearForeignLanguage = Float.valueOf(inputLayoutForeignLanguageCorrect.getEditText().getText().toString()) - Float.valueOf(inputLayoutForeignLanguageWrong.getEditText().getText().toString()) / 4;
-
-        rawEsitAgirlikScore = (clearMathCorrect * 3 + clearTurkishLanguageAndLiteratureCorrect * 3 + clearHistoryCorrect * 2.8  + clearGeographyCorrect * 3.33 + 100);
-        rawSozelScore = (clearTurkishLanguageAndLiteratureCorrect * 3 + clearHistoryCorrect * 2.8 + clearGeographyCorrect * 3.33  + clearHistory2Correct * 2.91 + clearGeography2Correct * 2.91 + clearPhilosophyorrect * 3 + clearReligionCultureCorrect * 3.33 + 100);
-        rawSayisalScore = (clearMathCorrect * 3 + clearPhysicsCorrect * 2.85 + clearChemistryCorrect * 3.07  + clearBiologyCorrect * 3.07 + 100);
-        rawForeignLanguageScore = (clearForeignLanguage * 3 + 100);
 
 
+        if (inputLayoutDiplomaGrade.getEditText().getText().toString().isEmpty()) {
+            diplomaGrade = 0;
+        }
+
+        else {
+            diplomaGrade = Float.valueOf(inputLayoutDiplomaGrade.getEditText().getText().toString());
+        }
+
+        clearTurkıshCorrect = calculateClearCorrect(inputLayoutTurkishCorrect,inputLayoutTurkishWrong);
+        clearSocialStudiesCorrect = calculateClearCorrect(inputLayoutSocialStudiesCorrect,inputLayoutSocialStudiesWrong);
+        clearBasicMathCorrect = calculateClearCorrect(inputLayoutBasicMathCorrect,inputLayoutBasicMathWrong);
+        clearScienceCorrect = calculateClearCorrect(inputLayoutScienceCorrect,inputLayoutScienceWrong);
+        rawTytScore = (clearTurkıshCorrect * 3.2 + clearSocialStudiesCorrect * 3.6 + clearBasicMathCorrect * 3.2  + clearScienceCorrect * 3.6 + 100);
+        placementTytScore = rawTytScore + diplomaGrade * 0.6;
+
+        clearMathCorrect = calculateClearCorrect(inputLayoutMathCorrect,inputLayoutMathWrong);
+        clearPhysicsCorrect = calculateClearCorrect(inputLayoutPhysicsCorrect,inputLayoutPhysicsWrong);
+        clearChemistryCorrect = calculateClearCorrect(inputLayoutChemistryCorrect,inputLayoutChemistryWrong);
+        clearBiologyCorrect = calculateClearCorrect(inputLayoutBiologyCorrect,inputLayoutBiologyWrong);
+        rawSayisalScore = ((rawTytScore - 100) * 0.4 + clearMathCorrect * 3 + clearPhysicsCorrect * 2.85 + clearChemistryCorrect * 3.07  + clearBiologyCorrect * 3.07 + 100);
+        placementSayisalScore = rawSayisalScore + diplomaGrade * 0.6;
+
+        clearTurkishLanguageAndLiteratureCorrect = calculateClearCorrect(inputLayoutTurkishLanguageAndLiteratureCorrect,inputLayoutTurkishLanguageAndLiteratureWrong);
+        clearHistoryCorrect = calculateClearCorrect(inputLayoutHistoryCorrect,inputLayoutHistoryWrong);
+        clearGeographyCorrect = calculateClearCorrect(inputLayoutGeographyCorrect,inputLayoutGeographyWrong);
+        rawEsitAgirlikScore = ((rawTytScore - 100) * 0.4 + clearMathCorrect * 3 + clearTurkishLanguageAndLiteratureCorrect * 3 + clearHistoryCorrect * 2.8  + clearGeographyCorrect * 3.33 + 100);
+        placementEsitAgirlikScore = rawEsitAgirlikScore + diplomaGrade * 0.6;
+
+        clearHistory2Correct = calculateClearCorrect(inputLayoutHistory2Correct,inputLayoutHistory2Wrong);
+        clearGeography2Correct = calculateClearCorrect(inputLayoutGeography2Correct,inputLayoutGeography2Wrong);
+        clearPhilosophyorrect = calculateClearCorrect(inputLayoutPhilosophyCorrect,inputLayoutPhilosophyWrong);
+        clearReligionCultureCorrect = calculateClearCorrect(inputLayoutReligionCultureCorrect,inputLayoutReligionCultureWrong);
+        rawSozelScore = ((rawTytScore - 100) * 0.4 + clearTurkishLanguageAndLiteratureCorrect * 3 + clearHistoryCorrect * 2.8 + clearGeographyCorrect * 3.33  + clearHistory2Correct * 2.91 + clearGeography2Correct * 2.91 + clearPhilosophyorrect * 3 + clearReligionCultureCorrect * 3.33 + 100);
+        placementSozelScore = rawSozelScore + diplomaGrade * 0.6;
+
+        clearForeignLanguageCorrect = calculateClearCorrect(inputLayoutForeignLanguageCorrect,inputLayoutForeignLanguageWrong);
+        rawForeignLanguageScore = ((rawTytScore - 100) * 0.4 + clearForeignLanguageCorrect * 3 + 100);
+        placementForeignLanguageScore = rawForeignLanguageScore + diplomaGrade * 0.6;
+
+        if (checkBoxIWonBefore.isChecked()) {
+            placementTytScore -= diplomaGrade * 0.6* 0.5;
+            placementSayisalScore -= diplomaGrade * 0.6* 0.5;
+            placementEsitAgirlikScore -= diplomaGrade * 0.6* 0.5;
+            placementSozelScore -= diplomaGrade * 0.6* 0.5;
+            placementForeignLanguageScore -= diplomaGrade * 0.6* 0.5;
+        }
     }
+
     private void initViews() {
 
         btnCalculate = findViewById(R.id.btnCalculate);
@@ -279,6 +350,10 @@ public class CalculateActivity extends AppCompatActivity implements View.OnClick
         inputLayoutBiologyWrong = findViewById(R.id.inputLayoutBiologyWrong);
         inputLayoutForeignLanguageCorrect = findViewById(R.id.inputLayoutForeignLanguageCorrect);
         inputLayoutForeignLanguageWrong = findViewById(R.id.inputLayoutForeignLanguageWrong);
+
+        checkBoxIWonBefore = findViewById(R.id.checkBoxIWonBefore);
+
+
 
 
 

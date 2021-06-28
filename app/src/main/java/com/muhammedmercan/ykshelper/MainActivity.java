@@ -3,7 +3,6 @@
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -11,29 +10,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.firestore.Source;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.time.Instant;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 
@@ -41,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView txtCounterDays, txtCounterHours,txtCounterMinutes, txtCounterSeconds;
     private CardView  robotCardView, subjectCardView, calculateCardView, examCardView;
     private ProgressBar progressBarDays, progressBarHours,progressBarMinutes,progressBarSeconds;
+
 
       private Map<String, Object> city;
       FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -57,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         city = new HashMap<>();
         db = FirebaseFirestore.getInstance();
+
 
 
         initViews();
@@ -120,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.subjectCardView:
-                Intent intent4 = new Intent(this, SubjectActivity.class);
+                Intent intent4 = new Intent(this, SubjectTrackerActivity.class);
                 this.startActivity(intent4);
                 break;
 
