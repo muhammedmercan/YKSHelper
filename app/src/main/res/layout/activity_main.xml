@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:clickable="true"
-        app:cardBackgroundColor="#ADBAFF"
+        app:cardBackgroundColor="@color/purple_500"
         app:layout_constraintEnd_toStartOf="@+id/guidelineMainRight"
         app:layout_constraintStart_toStartOf="@+id/guidelineMainLeft"
         app:layout_constraintTop_toTopOf="parent">
@@ -25,11 +25,12 @@
             android:layout_height="match_parent">
 
             <com.google.android.material.progressindicator.CircularProgressIndicator
-                android:id="@+id/progressBarDay"
+                android:id="@+id/progressBarDays"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
+                app:indicatorColor="@color/white"
                 app:indicatorSize="70dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/progressBarHours"
@@ -43,21 +44,22 @@
                 android:layout_height="wrap_content"
                 android:text="Gün"
                 android:textAlignment="center"
-                app:layout_constraintBottom_toBottomOf="@+id/progressBarDay"
-                app:layout_constraintEnd_toEndOf="@+id/progressBarDay"
+                app:layout_constraintBottom_toBottomOf="@+id/progressBarDays"
+                app:layout_constraintEnd_toEndOf="@+id/progressBarDays"
                 app:layout_constraintHorizontal_bias="0.49"
-                app:layout_constraintStart_toStartOf="@+id/progressBarDay"
-                app:layout_constraintTop_toTopOf="@+id/progressBarDay" />
+                app:layout_constraintStart_toStartOf="@+id/progressBarDays"
+                app:layout_constraintTop_toTopOf="@+id/progressBarDays" />
 
             <com.google.android.material.progressindicator.CircularProgressIndicator
                 android:id="@+id/progressBarHours"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                app:indicatorColor="@color/white"
                 app:indicatorSize="70dp"
                 app:layout_constraintEnd_toStartOf="@+id/progressBarMinutes"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/progressBarDay"
+                app:layout_constraintStart_toEndOf="@+id/progressBarDays"
                 app:layout_constraintTop_toBottomOf="@+id/txtCounterName" />
 
             <TextView
@@ -77,6 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                app:indicatorColor="@color/white"
                 app:indicatorSize="70dp"
                 app:layout_constraintEnd_toStartOf="@+id/progressBarSeconds"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -101,6 +104,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                app:indicatorColor="@color/white"
                 app:indicatorSize="70dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -123,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="YKS Geri Sayım"
+                android:text="TYT Geri Sayım (Tahmini)"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -292,17 +296,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
-
-    <TextView
-        android:id="@+id/txtSaying"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:text="Başarı için erken kalk, spor yap, ve yazılım çalış!"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineMainRight"
-        app:layout_constraintStart_toStartOf="@+id/guidelineMainLeft" />
 
 
     <androidx.constraintlayout.widget.Guideline

@@ -4,6 +4,301 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F4F4F4"
     tools:context="com.muhammedmercan.ykshelper.RobotActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutUniversty"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutCity">
+
+        <MultiAutoCompleteTextView
+            android:id="@+id/multiAutoCompleteTextViewUniversity"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Üniversite (Birden fazla seçilebilir)"
+            android:imeOptions="normal"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutDepartment"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutMinPlacementRanking">
+
+        <MultiAutoCompleteTextView
+            android:id="@+id/multiAutoCompleteTextViewDepartment"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Bölüm (Birden fazla seçilebilir)"
+            android:imeOptions="normal"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutMinPoint"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/inputLayoutMaxPoint"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtInputEditTextMinPoint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Min. Puan"
+            android:imeOptions="normal"
+            android:inputType="number"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutMaxPlacementRanking"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/inputLayoutMinPlacementRanking"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutMaxPoint">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtInputEditTextMaxPlacementRanking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Max. Sıralama"
+            android:imeOptions="normal"
+            android:inputType="number"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutMinPlacementRanking"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/inputLayoutMaxPlacementRanking"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutMinPoint">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtInputEditTextMinPlacementRanking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Min Sıralama"
+            android:imeOptions="normal"
+            android:inputType="number"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutCity"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutDepartment">
+
+        <MultiAutoCompleteTextView
+            android:id="@+id/multiAutoCompleteTextViewCity"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Şehir (Birden fazla seçilebilir)"
+            android:imeOptions="normal"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutMaxPoint"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/inputLayoutMinPoint"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtInputEditTextMaxPoint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Max. Puan"
+            android:imeOptions="normal"
+            android:inputType="number"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <Button
+        android:id="@+id/btnTypeOfPoint"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:text="Puan Türü"
+        android:textSize="12sp"
+        app:icon="@android:drawable/arrow_down_float"
+        app:layout_constraintEnd_toStartOf="@+id/btnTypeofUniversty"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxDegree"
+        app:strokeColor="@color/purple_500" />
+
+    <Button
+        android:id="@+id/btnTypeofUniversty"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Üni. Türü"
+        android:textSize="12sp"
+        app:icon="@android:drawable/arrow_down_float"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnTypeOfPoint"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintStart_toEndOf="@+id/btnTypeOfPoint"
+        app:strokeColor="@color/purple_500" />
+
+    <Button
+        android:id="@+id/btnTypeOfDepartment"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="10dp"
+        android:text="Bölüm Türü"
+        android:textSize="12sp"
+        app:icon="@android:drawable/arrow_down_float"
+        app:layout_constraintEnd_toStartOf="@+id/btnLanguage"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/btnTypeOfPoint"
+        app:strokeColor="@color/purple_500" />
+
+    <Button
+        android:id="@+id/btnLanguage"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Dil"
+        android:textSize="12sp"
+        app:icon="@android:drawable/arrow_down_float"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnTypeOfDepartment"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintStart_toEndOf="@+id/btnTypeOfDepartment"
+        app:strokeColor="@color/purple_500" />
+
+    <CheckBox
+        android:id="@+id/checkBoxDegree"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="Lisans"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxAssociateDegree" />
+
+    <CheckBox
+        android:id="@+id/checkBoxAssociateDegree"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:checked="true"
+        android:text="Önlisans"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutUniversty" />
+
+    <Button
+        android:id="@+id/btnShowResults"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:text="Sonuçları Göster"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/guideline7" />
+
+    <CheckBox
+        android:id="@+id/checkBoxNew"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:checked="true"
+        android:text="Yeni"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxNotFilled"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutUniversty" />
+
+    <CheckBox
+        android:id="@+id/checkBoxNotFilled"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="Dolmayanlar"
+        app:layout_constraintStart_toStartOf="@+id/btnTypeofUniversty"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxNew" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

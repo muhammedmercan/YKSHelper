@@ -14,6 +14,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import static com.google.firestore.v1.StructuredQuery.CompositeFilter.Operator.AND;
+
 
 public class CalculatedResults extends AppCompatActivity {
 
@@ -93,25 +95,36 @@ public class CalculatedResults extends AppCompatActivity {
 
     }
 
-    private void setDataFromFirebase(String path, String name, TextView textView, String dataType) {
+    private void setDataFromDatabase(String typeOfRanking, String typeOfPoint, int point, TextView textView ) {
 
-        DocumentReference docRef = db.collection(path).document(String.valueOf((int)intent.getDoubleExtra(name,0)));
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-                        textView.setText(String.valueOf(document.getData().get(dataType)));
-                    } else {
-                        Log.d(TAG, "No such document");
-                    }
-                } else {
-                    Log.d(TAG, "get failed with ", task.getException());
-                }
+        Database vt = new Database(this);
+        String data = "";
+        String query = "SELECT * FROM rankings WHERE type_of_rankings = '" + typeOfRanking + "' AND point = " + point ;
+        //String query = "SELECT * FROM rankings";
+
+        System.out.println(query);
+
+        if (typeOfRanking.equals("Raw")) {
+
+                data = data + vt.GetAllDataFromRankings(query);
+        }
+
+        if (typeOfRanking.equals("Placement")) {
+
+            if (point >= 150) {
+                data = data + vt.GetAllDataFromRankings(query);
+
             }
-        });
+
+            else {
+                data = data + "-- -- --";
+            }
+        }
+
+
+        textView.setText(data);
+
+
     }
 
     private void setData() {
@@ -157,8 +170,8 @@ public class CalculatedResults extends AppCompatActivity {
                 else {
                       txtRawTytScore.setText(String.format("%.2f",intent.getDoubleExtra("rawTytScore",0)));
                       txtPlacementTytScore.setText(String.format("%.2f",intent.getDoubleExtra("placementTytScore",0)));
-                      setDataFromFirebase("rawRankings","rawTytScore",txtRawTytRanking,"tyt");
-                      setDataFromFirebase("placementRankings","placementTytScore",txtPlacementTytRanking,"tyt");
+                      setDataFromDatabase("Raw","tyt",(int)intent.getDoubleExtra("rawTytScore",0),txtRawTytRanking);
+                      setDataFromDatabase("Placement","tyt",(int)intent.getDoubleExtra("placementTytScore",0),txtPlacementTytRanking);
                 }
 
 
@@ -173,10 +186,12 @@ public class CalculatedResults extends AppCompatActivity {
                 }
 
                 else {
-                      txtRawSayisalScore.setText(String.format("%.2f",intent.getDoubleExtra("rawTytScore",0)));
-                      txtPlacementSayisalScore.setText(String.format("%.2f",intent.getDoubleExtra("placementTytScore",0)));
-                    setDataFromFirebase("rawRankings","rawSayisalScore",txtRawSayisalRanking,"sayısal");
-                    setDataFromFirebase("placementRankings","placementSayisalScore",txtPlacementSayisalRanking,"sayısal");
+                      txtRawSayisalScore.setText(String.format("%.2f",intent.getDoubleExtra("rawSayisalScore",0)));
+                      txtPlacementSayisalScore.setText(String.format("%.2f",intent.getDoubleExtra("placementSayisalScore",0)));
+
+                    setDataFromDatabase("Raw","sayisal",(int)intent.getDoubleExtra("rawSayisalScore",0),txtRawSayisalRanking);
+                    setDataFromDatabase("Placement","sayisal",(int)intent.getDoubleExtra("placementSayisalScore",0),txtPlacementSayisalRanking);
+
                 }
 
                 if (intent.getFloatExtra("clearMathCorrect",0) == 0 &&
@@ -192,8 +207,9 @@ public class CalculatedResults extends AppCompatActivity {
                 else {
                     txtRawEsitAgirlikScore.setText(String.format("%.2f",intent.getDoubleExtra("rawEsitAgirlikScore",0)));
                     txtPlacementEsitAgirlikScore.setText(String.format("%.2f",intent.getDoubleExtra("placementEsitAgirlikScore",0)));
-                    setDataFromFirebase("rawRankings","rawEsitAgirlikScore",txtRawEsitAgirlikRanking,"eşitAğırlık");
-                    setDataFromFirebase("placementRankings","placementEsitAgirlikScore",txtPlacementEsitAgirlikRanking,"eşitAğırlık");
+                    setDataFromDatabase("Raw","esit_agirlik",(int)intent.getDoubleExtra("rawEsitAgirlikScore",0),txtRawEsitAgirlikRanking);
+                    setDataFromDatabase("Placement","esit_agirlik",(int)intent.getDoubleExtra("placementEsitAgirlikScore",0),txtPlacementEsitAgirlikRanking);
+
                 }
 
                 if (intent.getFloatExtra("clearTurkishLanguageAndLiteratureCorrect",0) == 0 &&
@@ -212,8 +228,8 @@ public class CalculatedResults extends AppCompatActivity {
                 else {
                     txtRawSozelScore.setText(String.format("%.2f",intent.getDoubleExtra("rawSozelScore",0)));
                     txtPlacementSozelScore.setText(String.format("%.2f",intent.getDoubleExtra("placementSozelScore",0)));
-                    setDataFromFirebase("rawRankings","rawSozelScore",txtRawSozelRanking,"sözel");
-                    setDataFromFirebase("placementRankings","placementSozelScore",txtPlacementSozelRanking,"sözel");
+                    setDataFromDatabase("Raw","sozel",(int)intent.getDoubleExtra("rawSozelScore",0),txtRawSozelRanking);
+                    setDataFromDatabase("Placement","sozel",(int)intent.getDoubleExtra("placementSozelScore",0),txtPlacementSozelRanking);
                 }
 
                 if (intent.getFloatExtra("clearForeignLanguageCorrect",0) == 0) {
@@ -226,8 +242,8 @@ public class CalculatedResults extends AppCompatActivity {
                 else {
                     txtRawDilScore.setText(String.format("%.2f",intent.getDoubleExtra("rawForeignLanguageScore",0)));
                     txtPlacementDilScore.setText(String.format("%.2f",intent.getDoubleExtra("placementForeignLanguageScore",0)));
-                    setDataFromFirebase("rawRankings","rawForeignLanguageScore",txtRawDilRanking,"dil");
-                    setDataFromFirebase("placementRankings","placementForeignLanguageScore",txtPlacementDilRanking,"dil");
+                  //  setDataFromFirebase("rawRankings","rawForeignLanguageScore",txtRawDilRanking,"dil");
+                 //   setDataFromFirebase("placementRankings","placementForeignLanguageScore",txtPlacementDilRanking,"dil");
                 }
 
 
