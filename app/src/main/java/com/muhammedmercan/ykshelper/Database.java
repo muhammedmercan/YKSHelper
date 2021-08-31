@@ -56,7 +56,6 @@ public class Database extends SQLiteOpenHelper {
     private static final String ROW_SOZEL = "sozel";
     private static final String ROW_DIL = "dil";
 
-    private String nameOfTable;
 
 
 
@@ -82,29 +81,29 @@ public class Database extends SQLiteOpenHelper {
                 + ROW_DEPARTMENT + " TEXT NOT NULL, "
                 + ROW_LANGUAGE + " TEXT NOT NULL, "
                 + ROW_TYPEOFPOINT + " TEXT NOT NULL, "
-                + ROW_ADDITIONALINFO + " TEXT DEFAULT '', "
-                + ROW_EDUCATİONTİME + " TEXT DEFAULT '', "
-                + ROW_CITY + " TEXT NOT NULL, "
-                + ROW_TYPEOFUNIVERSTY + " TEXT NOT NULL, "
-                + ROW_TYPEOFDEPARTMENT + " TEXT NOT NULL, "
-                + ROW_TYPEOFDEPARTMENT2 + " TEXT NOT NULL, "
-                + ROW_QUOTA2021 + " TEXT NOT NULL, "
-                + ROW_QUOTA2020 + " TEXT NOT NULL, "
-                + ROW_QUOTA2019 + " TEXT NOT NULL, "
-                + ROW_QUOTA2018 + " TEXT NOT NULL, "
-                + ROW_STATUS + " TEXT NOT NULL, "
-                + ROW_WINNER2021 + " TEXT NOT NULL, "
-                + ROW_WINNER2020 + " TEXT NOT NULL, "
-                + ROW_WINNER2019 + " TEXT NOT NULL, "
-                + ROW_WINNER2018 + " TEXT NOT NULL, "
-                + ROW_PLACEMENTRANKING2021 + " INTEGER NOT NULL, "
-                + ROW_PLACEMENTRANKING2020 + " INTEGER NOT NULL, "
-                + ROW_PLACEMENTRANKING2019 + " INTEGER NOT NULL, "
-                + ROW_PLACEMENTRANKING2018 + " INTEGER NOT NULL, "
-                + ROW_PLACEMENTPOINT2021 + " TEXT NOT NULL, "
-                + ROW_PLACEMENTPOINT2020 + " TEXT NOT NULL, "
-                + ROW_PLACEMENTPOINT2019 + " TEXT NOT NULL, "
-                + ROW_PLACEMENTPOINT2018 + " TEXT NOT NULL)");
+                + ROW_ADDITIONALINFO + " TEXT DEFAULT '---', "
+                + ROW_EDUCATİONTİME + " TEXT DEFAULT '---', "
+                + ROW_CITY + " TEXT  DEFAULT '---', "
+                + ROW_TYPEOFUNIVERSTY + " TEXT DEFAULT '---', "
+                + ROW_TYPEOFDEPARTMENT + " TEXT DEFAULT '---', "
+                + ROW_TYPEOFDEPARTMENT2 + " TEXT DEFAULT '---', "
+                + ROW_QUOTA2021 + " TEXT DEFAULT '---', "
+                + ROW_QUOTA2020 + " TEXT DEFAULT '---', "
+                + ROW_QUOTA2019 + " TEXT DEFAULT '---', "
+                + ROW_QUOTA2018 + " TEXT  DEFAULT '---',"
+                + ROW_STATUS + " TEXT DEFAULT '', "
+                + ROW_WINNER2021 + " TEXT DEFAULT '---', "
+                + ROW_WINNER2020 + " TEXT DEFAULT '---', "
+                + ROW_WINNER2019 + " TEXT DEFAULT '---' , "
+                + ROW_WINNER2018 + " TEXT DEFAULT '---', "
+                + ROW_PLACEMENTRANKING2021 + " INTEGER DEFAULT 0, "
+                + ROW_PLACEMENTRANKING2020 + " INTEGER DEFAULT 0, "
+                + ROW_PLACEMENTRANKING2019 + " INTEGER DEFAULT 0, "
+                + ROW_PLACEMENTRANKING2018 + " INTEGER DEFAULT 0, "
+                + ROW_PLACEMENTPOINT2021 + " TEXT DEFAULT '---', "
+                + ROW_PLACEMENTPOINT2020 + " TEXT DEFAULT '---', "
+                + ROW_PLACEMENTPOINT2019 + " TEXT DEFAULT '---', "
+                + ROW_PLACEMENTPOINT2018 + " TEXT DEFAULT '---')");
 
 
             String table2 = ("CREATE TABLE " + TABLE_RANKINGS + "("
@@ -166,10 +165,10 @@ public class Database extends SQLiteOpenHelper {
     }
 
     public void AddData(String typeOfPoint, String university, String faculty, String department, String language, String additionalInfo, String educationTime, String city, String typeOfUniversity, String typeOfDepartment,
-                        String typeOfDepartment2, String quota2020, String quota2019, String quota2018, String quota2017, String status, String winner2020,
-                        String winner2019, String winner2018, String winner2017, int placementRanking2020, int placementRanking2019,
-                        int placementRanking2018, int placementRanking2017, String placementPoint2020, String placementPoint2019,
-                        String placementPoint2018, String placementPoint2017){
+                        String typeOfDepartment2, String quota2021, String quota2020, String quota2019, String quota2018, String status, String winner2021,
+                        String winner2020, String winner2019, String winner2018, int placementRanking2021, int placementRanking2020,
+                        int placementRanking2019, int placementRanking2018, String placementPoint2021, String placementPoint2020,
+                        String placementPoint2019, String placementPoint2018){
         SQLiteDatabase db = this.getWritableDatabase();
         try {
             ContentValues cv = new ContentValues();
@@ -184,23 +183,23 @@ public class Database extends SQLiteOpenHelper {
             cv.put(ROW_TYPEOFUNIVERSTY, typeOfUniversity);
             cv.put(ROW_TYPEOFDEPARTMENT, typeOfDepartment);
             cv.put(ROW_TYPEOFDEPARTMENT2, typeOfDepartment2);
-            cv.put(ROW_QUOTA2018, quota2017);
-            cv.put(ROW_QUOTA2019, quota2018);
-            cv.put(ROW_QUOTA2020, quota2019);
-            cv.put(ROW_QUOTA2021, quota2020);
+            cv.put(ROW_QUOTA2018, quota2018);
+            cv.put(ROW_QUOTA2019, quota2019);
+            cv.put(ROW_QUOTA2020, quota2020);
+            cv.put(ROW_QUOTA2021, quota2021);
             cv.put(ROW_STATUS, status);
-            cv.put(ROW_WINNER2018, winner2017);
-            cv.put(ROW_WINNER2019, winner2018);
-            cv.put(ROW_WINNER2020, winner2019);
-            cv.put(ROW_WINNER2021, winner2020);
-            cv.put(ROW_PLACEMENTRANKING2018, placementRanking2017);
-            cv.put(ROW_PLACEMENTRANKING2019, placementRanking2018);
-            cv.put(ROW_PLACEMENTRANKING2020, placementRanking2019);
-            cv.put(ROW_PLACEMENTRANKING2021, placementRanking2020);
-            cv.put(ROW_PLACEMENTPOINT2018, placementPoint2017);
-            cv.put(ROW_PLACEMENTPOINT2019, placementPoint2018);
-            cv.put(ROW_PLACEMENTPOINT2020, placementPoint2019);
-            cv.put(ROW_PLACEMENTPOINT2021, placementPoint2020);
+            cv.put(ROW_WINNER2018, winner2018);
+            cv.put(ROW_WINNER2019, winner2019);
+            cv.put(ROW_WINNER2020, winner2020);
+            cv.put(ROW_WINNER2021, winner2021);
+            cv.put(ROW_PLACEMENTRANKING2018, placementRanking2018);
+            cv.put(ROW_PLACEMENTRANKING2019, placementRanking2019);
+            cv.put(ROW_PLACEMENTRANKING2020, placementRanking2020);
+            cv.put(ROW_PLACEMENTRANKING2021, placementRanking2021);
+            cv.put(ROW_PLACEMENTPOINT2018, placementPoint2018);
+            cv.put(ROW_PLACEMENTPOINT2019, placementPoint2019);
+            cv.put(ROW_PLACEMENTPOINT2020, placementPoint2020);
+            cv.put(ROW_PLACEMENTPOINT2021, placementPoint2021);
             db.insert(TABLE_DEPARTMENTS, null,cv);
         }catch (Exception e){
         }
@@ -208,10 +207,10 @@ public class Database extends SQLiteOpenHelper {
     }
 
     public void AddData(String typeOfPoint, String university, String faculty, String department, String language, String educationTime, String city, String typeOfUniversity, String typeOfDepartment,
-                        String typeOfDepartment2, String quota2020, String quota2019, String quota2018, String quota2017, String status, String winner2020,
-                        String winner2019, String winner2018, String winner2017, int placementRanking2020, int placementRanking2019,
-                        int placementRanking2018, int placementRanking2017, String placementPoint2020, String placementPoint2019,
-                        String placementPoint2018, String placementPoint2017){
+                        String typeOfDepartment2, String quota2021, String quota2020, String quota2019, String quota2018, String status, String winner2021,
+                        String winner2020, String winner2019, String winner2018, int placementRanking2021, int placementRanking2020,
+                        int placementRanking2019, int placementRanking2018, String placementPoint2021, String placementPoint2020,
+                        String placementPoint2019, String placementPoint2018){
         SQLiteDatabase db = this.getWritableDatabase();
         try {
             ContentValues cv = new ContentValues();
@@ -225,23 +224,85 @@ public class Database extends SQLiteOpenHelper {
             cv.put(ROW_TYPEOFUNIVERSTY, typeOfUniversity);
             cv.put(ROW_TYPEOFDEPARTMENT, typeOfDepartment);
             cv.put(ROW_TYPEOFDEPARTMENT2, typeOfDepartment2);
-            cv.put(ROW_QUOTA2018, quota2017);
-            cv.put(ROW_QUOTA2019, quota2018);
-            cv.put(ROW_QUOTA2020, quota2019);
-            cv.put(ROW_QUOTA2021, quota2020);
+            cv.put(ROW_QUOTA2018, quota2018);
+            cv.put(ROW_QUOTA2019, quota2019);
+            cv.put(ROW_QUOTA2020, quota2020);
+            cv.put(ROW_QUOTA2021, quota2021);
             cv.put(ROW_STATUS, status);
-            cv.put(ROW_WINNER2018, winner2017);
-            cv.put(ROW_WINNER2019, winner2018);
-            cv.put(ROW_WINNER2020, winner2019);
-            cv.put(ROW_WINNER2021, winner2020);
-            cv.put(ROW_PLACEMENTRANKING2018, placementRanking2017);
-            cv.put(ROW_PLACEMENTRANKING2019, placementRanking2018);
-            cv.put(ROW_PLACEMENTRANKING2020, placementRanking2019);
-            cv.put(ROW_PLACEMENTRANKING2021, placementRanking2020);
-            cv.put(ROW_PLACEMENTPOINT2018, placementPoint2017);
-            cv.put(ROW_PLACEMENTPOINT2019, placementPoint2018);
-            cv.put(ROW_PLACEMENTPOINT2020, placementPoint2019);
-            cv.put(ROW_PLACEMENTPOINT2021, placementPoint2020);
+            cv.put(ROW_WINNER2018, winner2018);
+            cv.put(ROW_WINNER2019, winner2019);
+            cv.put(ROW_WINNER2020, winner2020);
+            cv.put(ROW_WINNER2021, winner2021);
+            cv.put(ROW_PLACEMENTRANKING2018, placementRanking2018);
+            cv.put(ROW_PLACEMENTRANKING2019, placementRanking2019);
+            cv.put(ROW_PLACEMENTRANKING2020, placementRanking2020);
+            cv.put(ROW_PLACEMENTRANKING2021, placementRanking2021);
+            cv.put(ROW_PLACEMENTPOINT2018, placementPoint2018);
+            cv.put(ROW_PLACEMENTPOINT2019, placementPoint2019);
+            cv.put(ROW_PLACEMENTPOINT2020, placementPoint2020);
+            cv.put(ROW_PLACEMENTPOINT2021, placementPoint2021);
+            db.insert(TABLE_DEPARTMENTS, null,cv);
+        }catch (Exception e){
+        }
+        db.close();
+    }
+
+    public void AddData(String typeOfPoint, String university, String faculty, String department, String language, String additionalInfo,  String educationTime, String city, String typeOfUniversity, String typeOfDepartment,
+                        String typeOfDepartment2, String quota2021, String quota2020,  String winner2021,
+                        String winner2020, String placementPoint2021, String placementPoint2020, int placementRanking2021, int placementRanking2020){
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            ContentValues cv = new ContentValues();
+            cv.put(ROW_TYPEOFPOINT,typeOfPoint);
+            cv.put(ROW_UNIVERSITY, university);
+            cv.put(ROW_FACULTY, faculty);
+            cv.put(ROW_DEPARTMENT, department);
+            cv.put(ROW_LANGUAGE, language);
+            cv.put(ROW_ADDITIONALINFO, additionalInfo);
+            cv.put(ROW_EDUCATİONTİME, educationTime);
+            cv.put(ROW_CITY, city);
+            cv.put(ROW_TYPEOFUNIVERSTY, typeOfUniversity);
+            cv.put(ROW_TYPEOFDEPARTMENT, typeOfDepartment);
+            cv.put(ROW_TYPEOFDEPARTMENT2, typeOfDepartment2);
+            cv.put(ROW_QUOTA2020, quota2020);
+            cv.put(ROW_QUOTA2021, quota2021);
+            cv.put(ROW_WINNER2020, winner2020);
+            cv.put(ROW_WINNER2021, winner2021);
+            cv.put(ROW_PLACEMENTRANKING2020, placementRanking2020);
+            cv.put(ROW_PLACEMENTRANKING2021, placementRanking2021);
+            cv.put(ROW_PLACEMENTPOINT2020, placementPoint2020);
+            cv.put(ROW_PLACEMENTPOINT2021, placementPoint2021);
+            db.insert(TABLE_DEPARTMENTS, null,cv);
+        }catch (Exception e){
+        }
+        db.close();
+    }
+
+    public void AddData(String typeOfPoint, String university, String faculty, String department, String language, String educationTime, String city,
+                        String typeOfUniversity, String typeOfDepartment, String typeOfDepartment2, String quota2021, String quota2020,
+                        String winner2021, String winner2020, String placementPoint2021, String placementPoint2020, int placementRanking2021,
+                        int placementRanking2020){
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            ContentValues cv = new ContentValues();
+            cv.put(ROW_TYPEOFPOINT,typeOfPoint);
+            cv.put(ROW_UNIVERSITY, university);
+            cv.put(ROW_FACULTY, faculty);
+            cv.put(ROW_DEPARTMENT, department);
+            cv.put(ROW_LANGUAGE, language);
+            cv.put(ROW_EDUCATİONTİME, educationTime);
+            cv.put(ROW_CITY, city);
+            cv.put(ROW_TYPEOFUNIVERSTY, typeOfUniversity);
+            cv.put(ROW_TYPEOFDEPARTMENT, typeOfDepartment);
+            cv.put(ROW_TYPEOFDEPARTMENT2, typeOfDepartment2);
+            cv.put(ROW_QUOTA2020, quota2020);
+            cv.put(ROW_QUOTA2021, quota2021);
+            cv.put(ROW_WINNER2020, winner2020);
+            cv.put(ROW_WINNER2021, winner2021);
+            cv.put(ROW_PLACEMENTRANKING2020, placementRanking2020);
+            cv.put(ROW_PLACEMENTRANKING2021, placementRanking2021);
+            cv.put(ROW_PLACEMENTPOINT2020, placementPoint2020);
+            cv.put(ROW_PLACEMENTPOINT2021, placementPoint2021);
             db.insert(TABLE_DEPARTMENTS, null,cv);
         }catch (Exception e){
         }
@@ -249,15 +310,20 @@ public class Database extends SQLiteOpenHelper {
     }
 
 
+
     public ArrayList<Department> GetAllData(String queryString){
         ArrayList<Department> data = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
         try {
 
-            if (queryString.equals("SELECT * FROM Departments WHERE (")) {
-                queryString = "SELECT * FROM Departments";
+            if (queryString.equals("SELECT * FROM departments WHERE (")) {
+                queryString = "SELECT * FROM departments WHERE placement_ranking2020 > 0";
             }
-            queryString = queryString + " ORDER BY placementranking2020";
+
+            else {
+                queryString += " AND placement_ranking2020 > 0";
+            }
+            queryString = queryString + " ORDER BY placement_ranking2020   LIMIT 1000";
             System.out.println(queryString);
             Cursor cursor = db.rawQuery(queryString,null);
             while (cursor.moveToNext()){
@@ -265,8 +331,8 @@ public class Database extends SQLiteOpenHelper {
                 data.add(new Department(cursor.getInt(0),cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4),
                         cursor.getString(5),cursor.getString(6),cursor.getString(7),cursor.getString(8),cursor.getString(9),cursor.getString(10),
                         cursor.getString(11),cursor.getString(12),cursor.getString(13),cursor.getString(14),cursor.getString(15),cursor.getString(16),
-                        cursor.getString(17),cursor.getString(18),cursor.getInt(19),cursor.getInt(20),cursor.getInt(21),cursor.getInt(22),
-                        cursor.getString(23),cursor.getString(24),cursor.getString(25),cursor.getString(26)));
+                        cursor.getString(17),cursor.getString(18),cursor.getString(19),cursor.getString(20),cursor.getInt(21),cursor.getInt(22),
+                        cursor.getInt(23),cursor.getInt(24),cursor.getString(25),cursor.getString(26),cursor.getString(27),cursor.getString(28)));
             }
         }catch (Exception e){
         }

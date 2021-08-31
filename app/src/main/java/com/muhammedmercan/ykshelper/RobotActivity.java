@@ -160,7 +160,7 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
             case R.id.btnShowResults:
 
 
-                String queryString = checkData("SELECT * FROM Departments WHERE (");
+                String queryString = checkData("SELECT * FROM departments WHERE (");
 
                 Intent intent3 = new Intent(this, showResultOfSearchActivity.class);
                 intent3.putExtra("queryString",queryString);
@@ -234,7 +234,7 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
                 queryString = queryString + "AND (";
             }
 
-            queryString = queryString + "placementpoint2020 BETWEEN " + Integer.parseInt(txtInputEditTextMinPoint.getText().toString()) +
+            queryString = queryString + "placement_point2020 BETWEEN " + Integer.parseInt(txtInputEditTextMinPoint.getText().toString()) +
                     " AND " + Integer.parseInt(txtInputEditTextMaxPoint.getText().toString()) + ")" ;
             counter+=1;
 
@@ -245,7 +245,7 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
                 queryString = queryString + "AND (";
             }
 
-            queryString = queryString + "placementpoint2020 > " + Integer.parseInt(txtInputEditTextMinPoint.getText().toString()) + ")";
+            queryString = queryString + "placement_point2020 > " + Integer.parseInt(txtInputEditTextMinPoint.getText().toString()) + ")";
             counter+=1;
 
         }
@@ -256,7 +256,7 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
                 queryString = queryString + "AND (";
             }
 
-            queryString = queryString + "placementpoint2020 < " + Integer.parseInt(txtInputEditTextMaxPoint.getText().toString()) + ")";
+            queryString = queryString + "placement_point2020 < " + Integer.parseInt(txtInputEditTextMaxPoint.getText().toString()) + ")";
             counter+=1;
 
         }
@@ -268,7 +268,7 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
                 queryString = queryString + "AND (";
             }
 
-            queryString = queryString + "placementranking2020 BETWEEN " + Integer.parseInt(txtInputEditTextMinPlacementRanking.getText().toString()) +
+            queryString = queryString + "placement_ranking2020 BETWEEN " + Integer.parseInt(txtInputEditTextMinPlacementRanking.getText().toString()) +
                     " AND " + Integer.parseInt(txtInputEditTextMaxPlacementRanking.getText().toString()) + ")" ;
             counter+=1;
 
@@ -279,7 +279,7 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
                 queryString = queryString + "AND (";
             }
 
-            queryString = queryString + "placementranking2020 > " + Integer.parseInt(txtInputEditTextMinPlacementRanking.getText().toString()) + ")";
+            queryString = queryString + "placement_ranking2020 > " + Integer.parseInt(txtInputEditTextMinPlacementRanking.getText().toString()) + ")";
             counter+=1;
 
         }
@@ -291,7 +291,7 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
 
             }
 
-            queryString = queryString + "placementranking2020 < " + Integer.parseInt(txtInputEditTextMaxPlacementRanking.getText().toString()) + ")";
+            queryString = queryString + "placement_ranking2020 < " + Integer.parseInt(txtInputEditTextMaxPlacementRanking.getText().toString()) + ")";
             counter += 1;
         }
 
@@ -301,7 +301,7 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
                 queryString = queryString + "AND (";
             }
 
-            queryString = queryString + "typeofpoint != 'TYT')";
+            queryString = queryString + "type_of_point != 'TYT')";
             counter += 1;
         }
 
@@ -311,7 +311,7 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
                 queryString = queryString + "AND (";
             }
 
-            queryString = queryString + "typeofpoint != 'SAYISAL' AND typeofpoint != 'EŞİT AĞIRLIK' AND typeofpoint != 'DİL' AND typeofpoint != 'SÖZEL')";
+            queryString = queryString + "type_of_point != 'SAYISAL' AND type_ofpoint != 'EŞİT AĞIRLIK' AND type_of_point != 'DİL' AND type_of_point != 'SÖZEL')";
             counter += 1;
         }
 
@@ -351,8 +351,8 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
                     x = "";
                 }
 
-                queryString = queryString + "typeofpoint !='" + x + "' AND additionalinfo != '" + x + "' AND typeofuniversity !='" + x +
-                        "' AND typeofdepartment != '" + x + "' AND typeofdepartment2 != '" + x + "')";
+                queryString = queryString + "type_of_point !='" + x + "' AND additional_info != '" + x + "' AND type_of_university !='" + x +
+                        "' AND type_of_department != '" + x + "' AND type_of_department2 != '" + x + "')";
 
                 counter +=1;
 

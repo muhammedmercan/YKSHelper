@@ -5,17 +5,18 @@ import java.util.ArrayList;
 public class Department {
 
     private String typeOfPoint, university, faculty, department, additionalInfo, city,  typeOfUniversity, typeOfDepartment,
-    typeOfDepartment2, quota2020,  quota2019,  quota2018, quota2017, status, winner2020, winner2019, winner2018, winner2017,  placementPoint2020,  placementPoint2019,
-    placementPoint2018,  placementPoint2017;
+    typeOfDepartment2, quota2021,  quota2020,  quota2019, quota2018, status, winner2021, winner2020, winner2019, winner2018,  placementPoint2021,
+    placementPoint2020, placementPoint2019,  placementPoint2018;
 
-    private int id, placementRanking2020, placementRanking2019, placementRanking2018, placementRanking2017;
+    private int id, placementRanking2021, placementRanking2020, placementRanking2019, placementRanking2018;
 
 
-    public Department(int id,String university, String faculty, String department, String typeOfPoint,    String additionalInfo, String city, String typeOfUniversity, String typeOfDepartment,
-                      String typeOfDepartment2, String quota2020, String quota2019, String quota2018, String quota2017, String status, String winner2020,
-                      String winner2019, String winner2018, String winner2017, int placementRanking2020, int placementRanking2019,
-                      int placementRanking2018, int placementRanking2017, String placementPoint2020, String placementPoint2019,
-                      String placementPoint2018, String placementPoint2017) {
+    public Department(int id,String university, String faculty, String department, String language, String typeOfPoint,
+                      String additionalInfo, String educationTime, String city, String typeOfUniversity,
+                      String typeOfDepartment, String typeOfDepartment2, String quota2021, String quota2020, String quota2019,
+                      String quota2018, String status, String winner2021, String winner2020, String winner2019, String winner2018,
+                      int placementRanking2021, int placementRanking2020, int placementRanking2019, int placementRanking2018,
+                      String placementPoint2021, String placementPoint2020, String placementPoint2019, String placementPoint2018) {
         this.id = id;
         this.typeOfPoint = typeOfPoint;
         this.university = university;
@@ -26,32 +27,24 @@ public class Department {
         this.typeOfUniversity = typeOfUniversity;
         this.typeOfDepartment = typeOfDepartment;
         this.typeOfDepartment2 = typeOfDepartment2;
+        this.quota2021 = quota2021;
         this.quota2020 = quota2020;
         this.quota2019 = quota2019;
         this.quota2018 = quota2018;
-        this.quota2017 = quota2017;
         this.status = status;
+        this.winner2021 = winner2021;
         this.winner2020 = winner2020;
         this.winner2019 = winner2019;
         this.winner2018 = winner2018;
-        this.winner2017 = winner2017;
+        this.placementRanking2021 = placementRanking2021;
         this.placementRanking2020 = placementRanking2020;
         this.placementRanking2019 = placementRanking2019;
         this.placementRanking2018 = placementRanking2018;
-        this.placementRanking2017 = placementRanking2017;
+        this.placementPoint2021 = placementPoint2021;
         this.placementPoint2020 = placementPoint2020;
         this.placementPoint2019 = placementPoint2019;
         this.placementPoint2018 = placementPoint2018;
-        this.placementPoint2017 = placementPoint2017;
         ;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getTypeOfPoint() {
@@ -126,6 +119,14 @@ public class Department {
         this.typeOfDepartment2 = typeOfDepartment2;
     }
 
+    public String getQuota2021() {
+        return quota2021;
+    }
+
+    public void setQuota2021(String quota2021) {
+        this.quota2021 = quota2021;
+    }
+
     public String getQuota2020() {
         return quota2020;
     }
@@ -150,20 +151,20 @@ public class Department {
         this.quota2018 = quota2018;
     }
 
-    public String getQuota2017() {
-        return quota2017;
-    }
-
-    public void setQuota2017(String quota2017) {
-        this.quota2017 = quota2017;
-    }
-
     public String getStatus() {
         return status;
     }
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getWinner2021() {
+        return winner2021;
+    }
+
+    public void setWinner2021(String winner2021) {
+        this.winner2021 = winner2021;
     }
 
     public String getWinner2020() {
@@ -190,12 +191,12 @@ public class Department {
         this.winner2018 = winner2018;
     }
 
-    public String getWinner2017() {
-        return winner2017;
+    public String getPlacementPoint2021() {
+        return placementPoint2021;
     }
 
-    public void setWinner2017(String winner2017) {
-        this.winner2017 = winner2017;
+    public void setPlacementPoint2021(String placementPoint2021) {
+        this.placementPoint2021 = placementPoint2021;
     }
 
     public String getPlacementPoint2020() {
@@ -222,12 +223,20 @@ public class Department {
         this.placementPoint2018 = placementPoint2018;
     }
 
-    public String getPlacementPoint2017() {
-        return placementPoint2017;
+    public int getId() {
+        return id;
     }
 
-    public void setPlacementPoint2017(String placementPoint2017) {
-        this.placementPoint2017 = placementPoint2017;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getPlacementRanking2021() {
+        return placementRanking2021;
+    }
+
+    public void setPlacementRanking2021(int placementRanking2021) {
+        this.placementRanking2021 = placementRanking2021;
     }
 
     public int getPlacementRanking2020() {
@@ -254,17 +263,9 @@ public class Department {
         this.placementRanking2018 = placementRanking2018;
     }
 
-    public int getPlacementRanking2017() {
-        return placementRanking2017;
-    }
-
-    public void setPlacementRanking2017(int placementRanking2017) {
-        this.placementRanking2017 = placementRanking2017;
-    }
-
     @Override
     public String toString() {
-        return "Deparment{" +
+        return "Department{" +
                 "typeOfPoint='" + typeOfPoint + '\'' +
                 ", university='" + university + '\'' +
                 ", faculty='" + faculty + '\'' +
@@ -274,25 +275,24 @@ public class Department {
                 ", typeOfUniversity='" + typeOfUniversity + '\'' +
                 ", typeOfDepartment='" + typeOfDepartment + '\'' +
                 ", typeOfDepartment2='" + typeOfDepartment2 + '\'' +
+                ", quota2021='" + quota2021 + '\'' +
                 ", quota2020='" + quota2020 + '\'' +
                 ", quota2019='" + quota2019 + '\'' +
                 ", quota2018='" + quota2018 + '\'' +
-                ", quota2017='" + quota2017 + '\'' +
                 ", status='" + status + '\'' +
+                ", winner2021='" + winner2021 + '\'' +
                 ", winner2020='" + winner2020 + '\'' +
                 ", winner2019='" + winner2019 + '\'' +
                 ", winner2018='" + winner2018 + '\'' +
-                ", winner2017='" + winner2017 + '\'' +
+                ", placementPoint2021='" + placementPoint2021 + '\'' +
                 ", placementPoint2020='" + placementPoint2020 + '\'' +
                 ", placementPoint2019='" + placementPoint2019 + '\'' +
                 ", placementPoint2018='" + placementPoint2018 + '\'' +
-                ", placementPoint2017='" + placementPoint2017 + '\'' +
+                ", id=" + id +
+                ", placementRanking2021=" + placementRanking2021 +
                 ", placementRanking2020=" + placementRanking2020 +
                 ", placementRanking2019=" + placementRanking2019 +
                 ", placementRanking2018=" + placementRanking2018 +
-                ", placementRanking2017=" + placementRanking2017 +
                 '}';
     }
-
-
 }
