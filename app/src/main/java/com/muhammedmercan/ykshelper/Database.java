@@ -106,14 +106,14 @@ public class Database extends SQLiteOpenHelper {
                 + ROW_PLACEMENTPOINT2018 + " TEXT DEFAULT '---')");
 
 
-            String table2 = ("CREATE TABLE " + TABLE_RANKINGS + "("
-                    + ROW_TYPEOFRANKINGS + " TEXT NOT NULL, "
-                    + ROW_POINT + " INTEGER NOT NULL, "
-                    + ROW_TYT + " INTEGER NOT NULL, "
-                    + ROW_SAYİSAL + " INTEGER NOT NULL, "
-                    + ROW_ESİTAGİRLİK + " INTEGER NOT NULL, "
-                    + ROW_SOZEL + " INTEGER NOT NULL, "
-                    + ROW_DIL + " INTEGER NOT NULL)");
+        String table2 = ("CREATE TABLE " + TABLE_RANKINGS + "("
+                + ROW_TYPEOFRANKINGS + " TEXT NOT NULL, "
+                + ROW_POINT + " INTEGER NOT NULL, "
+                + ROW_TYT + " INTEGER NOT NULL, "
+                + ROW_SAYİSAL + " INTEGER NOT NULL, "
+                + ROW_ESİTAGİRLİK + " INTEGER NOT NULL, "
+                + ROW_SOZEL + " INTEGER NOT NULL, "
+                + ROW_DIL + " INTEGER NOT NULL)");
 
         db.execSQL(table);
         db.execSQL(table2);
@@ -149,19 +149,41 @@ public class Database extends SQLiteOpenHelper {
 
     }
 
-    public String GetAllDataFromRankings(String queryString){
+    public String GetAllDataFromRankings(String queryString, String typeOfPoint){
         SQLiteDatabase db = this.getReadableDatabase();
 
-
+        String data = "-- -- --";
         //TODO SAYISAL, EŞİTAĞIRLIK gibi verileri çekmeyi ayarla
 
-            Cursor cursor = db.rawQuery(queryString, null);
-            cursor.moveToNext();
-            String data = cursor.getString(2);
+        Cursor cursor = db.rawQuery(queryString, null);
+        if (cursor.moveToFirst()) {
 
-            db.close();
+            if (typeOfPoint.equals("tyt")) {
 
-            return data;
+                data = cursor.getString(2);
+            }
+            else if (typeOfPoint.equals("sayisal")) {
+
+                data = cursor.getString(3);
+            }
+            else if (typeOfPoint.equals("esit_agirlik")) {
+
+                data = cursor.getString(4);
+            }
+            else if (typeOfPoint.equals("sozel")) {
+
+                data = cursor.getString(5);
+            }
+
+            else if (typeOfPoint.equals("dil")) {
+
+                data = cursor.getString(6);
+            }
+
+        }
+        db.close();
+
+        return data;
     }
 
     public void AddData(String typeOfPoint, String university, String faculty, String department, String language, String additionalInfo, String educationTime, String city, String typeOfUniversity, String typeOfDepartment,
@@ -316,14 +338,7 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         try {
 
-            if (queryString.equals("SELECT * FROM departments WHERE (")) {
-                queryString = "SELECT * FROM departments WHERE placement_ranking2020 > 0";
-            }
 
-            else {
-                queryString += " AND placement_ranking2020 > 0";
-            }
-            queryString = queryString + " ORDER BY placement_ranking2020   LIMIT 1000";
             System.out.println(queryString);
             Cursor cursor = db.rawQuery(queryString,null);
             while (cursor.moveToNext()){

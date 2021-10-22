@@ -1,12 +1,32 @@
 package com.muhammedmercan.ykshelper;
 
-import java.util.ArrayList;
 
 public class Department {
 
-    private String typeOfPoint, university, faculty, department, additionalInfo, city,  typeOfUniversity, typeOfDepartment,
-    typeOfDepartment2, quota2021,  quota2020,  quota2019, quota2018, status, winner2021, winner2020, winner2019, winner2018,  placementPoint2021,
-    placementPoint2020, placementPoint2019,  placementPoint2018;
+    private String typeOfPoint;
+    private String university;
+    private String faculty;
+    private String department;
+    private String language;
+    private String additionalInfo;
+    private String educationTime;
+    private String city;
+    private String typeOfUniversity;
+    private String typeOfDepartment;
+    private String typeOfDepartment2;
+    private String quota2021;
+    private String quota2020;
+    private String quota2019;
+    private String quota2018;
+    private String status;
+    private String winner2021;
+    private String winner2020;
+    private String winner2019;
+    private String winner2018;
+    private String placementPoint2021;
+    private String placementPoint2020;
+    private String placementPoint2019;
+    private String placementPoint2018;
 
     private int id, placementRanking2021, placementRanking2020, placementRanking2019, placementRanking2018;
 
@@ -22,7 +42,9 @@ public class Department {
         this.university = university;
         this.faculty = faculty;
         this.department = department;
+        this.language = language;
         this.additionalInfo = additionalInfo;
+        this.educationTime = educationTime;
         this.city = city;
         this.typeOfUniversity = typeOfUniversity;
         this.typeOfDepartment = typeOfDepartment;
@@ -79,12 +101,28 @@ public class Department {
         this.department = department;
     }
 
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
     public String getAdditionalInfo() {
         return additionalInfo;
     }
 
     public void setAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
+    }
+
+    public String getEducationTime() {
+        return educationTime;
+    }
+
+    public void setEducationTime(String educationTime) {
+        this.educationTime = educationTime;
     }
 
     public String getCity() {
@@ -270,7 +308,9 @@ public class Department {
                 ", university='" + university + '\'' +
                 ", faculty='" + faculty + '\'' +
                 ", department='" + department + '\'' +
+                ", language='" + language + '\'' +
                 ", additionalInfo='" + additionalInfo + '\'' +
+                ", educationTime='" + educationTime + '\'' +
                 ", city='" + city + '\'' +
                 ", typeOfUniversity='" + typeOfUniversity + '\'' +
                 ", typeOfDepartment='" + typeOfDepartment + '\'' +

@@ -1,20 +1,11 @@
 package com.muhammedmercan.ykshelper;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.EditText;
 import android.widget.TextView;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
 
-import static com.google.firestore.v1.StructuredQuery.CompositeFilter.Operator.AND;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 
 public class CalculatedResults extends AppCompatActivity {
@@ -28,9 +19,8 @@ public class CalculatedResults extends AppCompatActivity {
             txtClearSozelHistoryCorrect, txtClearSozelGeographyCorrect, txtClearSozelReligionCultureCorrect, txtClearSozelHistory2Correct, txtClearSozelGeography2Correct,
             txtClearSozelPhilosophyCorrect, txtRawSozelScore, txtPlacementSozelScore, txtRawSozelRanking, txtPlacementSozelRanking, txtClearDilCorrect,
             txtRawDilScore,txtPlacementDilScore, txtRawDilRanking, txtPlacementDilRanking;
-    ;
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private static final String TAG = "DocSnippets";
+    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,32 +87,96 @@ public class CalculatedResults extends AppCompatActivity {
 
     private void setDataFromDatabase(String typeOfRanking, String typeOfPoint, int point, TextView textView ) {
 
-        Database vt = new Database(this);
-        String data = "";
-        String query = "SELECT * FROM rankings WHERE type_of_rankings = '" + typeOfRanking + "' AND point = " + point ;
-        //String query = "SELECT * FROM rankings";
+        System.out.println(point);
+        int point1 = (int)(Math.round(point / 10.0) * 10);
+        int point2,flag;
 
-        System.out.println(query);
-
-        if (typeOfRanking.equals("Raw")) {
-
-                data = data + vt.GetAllDataFromRankings(query);
+        if (point1 - point >= 0 ) {
+            point2 = point1 - 10;
+            flag = 1;
         }
 
-        if (typeOfRanking.equals("Placement")) {
-
-            if (point >= 150) {
-                data = data + vt.GetAllDataFromRankings(query);
-
-            }
-
-            else {
-                data = data + "-- -- --";
-            }
+        else {
+            point2 = point1 + 10;
+            flag =2;
         }
 
+        if (point1 != point) {
 
-        textView.setText(data);
+            Database vt = new Database(this);
+            String data = "";
+            String query = "SELECT * FROM rankings WHERE type_of_rankings = '" + typeOfRanking + "' AND point = " + point1;
+            String query2 = "SELECT * FROM rankings WHERE type_of_rankings = '" + typeOfRanking + "' AND point = " + point2;
+
+
+            if (typeOfRanking.equals("Raw")) {
+
+                if (point >= 100) {
+                    int fark = (Math.abs(Integer.parseInt(vt.GetAllDataFromRankings(query, typeOfPoint)) - Integer.parseInt(vt.GetAllDataFromRankings(query2, typeOfPoint)))) / 10;
+                    int x;
+
+                    if (flag == 1) {
+                        x = (Integer.parseInt(vt.GetAllDataFromRankings(query2, typeOfPoint))) - (Math.abs(point2 - point) * fark);
+                    } else {
+                        x = (Integer.parseInt(vt.GetAllDataFromRankings(query, typeOfPoint))) - (Math.abs(point1 - point) * fark);
+                    }
+                    data = data + x;
+                } else {
+                    data = data + "-- -- --";
+
+                }
+            }
+
+
+            if (typeOfRanking.equals("Placement")) {
+
+                if (point >= 150) {
+                    int fark = (Math.abs(Integer.parseInt(vt.GetAllDataFromRankings(query, typeOfPoint)) - Integer.parseInt(vt.GetAllDataFromRankings(query2, typeOfPoint)))) / 10;
+                    int x;
+
+                    if (flag == 1) {
+                        x = (Integer.parseInt(vt.GetAllDataFromRankings(query2, typeOfPoint))) - (Math.abs(point2 - point) * fark);
+                    } else {
+                        x = (Integer.parseInt(vt.GetAllDataFromRankings(query, typeOfPoint))) - (Math.abs(point1 - point) * fark);
+                    }
+                    data = data + x;
+                } else {
+                    data = data + "-- -- --";
+
+                }
+            }
+            textView.setText(data);
+        }
+
+        else {
+
+            Database vt = new Database(this);
+            String data = "";
+            String query = "SELECT * FROM rankings WHERE type_of_rankings = '" + typeOfRanking + "' AND point = " + point ;
+            //String query = "SELECT * FROM rankings";
+
+
+            if (typeOfRanking.equals("Raw")) {
+
+                data = data + vt.GetAllDataFromRankings(query,typeOfPoint);
+            }
+
+            if (typeOfRanking.equals("Placement")) {
+
+                if (point >= 150) {
+                    data = data + vt.GetAllDataFromRankings(query,typeOfPoint);
+
+                }
+
+                else {
+                    data = data + "-- -- --";
+                }
+            }
+
+
+            textView.setText(data);
+        }
+
 
 
     }
@@ -242,8 +296,8 @@ public class CalculatedResults extends AppCompatActivity {
                 else {
                     txtRawDilScore.setText(String.format("%.2f",intent.getDoubleExtra("rawForeignLanguageScore",0)));
                     txtPlacementDilScore.setText(String.format("%.2f",intent.getDoubleExtra("placementForeignLanguageScore",0)));
-                  //  setDataFromFirebase("rawRankings","rawForeignLanguageScore",txtRawDilRanking,"dil");
-                 //   setDataFromFirebase("placementRankings","placementForeignLanguageScore",txtPlacementDilRanking,"dil");
+                    setDataFromDatabase("Raw","dil",(int)intent.getDoubleExtra("rawForeignLanguageScore",0),txtRawDilRanking);
+                    setDataFromDatabase("Placement","dil",(int)intent.getDoubleExtra("placementForeignLanguageScore",0),txtPlacementDilRanking);
                 }
 
 

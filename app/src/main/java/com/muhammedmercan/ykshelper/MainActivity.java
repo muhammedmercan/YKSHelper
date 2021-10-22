@@ -8,11 +8,9 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import com.google.firebase.firestore.FirebaseFirestore;
+import java.io.IOException;
 import java.time.Instant;
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 
@@ -21,19 +19,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private CardView robotCardView, subjectCardView, calculateCardView, examCardView;
     private ProgressBar progressBarDays, progressBarHours, progressBarMinutes, progressBarSeconds;
 
-    private Map<String, Object> city;
+    DatabaseHelper dbHelper;
 
-    Database vt = new Database(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        city = new HashMap<>();
         initViews();
         long differentBetween = calculateDate();
         countDownTimer(differentBetween, 1000);
+
+
+
+
+        dbHelper = new DatabaseHelper(this);
+        try {
+            dbHelper.createDataBase();
+            dbHelper.openDataBase();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
     }
 

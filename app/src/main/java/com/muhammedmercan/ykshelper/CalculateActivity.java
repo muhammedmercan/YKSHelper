@@ -101,70 +101,70 @@ public class CalculateActivity extends AppCompatActivity implements View.OnClick
                 checkValue(inputLayoutDiplomaGrade,b,100, "100'den büyük");
 
             case R.id.txtInputEditTextTurkishLanguageAndLiteratureCorrect:
-                checkValue(inputLayoutTurkishLanguageAndLiteratureCorrect,b,24, "100'den büyük");
+                checkValue(inputLayoutTurkishLanguageAndLiteratureCorrect,b,24, "24'den büyük");
 
             case R.id.txtInputEditTextTurkishLanguageAndLiteratureWrong:
-                checkValue(inputLayoutTurkishLanguageAndLiteratureWrong,b,24, "100'den büyük");
+                checkValue(inputLayoutTurkishLanguageAndLiteratureWrong,b,24, "24'den büyük");
 
             case R.id.txtInputEditTextHistoryCorrect:
-                checkValue(inputLayoutHistoryCorrect,b,10, "100'den büyük");
+                checkValue(inputLayoutHistoryCorrect,b,10, "10'den büyük");
 
             case R.id.txtInputEditTextHistoryWrong:
-                checkValue(inputLayoutHistoryWrong,b,10, "100'den büyük");
+                checkValue(inputLayoutHistoryWrong,b,10, "10'den büyük");
 
             case R.id.txtInputEditTextGeographyCorrect:
-                checkValue(inputLayoutGeographyCorrect,b,6, "100'den büyük");
+                checkValue(inputLayoutGeographyCorrect,b,6, "6'den büyük");
 
             case R.id.txtInputEditTextGeographyWrong:
-                checkValue(inputLayoutGeographyWrong,b,6, "100'den büyük");
+                checkValue(inputLayoutGeographyWrong,b,6, "6'den büyük");
 
             case R.id.txtInputEditTextHistory2Correct:
-                checkValue(inputLayoutHistory2Correct,b,11, "100'den büyük");
+                checkValue(inputLayoutHistory2Correct,b,11, "11'den büyük");
 
             case R.id.txtInputEditTextHistory2Wrong:
-                checkValue(inputLayoutHistory2Wrong,b,11, "100'den büyük");
+                checkValue(inputLayoutHistory2Wrong,b,11, "11'den büyük");
 
             case R.id.txtInputEditTextGeography2Correct:
-                checkValue(inputLayoutGeography2Correct,b,11, "100'den büyük");
+                checkValue(inputLayoutGeography2Correct,b,11, "11'den büyük");
 
             case R.id.txtInputEditTextGeography2Wrong:
-                checkValue(inputLayoutGeography2Wrong,b,11, "100'den büyük");
+                checkValue(inputLayoutGeography2Wrong,b,11, "11'den büyük");
 
             case R.id.txtInputEditTextPhilosophyCorrect:
-                checkValue(inputLayoutPhilosophyCorrect,b,12, "100'den büyük");
+                checkValue(inputLayoutPhilosophyCorrect,b,12, "12'den büyük");
 
             case R.id.txtInputEditTextPhilosophyWrong:
-                checkValue(inputLayoutPhilosophyWrong,b,12, "100'den büyük");
+                checkValue(inputLayoutPhilosophyWrong,b,12, "12'den büyük");
 
             case R.id.txtInputEditTextReligionCultureCorrect:
-                checkValue(inputLayoutReligionCultureCorrect,b,6, "100'den büyük");
+                checkValue(inputLayoutReligionCultureCorrect,b,6, "6'den büyük");
 
             case R.id.txtInputEditTextReligionCultureWrong:
-                checkValue(inputLayoutReligionCultureWrong,b,6, "100'den büyük");
+                checkValue(inputLayoutReligionCultureWrong,b,6, "6'den büyük");
 
             case R.id.txtInputEditTextMathCorrect:
-                checkValue(inputLayoutMathCorrect,b,40, "100'den büyük");
+                checkValue(inputLayoutMathCorrect,b,40, "40'den büyük");
 
             case R.id.txtInputEditMathWrong:
-                checkValue(inputLayoutMathWrong,b,40, "100'den büyük");
+                checkValue(inputLayoutMathWrong,b,40, "40'den büyük");
 
             case R.id.txtInputEditTextPhysicsCorrect:
-                checkValue(inputLayoutPhysicsCorrect,b,14, "100'den büyük");
+                checkValue(inputLayoutPhysicsCorrect,b,14, "14'den büyük");
 
             case R.id.txtInputEditTextPhysicsWrong:
-                checkValue(inputLayoutPhysicsWrong,b,14, "100'den büyük");
+                checkValue(inputLayoutPhysicsWrong,b,14, "14'den büyük");
 
             case R.id.txtInputEditTextChemistryCorrect:
-                checkValue(inputLayoutChemistryCorrect,b,13, "100'den büyük");
+                checkValue(inputLayoutChemistryCorrect,b,13, "13'den büyük");
 
             case R.id.txtInputEditTextChemistryWrong:
-                checkValue(inputLayoutChemistryWrong,b,13, "100'den büyük");
+                checkValue(inputLayoutChemistryWrong,b,13, "13'den büyük");
 
             case R.id.txtInputEditTextBiologyCorrect:
-                checkValue(inputLayoutBiologyCorrect,b,13, "100'den büyük");
+                checkValue(inputLayoutBiologyCorrect,b,13, "13'den büyük");
 
             case R.id.txtInputEditTextBiologyWrong:
-                checkValue(inputLayoutBiologyWrong,b,13, "100'den büyük");
+                checkValue(inputLayoutBiologyWrong,b,13, "13'den büyük");
 
             case R.id.txtInputEditTextForeignLanguageCorrect:
                 checkValue(inputLayoutForeignLanguageCorrect,b,80, "80'den büyük");
@@ -253,6 +253,12 @@ public class CalculateActivity extends AppCompatActivity implements View.OnClick
             return Float.valueOf(correctLayout.getEditText().getText().toString());
         }
 
+        else if (correctLayout.getEditText().getText().toString().isEmpty()) {
+            return -(Float.valueOf(wrongLayout.getEditText().getText().toString()))/4;
+        }
+
+
+
         else {
             return Float.valueOf(correctLayout.getEditText().getText().toString()) - Float.valueOf(wrongLayout.getEditText().getText().toString()) / 4;
         }
@@ -284,20 +290,20 @@ public class CalculateActivity extends AppCompatActivity implements View.OnClick
         clearPhysicsCorrect = calculateClearCorrect(inputLayoutPhysicsCorrect,inputLayoutPhysicsWrong);
         clearChemistryCorrect = calculateClearCorrect(inputLayoutChemistryCorrect,inputLayoutChemistryWrong);
         clearBiologyCorrect = calculateClearCorrect(inputLayoutBiologyCorrect,inputLayoutBiologyWrong);
-        rawSayisalScore = ((rawTytScore - 100) * 0.4 + clearMathCorrect * 3 + clearPhysicsCorrect * 2.85 + clearChemistryCorrect * 3.07  + clearBiologyCorrect * 3.07 + 100);
+        rawSayisalScore = ((rawTytScore - 100) * 0.4 + clearMathCorrect * 3 + clearPhysicsCorrect * 2.857142857142857 + clearChemistryCorrect * 3.076923076923077  + clearBiologyCorrect * 3.076923076923077 + 100);
         placementSayisalScore = rawSayisalScore + diplomaGrade * 0.6;
 
         clearTurkishLanguageAndLiteratureCorrect = calculateClearCorrect(inputLayoutTurkishLanguageAndLiteratureCorrect,inputLayoutTurkishLanguageAndLiteratureWrong);
         clearHistoryCorrect = calculateClearCorrect(inputLayoutHistoryCorrect,inputLayoutHistoryWrong);
         clearGeographyCorrect = calculateClearCorrect(inputLayoutGeographyCorrect,inputLayoutGeographyWrong);
-        rawEsitAgirlikScore = ((rawTytScore - 100) * 0.4 + clearMathCorrect * 3 + clearTurkishLanguageAndLiteratureCorrect * 3 + clearHistoryCorrect * 2.8  + clearGeographyCorrect * 3.33 + 100);
+        rawEsitAgirlikScore = ((rawTytScore - 100) * 0.4 + clearMathCorrect * 3 + clearTurkishLanguageAndLiteratureCorrect * 3 + clearHistoryCorrect * 2.8  + clearGeographyCorrect * 3.333333333333333 + 100);
         placementEsitAgirlikScore = rawEsitAgirlikScore + diplomaGrade * 0.6;
 
         clearHistory2Correct = calculateClearCorrect(inputLayoutHistory2Correct,inputLayoutHistory2Wrong);
         clearGeography2Correct = calculateClearCorrect(inputLayoutGeography2Correct,inputLayoutGeography2Wrong);
         clearPhilosophyorrect = calculateClearCorrect(inputLayoutPhilosophyCorrect,inputLayoutPhilosophyWrong);
         clearReligionCultureCorrect = calculateClearCorrect(inputLayoutReligionCultureCorrect,inputLayoutReligionCultureWrong);
-        rawSozelScore = ((rawTytScore - 100) * 0.4 + clearTurkishLanguageAndLiteratureCorrect * 3 + clearHistoryCorrect * 2.8 + clearGeographyCorrect * 3.33  + clearHistory2Correct * 2.91 + clearGeography2Correct * 2.91 + clearPhilosophyorrect * 3 + clearReligionCultureCorrect * 3.33 + 100);
+        rawSozelScore = ((rawTytScore - 100) * 0.4 + clearTurkishLanguageAndLiteratureCorrect * 3 + clearHistoryCorrect * 2.8 + clearGeographyCorrect * 3.333333  + clearHistory2Correct * 2.9091 + clearGeography2Correct * 2.9091 + clearPhilosophyorrect * 3 + clearReligionCultureCorrect * 3.333333 + 100);
         placementSozelScore = rawSozelScore + diplomaGrade * 0.6;
 
         clearForeignLanguageCorrect = calculateClearCorrect(inputLayoutForeignLanguageCorrect,inputLayoutForeignLanguageWrong);

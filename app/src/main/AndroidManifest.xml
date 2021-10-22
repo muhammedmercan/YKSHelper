@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.muhammedmercan.ykshelper">
+    package="com.muhammedmercan.ykshelper" >
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.YKSHelper">
-        <activity android:name=".showResultOfSearchActivity"></activity>
-        <activity android:name=".CalculatedResults" />
+        android:theme="@style/Theme.YKSHelper" >
+        <activity
+            android:name=".ShowDetailOfDepartment"
+            android:exported="true" />
         <activity
             android:name=".ExamActivity"
             android:label="Deneme Takip" />
@@ -23,7 +24,13 @@
         <activity
             android:name=".CalculateActivity"
             android:label="Puan ve Sıralama Hesaplama" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".CalculatedResults"
+            android:label="Hesaplama Sonuçları" />
+        <activity
+            android:name=".showResultOfSearchActivity"
+            android:label="Arama Sonuçları" />
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
