@@ -3,22 +3,23 @@ package com.muhammedmercan.ykshelper;
 
 public class Department {
 
-    private String typeOfPoint;
     private String university;
     private String faculty;
     private String department;
-    private String language;
+    private String city;
+    private String typeOfPoint;
+    private String conditions;
     private String additionalInfo;
     private String educationTime;
-    private String city;
+    private String associate_degree;
     private String typeOfUniversity;
-    private String typeOfDepartment;
-    private String typeOfDepartment2;
     private String quota2021;
     private String quota2020;
     private String quota2019;
     private String quota2018;
-    private String status;
+    private String quota2017;
+    private String quota2016;
+    private String quota2015;
     private String winner2021;
     private String winner2020;
     private String winner2019;
@@ -27,47 +28,177 @@ public class Department {
     private String placementPoint2020;
     private String placementPoint2019;
     private String placementPoint2018;
+    private String placementPoint2017;
+    private String placementPoint2016;
+    private String placementPoint2015;
+    private String additionalQuota2020;
+    private String additionalQuota2019;
+    private String additionalQuota2018;
+    private String firstWinner2021;
+    private String firstWinner2020;
+    private String firstWinner2019;
+    private String firstWinner2018;
+    private String maxPoint2021;
+    private String maxPoint2020;
+    private String firstWinnerPlacementRanking2021;
+    private String firstWinnerPlacementRanking2020;
+    private String firstWinnerPlacementRanking2018;
+    private String firstWinnerPlacementPoint2021;
+    private String firstWinnerPlacementPoint2020;
+    private String firstWinnerMaxPoint2021;
+    private String firstWinnerMaxPoint2020;
+    private String minPoint2018;
+    private String prefence2017;
+    private String prefence2016;
+    private String prefenceTotal2020;
+    private String prefenceTotal2018;
+    private String prefenceTop1_2020;
+    private String prefenceTop1_2018;
+    private String prefenceTop1_2017;
+    private String prefenceTop1_2016;
+    private String prefenceTop3_2020;
+    private String prefenceTop3_2018;
+    private String prefenceTop3_2017;
+    private String prefenceTop3_2016;
+    private String prefenceTop9_2020;
+    private String prefenceTop9_2018;
+    private String prefenceTop9_2017;
+    private String prefenceTop9_2016;
+    private String man2020;
+    private String man2019;
+    private String man2018;
+    private String girl2020;
+    private String girl2019;
+    private String girl2018;
+    private String highSchool2020;
+    private String highSchool2019;
+    private String highSchool2018;
+    private String graduate2020;
+    private String graduate2019;
+    private String graduate2018;
+    private String collageStudent2020;
+    private String collageStudent2019;
+    private String collageStudent2018;
+    private String graduateFromUniverstiy2020;
+    private String graduateFromUniverstiy2019;
+    private String graduateFromUniverstiy2018;
+    private String tytPlacementPoint2018;
+    private String tytPlacementRanking2018;
 
-    private int id, placementRanking2021, placementRanking2020, placementRanking2019, placementRanking2018;
+
+    private int id, placementRanking2021, placementRanking2020, placementRanking2019, placementRanking2018, placementRanking2017,placementRanking2016,placementRanking2015;
 
 
-    public Department(int id,String university, String faculty, String department, String language, String typeOfPoint,
-                      String additionalInfo, String educationTime, String city, String typeOfUniversity,
-                      String typeOfDepartment, String typeOfDepartment2, String quota2021, String quota2020, String quota2019,
-                      String quota2018, String status, String winner2021, String winner2020, String winner2019, String winner2018,
-                      int placementRanking2021, int placementRanking2020, int placementRanking2019, int placementRanking2018,
-                      String placementPoint2021, String placementPoint2020, String placementPoint2019, String placementPoint2018) {
-        this.id = id;
-        this.typeOfPoint = typeOfPoint;
+    public Department(int id, String university, String faculty, String department, String city, String typeOfPoint, String conditions, String additionalInfo,
+                      String educationTime, String associate_degree, String typeOfUniversity, String quota2021, String quota2020, String quota2019,
+                      String quota2018, String quota2017, String quota2016, String quota2015, String winner2021, String winner2020, String winner2019,
+                      String winner2018, int placementRanking2021, int placementRanking2020, int placementRanking2019, int placementRanking2018,
+                      int placementRanking2017, int placementRanking2016,
+                      int placementRanking2015, String placementPoint2021, String placementPoint2020, String placementPoint2019, String placementPoint2018,
+                      String placementPoint2017, String placementPoint2016, String placementPoint2015, String additionalQuota2020, String additionalQuota2019,
+                      String additionalQuota2018, String firstWinner2021, String firstWinner2020, String firstWinner2019, String firstWinner2018,
+                      String maxPoint2021, String maxPoint2020, String firstWinnerPlacementRanking2021, String firstWinnerPlacementRanking2020,
+                      String firstWinnerPlacementRanking2018, String firstWinnerPlacementPoint2021, String firstWinnerPlacementPoint2020,
+                      String firstWinnerMaxPoint2021, String firstWinnerMaxPoint2020, String minPoint2018, String prefence2017, String prefence2016,
+                      String prefenceTotal2020, String prefenceTotal2018, String prefenceTop1_2020, String prefenceTop1_2018, String prefenceTop1_2017,
+                      String prefenceTop1_2016, String prefenceTop3_2020, String prefenceTop3_2018, String prefenceTop3_2017, String prefenceTop3_2016,
+                      String prefenceTop9_2020, String prefenceTop9_2018, String prefenceTop9_2017, String prefenceTop9_2016, String man2020,
+                      String man2019, String man2018, String girl2020, String girl2019, String girl2018, String highSchool2020, String highSchool2019,
+                      String highSchool2018, String graduate2020, String graduate2019, String graduate2018, String collageStudent2020,
+                      String collageStudent2019, String collageStudent2018, String graduateFromUniverstiy2020, String graduateFromUniverstiy2019,
+                      String graduateFromUniverstiy2018, String tytPlacementPoint2018, String tytPlacementRanking2018) {
         this.university = university;
         this.faculty = faculty;
         this.department = department;
-        this.language = language;
+        this.city = city;
+        this.typeOfPoint = typeOfPoint;
+        this.conditions = conditions;
         this.additionalInfo = additionalInfo;
         this.educationTime = educationTime;
-        this.city = city;
+        this.associate_degree = associate_degree;
         this.typeOfUniversity = typeOfUniversity;
-        this.typeOfDepartment = typeOfDepartment;
-        this.typeOfDepartment2 = typeOfDepartment2;
         this.quota2021 = quota2021;
         this.quota2020 = quota2020;
         this.quota2019 = quota2019;
         this.quota2018 = quota2018;
-        this.status = status;
+        this.quota2017 = quota2017;
+        this.quota2016 = quota2016;
+        this.quota2015 = quota2015;
         this.winner2021 = winner2021;
         this.winner2020 = winner2020;
         this.winner2019 = winner2019;
         this.winner2018 = winner2018;
-        this.placementRanking2021 = placementRanking2021;
-        this.placementRanking2020 = placementRanking2020;
-        this.placementRanking2019 = placementRanking2019;
-        this.placementRanking2018 = placementRanking2018;
         this.placementPoint2021 = placementPoint2021;
         this.placementPoint2020 = placementPoint2020;
         this.placementPoint2019 = placementPoint2019;
         this.placementPoint2018 = placementPoint2018;
-        ;
+        this.placementPoint2017 = placementPoint2017;
+        this.placementPoint2016 = placementPoint2016;
+        this.placementPoint2015 = placementPoint2015;
+        this.additionalQuota2020 = additionalQuota2020;
+        this.additionalQuota2019 = additionalQuota2019;
+        this.additionalQuota2018 = additionalQuota2018;
+        this.firstWinner2021 = firstWinner2021;
+        this.firstWinner2020 = firstWinner2020;
+        this.firstWinner2019 = firstWinner2019;
+        this.firstWinner2018 = firstWinner2018;
+        this.maxPoint2021 = maxPoint2021;
+        this.maxPoint2020 = maxPoint2020;
+        this.firstWinnerPlacementRanking2021 = firstWinnerPlacementRanking2021;
+        this.firstWinnerPlacementRanking2020 = firstWinnerPlacementRanking2020;
+        this.firstWinnerPlacementRanking2018 = firstWinnerPlacementRanking2018;
+        this.firstWinnerPlacementPoint2021 = firstWinnerPlacementPoint2021;
+        this.firstWinnerPlacementPoint2020 = firstWinnerPlacementPoint2020;
+        this.firstWinnerMaxPoint2021 = firstWinnerMaxPoint2021;
+        this.firstWinnerMaxPoint2020 = firstWinnerMaxPoint2020;
+        this.minPoint2018 = minPoint2018;
+        this.prefence2017 = prefence2017;
+        this.prefence2016 = prefence2016;
+        this.prefenceTotal2020 = prefenceTotal2020;
+        this.prefenceTotal2018 = prefenceTotal2018;
+        this.prefenceTop1_2020 = prefenceTop1_2020;
+        this.prefenceTop1_2018 = prefenceTop1_2018;
+        this.prefenceTop1_2017 = prefenceTop1_2017;
+        this.prefenceTop1_2016 = prefenceTop1_2016;
+        this.prefenceTop3_2020 = prefenceTop3_2020;
+        this.prefenceTop3_2018 = prefenceTop3_2018;
+        this.prefenceTop3_2017 = prefenceTop3_2017;
+        this.prefenceTop3_2016 = prefenceTop3_2016;
+        this.prefenceTop9_2020 = prefenceTop9_2020;
+        this.prefenceTop9_2018 = prefenceTop9_2018;
+        this.prefenceTop9_2017 = prefenceTop9_2017;
+        this.prefenceTop9_2016 = prefenceTop9_2016;
+        this.man2020 = man2020;
+        this.man2019 = man2019;
+        this.man2018 = man2018;
+        this.girl2020 = girl2020;
+        this.girl2019 = girl2019;
+        this.girl2018 = girl2018;
+        this.highSchool2020 = highSchool2020;
+        this.highSchool2019 = highSchool2019;
+        this.highSchool2018 = highSchool2018;
+        this.graduate2020 = graduate2020;
+        this.graduate2019 = graduate2019;
+        this.graduate2018 = graduate2018;
+        this.collageStudent2020 = collageStudent2020;
+        this.collageStudent2019 = collageStudent2019;
+        this.collageStudent2018 = collageStudent2018;
+        this.graduateFromUniverstiy2020 = graduateFromUniverstiy2020;
+        this.graduateFromUniverstiy2019 = graduateFromUniverstiy2019;
+        this.graduateFromUniverstiy2018 = graduateFromUniverstiy2018;
+        this.tytPlacementPoint2018 = tytPlacementPoint2018;
+        this.tytPlacementRanking2018 = tytPlacementRanking2018;
+        this.id = id;
+        this.placementRanking2021 = placementRanking2021;
+        this.placementRanking2020 = placementRanking2020;
+        this.placementRanking2019 = placementRanking2019;
+        this.placementRanking2018 = placementRanking2018;
+        this.placementRanking2017 = placementRanking2017;
+        this.placementRanking2016 = placementRanking2016;
+        this.placementRanking2015 = placementRanking2015;
     }
+
+
 
     public String getTypeOfPoint() {
         return typeOfPoint;
@@ -99,14 +230,6 @@ public class Department {
 
     public void setDepartment(String department) {
         this.department = department;
-    }
-
-    public String getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(String language) {
-        this.language = language;
     }
 
     public String getAdditionalInfo() {
@@ -141,21 +264,6 @@ public class Department {
         this.typeOfUniversity = typeOfUniversity;
     }
 
-    public String getTypeOfDepartment() {
-        return typeOfDepartment;
-    }
-
-    public void setTypeOfDepartment(String typeOfDepartment) {
-        this.typeOfDepartment = typeOfDepartment;
-    }
-
-    public String getTypeOfDepartment2() {
-        return typeOfDepartment2;
-    }
-
-    public void setTypeOfDepartment2(String typeOfDepartment2) {
-        this.typeOfDepartment2 = typeOfDepartment2;
-    }
 
     public String getQuota2021() {
         return quota2021;
@@ -187,14 +295,6 @@ public class Department {
 
     public void setQuota2018(String quota2018) {
         this.quota2018 = quota2018;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public String getWinner2021() {
@@ -304,22 +404,23 @@ public class Department {
     @Override
     public String toString() {
         return "Department{" +
-                "typeOfPoint='" + typeOfPoint + '\'' +
-                ", university='" + university + '\'' +
+                "university='" + university + '\'' +
                 ", faculty='" + faculty + '\'' +
                 ", department='" + department + '\'' +
-                ", language='" + language + '\'' +
+                ", city='" + city + '\'' +
+                ", typeOfPoint='" + typeOfPoint + '\'' +
+                ", conditions='" + conditions + '\'' +
                 ", additionalInfo='" + additionalInfo + '\'' +
                 ", educationTime='" + educationTime + '\'' +
-                ", city='" + city + '\'' +
+                ", associate_degree='" + associate_degree + '\'' +
                 ", typeOfUniversity='" + typeOfUniversity + '\'' +
-                ", typeOfDepartment='" + typeOfDepartment + '\'' +
-                ", typeOfDepartment2='" + typeOfDepartment2 + '\'' +
                 ", quota2021='" + quota2021 + '\'' +
                 ", quota2020='" + quota2020 + '\'' +
                 ", quota2019='" + quota2019 + '\'' +
                 ", quota2018='" + quota2018 + '\'' +
-                ", status='" + status + '\'' +
+                ", quota2017='" + quota2017 + '\'' +
+                ", quota2016='" + quota2016 + '\'' +
+                ", quota2015='" + quota2015 + '\'' +
                 ", winner2021='" + winner2021 + '\'' +
                 ", winner2020='" + winner2020 + '\'' +
                 ", winner2019='" + winner2019 + '\'' +
@@ -328,11 +429,70 @@ public class Department {
                 ", placementPoint2020='" + placementPoint2020 + '\'' +
                 ", placementPoint2019='" + placementPoint2019 + '\'' +
                 ", placementPoint2018='" + placementPoint2018 + '\'' +
+                ", placementPoint2017='" + placementPoint2017 + '\'' +
+                ", placementPoint2016='" + placementPoint2016 + '\'' +
+                ", placementPoint2015='" + placementPoint2015 + '\'' +
+                ", additionalQuota2020='" + additionalQuota2020 + '\'' +
+                ", additionalQuota2019='" + additionalQuota2019 + '\'' +
+                ", additionalQuota2018='" + additionalQuota2018 + '\'' +
+                ", firstWinner2021='" + firstWinner2021 + '\'' +
+                ", firstWinner2020='" + firstWinner2020 + '\'' +
+                ", firstWinner2019='" + firstWinner2019 + '\'' +
+                ", firstWinner2018='" + firstWinner2018 + '\'' +
+                ", maxPoint2021='" + maxPoint2021 + '\'' +
+                ", maxPoint2020='" + maxPoint2020 + '\'' +
+                ", firstWinnerPlacementRanking2021='" + firstWinnerPlacementRanking2021 + '\'' +
+                ", firstWinnerPlacementRanking2020='" + firstWinnerPlacementRanking2020 + '\'' +
+                ", firstWinnerPlacementRanking2018='" + firstWinnerPlacementRanking2018 + '\'' +
+                ", firstWinnerPlacementPoint2021='" + firstWinnerPlacementPoint2021 + '\'' +
+                ", firstWinnerPlacementPoint2020='" + firstWinnerPlacementPoint2020 + '\'' +
+                ", firstWinnerMaxPoint2021='" + firstWinnerMaxPoint2021 + '\'' +
+                ", firstWinnerMaxPoint2020='" + firstWinnerMaxPoint2020 + '\'' +
+                ", minPoint2018='" + minPoint2018 + '\'' +
+                ", prefence2017='" + prefence2017 + '\'' +
+                ", prefence2016='" + prefence2016 + '\'' +
+                ", prefenceTotal2020='" + prefenceTotal2020 + '\'' +
+                ", prefenceTotal2018='" + prefenceTotal2018 + '\'' +
+                ", prefenceTop1_2020='" + prefenceTop1_2020 + '\'' +
+                ", prefenceTop1_2018='" + prefenceTop1_2018 + '\'' +
+                ", prefenceTop1_2017='" + prefenceTop1_2017 + '\'' +
+                ", prefenceTop1_2016='" + prefenceTop1_2016 + '\'' +
+                ", prefenceTop3_2020='" + prefenceTop3_2020 + '\'' +
+                ", prefenceTop3_2018='" + prefenceTop3_2018 + '\'' +
+                ", prefenceTop3_2017='" + prefenceTop3_2017 + '\'' +
+                ", prefenceTop3_2016='" + prefenceTop3_2016 + '\'' +
+                ", prefenceTop9_2020='" + prefenceTop9_2020 + '\'' +
+                ", prefenceTop9_2018='" + prefenceTop9_2018 + '\'' +
+                ", prefenceTop9_2017='" + prefenceTop9_2017 + '\'' +
+                ", prefenceTop9_2016='" + prefenceTop9_2016 + '\'' +
+                ", man2020='" + man2020 + '\'' +
+                ", man2019='" + man2019 + '\'' +
+                ", man2018='" + man2018 + '\'' +
+                ", girl2020='" + girl2020 + '\'' +
+                ", girl2019='" + girl2019 + '\'' +
+                ", girl2018='" + girl2018 + '\'' +
+                ", highSchool2020='" + highSchool2020 + '\'' +
+                ", highSchool2019='" + highSchool2019 + '\'' +
+                ", highSchool2018='" + highSchool2018 + '\'' +
+                ", graduate2020='" + graduate2020 + '\'' +
+                ", graduate2019='" + graduate2019 + '\'' +
+                ", graduate2018='" + graduate2018 + '\'' +
+                ", collageStudent2020='" + collageStudent2020 + '\'' +
+                ", collageStudent2019='" + collageStudent2019 + '\'' +
+                ", collageStudent2018='" + collageStudent2018 + '\'' +
+                ", graduateFromUniverstiy2020='" + graduateFromUniverstiy2020 + '\'' +
+                ", graduateFromUniverstiy2019='" + graduateFromUniverstiy2019 + '\'' +
+                ", graduateFromUniverstiy2018='" + graduateFromUniverstiy2018 + '\'' +
+                ", tytPlacementPoint2018='" + tytPlacementPoint2018 + '\'' +
+                ", tytPlacementRanking2018='" + tytPlacementRanking2018 + '\'' +
                 ", id=" + id +
                 ", placementRanking2021=" + placementRanking2021 +
                 ", placementRanking2020=" + placementRanking2020 +
                 ", placementRanking2019=" + placementRanking2019 +
                 ", placementRanking2018=" + placementRanking2018 +
+                ", placementRanking2017=" + placementRanking2017 +
+                ", placementRanking2016=" + placementRanking2016 +
+                ", placementRanking2015=" + placementRanking2015 +
                 '}';
     }
 }

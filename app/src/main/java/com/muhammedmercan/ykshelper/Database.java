@@ -14,7 +14,7 @@ import java.util.List;
 public class Database extends SQLiteOpenHelper {
 
 
-    private static final String DATABASE_NAME = "universities";
+    private static final String DATABASE_NAME = "universities2";
     private static final int DATABASE_VERSION = 1;
     private static final String TABLE_DEPARTMENTS = "departments";
     private static final String ROW_ID = "id";
@@ -57,7 +57,7 @@ public class Database extends SQLiteOpenHelper {
     private static final String ROW_DIL = "dil";
 
 
-
+    private Context mContext;
 
 
 
@@ -67,6 +67,7 @@ public class Database extends SQLiteOpenHelper {
 
     public Database(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        mContext = context;
 
     }
 
@@ -79,11 +80,11 @@ public class Database extends SQLiteOpenHelper {
                 + ROW_UNIVERSITY + " TEXT NOT NULL, "
                 + ROW_FACULTY + " TEXT NOT NULL, "
                 + ROW_DEPARTMENT + " TEXT NOT NULL, "
+                + ROW_CITY + " TEXT  DEFAULT '---', "
                 + ROW_LANGUAGE + " TEXT NOT NULL, "
                 + ROW_TYPEOFPOINT + " TEXT NOT NULL, "
                 + ROW_ADDITIONALINFO + " TEXT DEFAULT '---', "
                 + ROW_EDUCATİONTİME + " TEXT DEFAULT '---', "
-                + ROW_CITY + " TEXT  DEFAULT '---', "
                 + ROW_TYPEOFUNIVERSTY + " TEXT DEFAULT '---', "
                 + ROW_TYPEOFDEPARTMENT + " TEXT DEFAULT '---', "
                 + ROW_TYPEOFDEPARTMENT2 + " TEXT DEFAULT '---', "
@@ -126,6 +127,7 @@ public class Database extends SQLiteOpenHelper {
         onCreate(db);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_RANKINGS);
         onCreate(db);
+
 
     }
 
@@ -343,11 +345,22 @@ public class Database extends SQLiteOpenHelper {
             Cursor cursor = db.rawQuery(queryString,null);
             while (cursor.moveToNext()){
 
-                data.add(new Department(cursor.getInt(0),cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4),
-                        cursor.getString(5),cursor.getString(6),cursor.getString(7),cursor.getString(8),cursor.getString(9),cursor.getString(10),
-                        cursor.getString(11),cursor.getString(12),cursor.getString(13),cursor.getString(14),cursor.getString(15),cursor.getString(16),
-                        cursor.getString(17),cursor.getString(18),cursor.getString(19),cursor.getString(20),cursor.getInt(21),cursor.getInt(22),
-                        cursor.getInt(23),cursor.getInt(24),cursor.getString(25),cursor.getString(26),cursor.getString(27),cursor.getString(28)));
+                data.add(new Department(cursor.getInt(0),cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4), cursor.getString(5),
+                        cursor.getString(6), cursor.getString(7),cursor.getString(8),cursor.getString(9),cursor.getString(10),cursor.getString(11),
+                        cursor.getString(12),cursor.getString(13),cursor.getString(14),cursor.getString(15),cursor.getString(16), cursor.getString(17),
+                        cursor.getString(18),cursor.getString(19),cursor.getString(20),cursor.getString(21),cursor.getInt(22),
+                        cursor.getInt(23),cursor.getInt(24),cursor.getInt(25),cursor.getInt(26),cursor.getInt(27),cursor.getInt(28),
+                        cursor.getString(29),cursor.getString(30),cursor.getString(31),cursor.getString(32),cursor.getString(33),cursor.getString(34),
+                        cursor.getString(35),cursor.getString(36),cursor.getString(37),cursor.getString(38),cursor.getString(39),cursor.getString(40),
+                        cursor.getString(41),cursor.getString(42),cursor.getString(43),cursor.getString(44),cursor.getString(45),
+                        cursor.getString(46),cursor.getString(47),cursor.getString(48),cursor.getString(49),cursor.getString(50),cursor.getString(51),
+                        cursor.getString(52),cursor.getString(53),cursor.getString(54),cursor.getString(55),cursor.getString(56),cursor.getString(57),
+                        cursor.getString(58),cursor.getString(59),cursor.getString(60),cursor.getString(61),cursor.getString(62),cursor.getString(63),
+                        cursor.getString(64),cursor.getString(65),cursor.getString(66),cursor.getString(67),cursor.getString(68),cursor.getString(69),
+                        cursor.getString(70),cursor.getString(71),cursor.getString(72),cursor.getString(73),cursor.getString(74),cursor.getString(75),
+                        cursor.getString(76),cursor.getString(77),cursor.getString(78),cursor.getString(79),cursor.getString(80),cursor.getString(81),
+                        cursor.getString(82),cursor.getString(83),cursor.getString(84),cursor.getString(85),cursor.getString(86),cursor.getString(87),
+                        cursor.getString(88)));
             }
         }catch (Exception e){
         }

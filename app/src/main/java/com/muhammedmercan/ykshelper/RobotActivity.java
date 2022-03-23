@@ -223,7 +223,7 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
 
         if (!txtInputEditTextMinPoint.getText().toString().isEmpty() && !txtInputEditTextMaxPoint.getText().toString().isEmpty()) {
 
-            queryString = sumQuery(queryString,"placement_point2020 BETWEEN " + Integer.parseInt(txtInputEditTextMinPoint.getText().toString()) +
+            queryString = sumQuery(queryString,"placement_point2021 BETWEEN " + Integer.parseInt(txtInputEditTextMinPoint.getText().toString()) +
                     " AND " + Integer.parseInt(txtInputEditTextMaxPoint.getText().toString()));
 
 
@@ -233,14 +233,14 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
 
         if (!txtInputEditTextMinPoint.getText().toString().isEmpty() && txtInputEditTextMaxPoint.getText().toString().isEmpty()) {
 
-            queryString = sumQuery(queryString,"placement_point2020 > " + Integer.parseInt(txtInputEditTextMinPoint.getText().toString()));
+            queryString = sumQuery(queryString,"placement_point2021 > " + Integer.parseInt(txtInputEditTextMinPoint.getText().toString()));
 
 
         }
 
         if (txtInputEditTextMinPoint.getText().toString().isEmpty() && !txtInputEditTextMaxPoint.getText().toString().isEmpty()) {
 
-            queryString = sumQuery(queryString,"placement_point2020 < " + Integer.parseInt(txtInputEditTextMaxPoint.getText().toString()));
+            queryString = sumQuery(queryString,"placement_point2021 < " + Integer.parseInt(txtInputEditTextMaxPoint.getText().toString()));
 
 
 
@@ -249,7 +249,7 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
 
         if (!txtInputEditTextMinPlacementRanking.getText().toString().isEmpty() && !txtInputEditTextMaxPlacementRanking.getText().toString().isEmpty()) {
 
-            queryString = sumQuery(queryString,"placement_ranking2020 BETWEEN " + Integer.parseInt(txtInputEditTextMinPlacementRanking.getText().toString()) +
+            queryString = sumQuery(queryString,"placement_ranking2021 BETWEEN " + Integer.parseInt(txtInputEditTextMinPlacementRanking.getText().toString()) +
                     " AND " + Integer.parseInt(txtInputEditTextMaxPlacementRanking.getText().toString()));
 
 
@@ -260,7 +260,7 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
         if (!txtInputEditTextMinPlacementRanking.getText().toString().isEmpty() && txtInputEditTextMaxPlacementRanking.getText().toString().isEmpty()) {
 
 
-            queryString = sumQuery(queryString,"placement_ranking2020 > " + Integer.parseInt(txtInputEditTextMinPlacementRanking.getText().toString()));
+            queryString = sumQuery(queryString,"placement_ranking2021 > " + Integer.parseInt(txtInputEditTextMinPlacementRanking.getText().toString()));
 
 
 
@@ -268,33 +268,33 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
 
         if (txtInputEditTextMinPlacementRanking.getText().toString().isEmpty() && !txtInputEditTextMaxPlacementRanking.getText().toString().isEmpty()) {
 
-            queryString = sumQuery(queryString,"placement_ranking2020 < " + Integer.parseInt(txtInputEditTextMaxPlacementRanking.getText().toString()));
+            queryString = sumQuery(queryString,"placement_ranking2021 < " + Integer.parseInt(txtInputEditTextMaxPlacementRanking.getText().toString()));
 
 
         }
 
         if (!checkBoxAssociateDegree.isChecked()) {
 
-            queryString = sumQuery(queryString,"type_of_point != 'TYT'");
+            queryString = sumQuery(queryString,"type_of_point NOT CONTAINS 'TYT'");
 
 
         }
 
         if (!checkBoxDegree.isChecked()) {
 
-            queryString = sumQuery(queryString,"type_of_point != 'SAYISAL' AND type_ofpoint != 'EŞİT AĞIRLIK' AND type_of_point != 'DİL' AND type_of_point != 'SÖZEL'");
+            queryString = sumQuery(queryString,"type_of_point NOT CONTAINS 'SAYISAL' AND 'EŞİT AĞIRLIK' AND 'DİL' AND 'SÖZEL'");
 
 
 
         }
-
+        //TODO status yok
         if (!checkBoxNew.isChecked()) {
 
             queryString = sumQuery(queryString,"status != 'Yeni'");
 
 
         }
-
+        //TODO status yok
         if (!checkBoxNotFilled.isChecked()) {
 
             queryString = sumQuery(queryString,"status != 'Dolmadı'");
@@ -306,11 +306,11 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
 
 
             for (String x:notIncluded
-                 ) {
+            ) {
 
 
-                queryString = sumQuery(queryString,"type_of_point !='" + x + "' AND additional_info != '" + x + "' AND type_of_university !='" + x +
-                        "' AND type_of_department != '" + x + "' AND language != '" + x + "' AND type_of_department2 != '" + x + "'");
+                queryString = sumQuery(queryString,"type_of_point !='" + x + "' AND additional_info NOT LIKE '" + x + "' AND type_of_university !='" + x.toUpperCase() + "'");
+
 
 
 
@@ -321,10 +321,10 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
 
         }
         if (queryString.equals("SELECT * FROM departments WHERE ")) {
-            queryString = "SELECT * FROM departments WHERE placement_ranking2020 > 0 ORDER BY placement_ranking2020   LIMIT 1000";
+            queryString = "SELECT * FROM departments WHERE placement_ranking2021 > 0 ORDER BY placement_ranking2021   LIMIT 1000";
         }
         else {
-            queryString += " AND placement_ranking2020 > 0 ORDER BY placement_ranking2020 LIMIT 1000";
+            queryString += " AND placement_ranking2021 > 0 ORDER BY placement_ranking2021 LIMIT 1000";
         }
 
         return queryString;

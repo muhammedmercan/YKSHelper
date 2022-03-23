@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ShowDetailOfDepartment">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/showDetailOfDepartment_txtName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="HALİÇ ÜNİVERSİTESİ"
+                    android:textAlignment="center"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/department"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Bölüm :"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline8"
+                    app:layout_constraintTop_toBottomOf="@+id/showDetailOfDepartment_txtName" />
+
+                <TextView
+                    android:id="@+id/language"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Dil :"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline8"
+                    app:layout_constraintTop_toBottomOf="@+id/txtFaculty" />
+
+                <TextView
+                    android:id="@+id/typeOfDepartment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Bölüm Türü :"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline8"
+                    app:layout_constraintTop_toBottomOf="@+id/language" />
+
+                <TextView
+                    android:id="@+id/city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Şehir :"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline8"
+                    app:layout_constraintTop_toBottomOf="@+id/typeOfDepartment" />
+
+                <TextView
+                    android:id="@+id/educationTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Öğretim Süresi :"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline8"
+                    app:layout_constraintTop_toBottomOf="@+id/city" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="20dp" />
+
+                <TextView
+                    android:id="@+id/showDetailOfDepartment_txtDepartment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="Bilgisayar Mühendisliği"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/department"
+                    app:layout_constraintStart_toEndOf="@+id/department" />
+
+                <TextView
+                    android:id="@+id/showDetailOfDepartment_txtLanguage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="Türkçe"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/language"
+                    app:layout_constraintStart_toEndOf="@+id/language" />
+
+                <TextView
+                    android:id="@+id/showDetailOfDepartment_txtTypeOfDepartment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="Burslu"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/typeOfDepartment"
+                    app:layout_constraintStart_toEndOf="@+id/typeOfDepartment" />
+
+                <TextView
+                    android:id="@+id/showDetailOfDepartment_txtCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="İSTANBUL"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/city"
+                    app:layout_constraintStart_toEndOf="@+id/city" />
+
+                <TextView
+                    android:id="@+id/txtEducationTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="4 Yıllık"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/educationTime"
+                    app:layout_constraintStart_toEndOf="@+id/educationTime" />
+
+                <TextView
+                    android:id="@+id/typeOfUniversity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Üniversite Türü : "
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline8"
+                    app:layout_constraintTop_toBottomOf="@+id/educationTime" />
+
+                <TextView
+                    android:id="@+id/txtTypeOfUniversity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="Vakıf"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/typeOfUniversity"
+                    app:layout_constraintStart_toEndOf="@+id/typeOfUniversity" />
+
+                <TextView
+                    android:id="@+id/faculty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Fakülte Adı :"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline8"
+                    app:layout_constraintTop_toBottomOf="@+id/department" />
+
+                <TextView
+                    android:id="@+id/txtFaculty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="Mühendislik Fakültesi"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/faculty"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/faculty" />
+
+                <TextView
+                    android:id="@+id/typeOfPoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Puan Türü :"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline8"
+                    app:layout_constraintTop_toBottomOf="@+id/typeOfUniversity" />
+
+                <TextView
+                    android:id="@+id/txtTypeOfPoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="SAYISAL"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/typeOfPoint"
+                    app:layout_constraintStart_toEndOf="@+id/typeOfPoint" />
+
+                <TextView
+                    android:id="@+id/line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:text="-"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/showDetailOfDepartment_txtTypeOfDepartment"
+                    app:layout_constraintStart_toEndOf="@+id/showDetailOfDepartment_txtTypeOfDepartment" />
+
+                <TextView
+                    android:id="@+id/showDetailOfDepartment_txtTypeOfDepartment2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:text="Örgün"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/line"
+                    app:layout_constraintStart_toEndOf="@+id/line" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView4">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/year2021"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="2021"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline9"
+                    app:layout_constraintTop_toBottomOf="@+id/point" />
+
+                <TextView
+                    android:id="@+id/year2020"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="2020"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline9"
+                    app:layout_constraintTop_toBottomOf="@+id/year2021" />
+
+                <TextView
+                    android:id="@+id/year2019"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="2019"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline9"
+                    app:layout_constraintTop_toBottomOf="@+id/year2020" />
+
+                <TextView
+                    android:id="@+id/year2018"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="2018"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline9"
+                    app:layout_constraintTop_toBottomOf="@+id/year2019" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="20dp" />
+
+                <TextView
+                    android:id="@+id/point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Taban Puan"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/placementRanking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:text="Sıralama"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/point"
+                    app:layout_constraintStart_toEndOf="@+id/point" />
+
+                <TextView
+                    android:id="@+id/txtPoint2021"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--- --- ---"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/year2021"
+                    app:layout_constraintEnd_toEndOf="@+id/point"
+                    app:layout_constraintStart_toStartOf="@+id/point" />
+
+                <TextView
+                    android:id="@+id/txtPoint2020"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="447,58283"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/year2020"
+                    app:layout_constraintEnd_toEndOf="@+id/txtPoint2021"
+                    app:layout_constraintStart_toStartOf="@+id/txtPoint2021" />
+
+                <TextView
+                    android:id="@+id/txtPoint2019"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--- --- ---"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/year2019"
+                    app:layout_constraintEnd_toEndOf="@+id/txtPoint2020"
+                    app:layout_constraintStart_toStartOf="@+id/txtPoint2020" />
+
+                <TextView
+                    android:id="@+id/txtPoint2018"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--- --- ---"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/year2018"
+                    app:layout_constraintEnd_toEndOf="@+id/txtPoint2019"
+                    app:layout_constraintStart_toStartOf="@+id/txtPoint2019" />
+
+                <TextView
+                    android:id="@+id/txtPlacementRanking2021"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--- --- ---"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/txtPoint2021"
+                    app:layout_constraintEnd_toEndOf="@+id/placementRanking"
+                    app:layout_constraintStart_toStartOf="@+id/placementRanking" />
+
+                <TextView
+                    android:id="@+id/txtPlacementRanking2020"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="56600"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/txtPoint2020"
+                    app:layout_constraintEnd_toEndOf="@+id/txtPlacementRanking2021"
+                    app:layout_constraintStart_toStartOf="@+id/txtPlacementRanking2021" />
+
+                <TextView
+                    android:id="@+id/txtPlacementRanking2019"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--- --- ---"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/txtPoint2019"
+                    app:layout_constraintEnd_toEndOf="@+id/txtPlacementRanking2020"
+                    app:layout_constraintStart_toStartOf="@+id/txtPlacementRanking2020" />
+
+                <TextView
+                    android:id="@+id/txtPlacementRanking2018"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--- --- ---"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/txtPoint2018"
+                    app:layout_constraintEnd_toEndOf="@+id/txtPlacementRanking2019"
+                    app:layout_constraintStart_toStartOf="@+id/txtPlacementRanking2019" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView6">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/year2021_quota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="2021"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline11"
+                    app:layout_constraintTop_toBottomOf="@+id/quota" />
+
+                <TextView
+                    android:id="@+id/year2020_quota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="2020"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline11"
+                    app:layout_constraintTop_toBottomOf="@+id/year2021_quota" />
+
+                <TextView
+                    android:id="@+id/year2019_quota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="2019"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline11"
+                    app:layout_constraintTop_toBottomOf="@+id/year2020_quota" />
+
+                <TextView
+                    android:id="@+id/year2018_quota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="2018"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline11"
+                    app:layout_constraintTop_toBottomOf="@+id/year2019_quota" />
+
+                <TextView
+                    android:id="@+id/quota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Kontenjan"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/winner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:text="Yerleşen"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/quota"
+                    app:layout_constraintStart_toEndOf="@+id/quota" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="20dp" />
+
+                <TextView
+                    android:id="@+id/txtQuota2021"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/year2021_quota"
+                    app:layout_constraintEnd_toEndOf="@+id/quota"
+                    app:layout_constraintStart_toStartOf="@+id/quota" />
+
+                <TextView
+                    android:id="@+id/txtQuota2020"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/year2020_quota"
+                    app:layout_constraintEnd_toEndOf="@+id/txtQuota2021"
+                    app:layout_constraintStart_toStartOf="@+id/txtQuota2021" />
+
+                <TextView
+                    android:id="@+id/txtQuota2019"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/year2019_quota"
+                    app:layout_constraintEnd_toEndOf="@+id/txtQuota2020"
+                    app:layout_constraintStart_toStartOf="@+id/txtQuota2020" />
+
+                <TextView
+                    android:id="@+id/txtQuota2018"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="32"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/year2018_quota"
+                    app:layout_constraintEnd_toEndOf="@+id/txtQuota2019"
+                    app:layout_constraintStart_toStartOf="@+id/txtQuota2019" />
+
+                <TextView
+                    android:id="@+id/txtWinner2021"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="29"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/txtQuota2021"
+                    app:layout_constraintEnd_toEndOf="@+id/winner"
+                    app:layout_constraintStart_toStartOf="@+id/winner" />
+
+                <TextView
+                    android:id="@+id/txtWinner2020"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/txtQuota2020"
+                    app:layout_constraintEnd_toEndOf="@+id/txtWinner2021"
+                    app:layout_constraintStart_toStartOf="@+id/txtWinner2021" />
+
+                <TextView
+                    android:id="@+id/txtWinner2019"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/txtQuota2019"
+                    app:layout_constraintEnd_toEndOf="@+id/txtWinner2020"
+                    app:layout_constraintStart_toStartOf="@+id/txtWinner2020" />
+
+                <TextView
+                    android:id="@+id/txtWinner2018"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="35"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/txtQuota2018"
+                    app:layout_constraintEnd_toEndOf="@+id/txtWinner2019"
+                    app:layout_constraintStart_toStartOf="@+id/txtWinner2019" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

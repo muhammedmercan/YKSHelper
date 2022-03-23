@@ -24,29 +24,21 @@
             android:id="@+id/txtCity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="50dp"
             android:text="City"
-            app:layout_constraintBaseline_toBaselineOf="@+id/txtTypeOfDepartment"
-            app:layout_constraintEnd_toEndOf="@+id/txtDepartment"
-            app:layout_constraintStart_toStartOf="@+id/txtDepartment" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDepartment" />
 
         <TextView
-            android:id="@+id/txtLanguage"
+            android:id="@+id/txtAdditional"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:text="Language"
+            android:text="Additional"
             app:layout_constraintBaseline_toBaselineOf="@+id/txtCity"
             app:layout_constraintStart_toEndOf="@+id/txtCity" />
-
-        <TextView
-            android:id="@+id/txtTypeOfDepartment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="15dp"
-            android:text="Type of Department"
-            app:layout_constraintEnd_toStartOf="@+id/txtCity"
-            app:layout_constraintTop_toBottomOf="@+id/txtDepartment" />
 
         <TextView
             android:id="@+id/txtName"
@@ -77,14 +69,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
             android:text="1000"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/space"
-            app:layout_constraintTop_toBottomOf="@+id/txtTypeOfDepartment" />
+            app:layout_constraintStart_toStartOf="@+id/txtCity"
+            app:layout_constraintTop_toBottomOf="@+id/txtCity" />
 
         <TextView
             android:id="@+id/txtDepartment"

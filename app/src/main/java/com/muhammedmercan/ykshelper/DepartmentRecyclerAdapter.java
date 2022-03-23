@@ -35,7 +35,7 @@ public class DepartmentRecyclerAdapter extends RecyclerView.Adapter<DepartmentRe
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtName, txtPoint, txtPlacementRanking, txtDepartment, txtLanguage, txtCity, txtTypeOfDepartment;
+        TextView txtName, txtPoint, txtPlacementRanking, txtDepartment, txtAdditional, txtCity;
         CardView parent;
 
 
@@ -45,9 +45,8 @@ public class DepartmentRecyclerAdapter extends RecyclerView.Adapter<DepartmentRe
             txtPoint = itemView.findViewById(R.id.txtPoint);
             txtPlacementRanking = itemView.findViewById(R.id.txtPlacementRanking);
             txtDepartment = itemView.findViewById(R.id.txtDepartment);
-            txtLanguage = itemView.findViewById(R.id.txtLanguage);
+            txtAdditional = itemView.findViewById(R.id.txtAdditional);
             txtCity = itemView.findViewById(R.id.txtCity);
-            txtTypeOfDepartment = itemView.findViewById(R.id.txtTypeOfDepartment);
             parent = itemView.findViewById(R.id.parent);
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -80,12 +79,11 @@ public class DepartmentRecyclerAdapter extends RecyclerView.Adapter<DepartmentRe
     @Override
     public void onBindViewHolder(@NonNull  DepartmentRecyclerAdapter.MyViewHolder holder, int position) {
         holder.txtName.setText(departments.get(position).getUniversity());
-        holder.txtPoint.setText(departments.get(position).getPlacementPoint2020());
-        holder.txtPlacementRanking.setText(Integer.toString(departments.get(position).getPlacementRanking2020()));
+        holder.txtPoint.setText(departments.get(position).getPlacementPoint2021());
+        holder.txtPlacementRanking.setText(Integer.toString(departments.get(position).getPlacementRanking2021()));
+        holder.txtAdditional.setText(departments.get(position).getAdditionalInfo());
         holder.txtDepartment.setText(departments.get(position).getDepartment());
-        holder.txtLanguage.setText("(" + departments.get(position).getLanguage() + ")");
         holder.txtCity.setText(departments.get(position).getCity());
-        holder.txtTypeOfDepartment.setText(departments.get(position).getTypeOfDepartment());
 
 
 

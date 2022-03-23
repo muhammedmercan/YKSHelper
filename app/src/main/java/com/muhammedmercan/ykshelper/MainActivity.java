@@ -2,12 +2,15 @@
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
 import java.io.IOException;
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -20,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ProgressBar progressBarDays, progressBarHours, progressBarMinutes, progressBarSeconds;
 
     DatabaseHelper dbHelper;
+    private Context context;
 
 
     @Override
@@ -31,7 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         long differentBetween = calculateDate();
         countDownTimer(differentBetween, 1000);
 
+        context = getApplicationContext();
 
+        context.deleteDatabase("universities");
 
 
         dbHelper = new DatabaseHelper(this);
@@ -41,6 +47,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
+
+
 
 
     }
