@@ -199,15 +199,6 @@ public class Department {
     }
 
 
-
-    public String getTypeOfPoint() {
-        return typeOfPoint;
-    }
-
-    public void setTypeOfPoint(String typeOfPoint) {
-        this.typeOfPoint = typeOfPoint;
-    }
-
     public String getUniversity() {
         return university;
     }
@@ -232,6 +223,30 @@ public class Department {
         this.department = department;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getTypeOfPoint() {
+        return typeOfPoint;
+    }
+
+    public void setTypeOfPoint(String typeOfPoint) {
+        this.typeOfPoint = typeOfPoint;
+    }
+
+    public String getConditions() {
+        return conditions;
+    }
+
+    public void setConditions(String conditions) {
+        this.conditions = conditions;
+    }
+
     public String getAdditionalInfo() {
         return additionalInfo;
     }
@@ -248,12 +263,12 @@ public class Department {
         this.educationTime = educationTime;
     }
 
-    public String getCity() {
-        return city;
+    public String getAssociate_degree() {
+        return associate_degree;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setAssociate_degree(String associate_degree) {
+        this.associate_degree = associate_degree;
     }
 
     public String getTypeOfUniversity() {
@@ -263,7 +278,6 @@ public class Department {
     public void setTypeOfUniversity(String typeOfUniversity) {
         this.typeOfUniversity = typeOfUniversity;
     }
-
 
     public String getQuota2021() {
         return quota2021;
@@ -295,6 +309,30 @@ public class Department {
 
     public void setQuota2018(String quota2018) {
         this.quota2018 = quota2018;
+    }
+
+    public String getQuota2017() {
+        return quota2017;
+    }
+
+    public void setQuota2017(String quota2017) {
+        this.quota2017 = quota2017;
+    }
+
+    public String getQuota2016() {
+        return quota2016;
+    }
+
+    public void setQuota2016(String quota2016) {
+        this.quota2016 = quota2016;
+    }
+
+    public String getQuota2015() {
+        return quota2015;
+    }
+
+    public void setQuota2015(String quota2015) {
+        this.quota2015 = quota2015;
     }
 
     public String getWinner2021() {
@@ -361,6 +399,454 @@ public class Department {
         this.placementPoint2018 = placementPoint2018;
     }
 
+    public String getPlacementPoint2017() {
+        return placementPoint2017;
+    }
+
+    public void setPlacementPoint2017(String placementPoint2017) {
+        this.placementPoint2017 = placementPoint2017;
+    }
+
+    public String getPlacementPoint2016() {
+        return placementPoint2016;
+    }
+
+    public void setPlacementPoint2016(String placementPoint2016) {
+        this.placementPoint2016 = placementPoint2016;
+    }
+
+    public String getPlacementPoint2015() {
+        return placementPoint2015;
+    }
+
+    public void setPlacementPoint2015(String placementPoint2015) {
+        this.placementPoint2015 = placementPoint2015;
+    }
+
+    public String getAdditionalQuota2020() {
+        return additionalQuota2020;
+    }
+
+    public void setAdditionalQuota2020(String additionalQuota2020) {
+        this.additionalQuota2020 = additionalQuota2020;
+    }
+
+    public String getAdditionalQuota2019() {
+        return additionalQuota2019;
+    }
+
+    public void setAdditionalQuota2019(String additionalQuota2019) {
+        this.additionalQuota2019 = additionalQuota2019;
+    }
+
+    public String getAdditionalQuota2018() {
+        return additionalQuota2018;
+    }
+
+    public void setAdditionalQuota2018(String additionalQuota2018) {
+        this.additionalQuota2018 = additionalQuota2018;
+    }
+
+    public String getFirstWinner2021() {
+        return firstWinner2021;
+    }
+
+    public void setFirstWinner2021(String firstWinner2021) {
+        this.firstWinner2021 = firstWinner2021;
+    }
+
+    public String getFirstWinner2020() {
+        return firstWinner2020;
+    }
+
+    public void setFirstWinner2020(String firstWinner2020) {
+        this.firstWinner2020 = firstWinner2020;
+    }
+
+    public String getFirstWinner2019() {
+        return firstWinner2019;
+    }
+
+    public void setFirstWinner2019(String firstWinner2019) {
+        this.firstWinner2019 = firstWinner2019;
+    }
+
+    public String getFirstWinner2018() {
+        return firstWinner2018;
+    }
+
+    public void setFirstWinner2018(String firstWinner2018) {
+        this.firstWinner2018 = firstWinner2018;
+    }
+
+    public String getMaxPoint2021() {
+        return maxPoint2021;
+    }
+
+    public void setMaxPoint2021(String maxPoint2021) {
+        this.maxPoint2021 = maxPoint2021;
+    }
+
+    public String getMaxPoint2020() {
+        return maxPoint2020;
+    }
+
+    public void setMaxPoint2020(String maxPoint2020) {
+        this.maxPoint2020 = maxPoint2020;
+    }
+
+    public String getFirstWinnerPlacementRanking2021() {
+        return firstWinnerPlacementRanking2021;
+    }
+
+    public void setFirstWinnerPlacementRanking2021(String firstWinnerPlacementRanking2021) {
+        this.firstWinnerPlacementRanking2021 = firstWinnerPlacementRanking2021;
+    }
+
+    public String getFirstWinnerPlacementRanking2020() {
+        return firstWinnerPlacementRanking2020;
+    }
+
+    public void setFirstWinnerPlacementRanking2020(String firstWinnerPlacementRanking2020) {
+        this.firstWinnerPlacementRanking2020 = firstWinnerPlacementRanking2020;
+    }
+
+    public String getFirstWinnerPlacementRanking2018() {
+        return firstWinnerPlacementRanking2018;
+    }
+
+    public void setFirstWinnerPlacementRanking2018(String firstWinnerPlacementRanking2018) {
+        this.firstWinnerPlacementRanking2018 = firstWinnerPlacementRanking2018;
+    }
+
+    public String getFirstWinnerPlacementPoint2021() {
+        return firstWinnerPlacementPoint2021;
+    }
+
+    public void setFirstWinnerPlacementPoint2021(String firstWinnerPlacementPoint2021) {
+        this.firstWinnerPlacementPoint2021 = firstWinnerPlacementPoint2021;
+    }
+
+    public String getFirstWinnerPlacementPoint2020() {
+        return firstWinnerPlacementPoint2020;
+    }
+
+    public void setFirstWinnerPlacementPoint2020(String firstWinnerPlacementPoint2020) {
+        this.firstWinnerPlacementPoint2020 = firstWinnerPlacementPoint2020;
+    }
+
+    public String getFirstWinnerMaxPoint2021() {
+        return firstWinnerMaxPoint2021;
+    }
+
+    public void setFirstWinnerMaxPoint2021(String firstWinnerMaxPoint2021) {
+        this.firstWinnerMaxPoint2021 = firstWinnerMaxPoint2021;
+    }
+
+    public String getFirstWinnerMaxPoint2020() {
+        return firstWinnerMaxPoint2020;
+    }
+
+    public void setFirstWinnerMaxPoint2020(String firstWinnerMaxPoint2020) {
+        this.firstWinnerMaxPoint2020 = firstWinnerMaxPoint2020;
+    }
+
+    public String getMinPoint2018() {
+        return minPoint2018;
+    }
+
+    public void setMinPoint2018(String minPoint2018) {
+        this.minPoint2018 = minPoint2018;
+    }
+
+    public String getPrefence2017() {
+        return prefence2017;
+    }
+
+    public void setPrefence2017(String prefence2017) {
+        this.prefence2017 = prefence2017;
+    }
+
+    public String getPrefence2016() {
+        return prefence2016;
+    }
+
+    public void setPrefence2016(String prefence2016) {
+        this.prefence2016 = prefence2016;
+    }
+
+    public String getPrefenceTotal2020() {
+        return prefenceTotal2020;
+    }
+
+    public void setPrefenceTotal2020(String prefenceTotal2020) {
+        this.prefenceTotal2020 = prefenceTotal2020;
+    }
+
+    public String getPrefenceTotal2018() {
+        return prefenceTotal2018;
+    }
+
+    public void setPrefenceTotal2018(String prefenceTotal2018) {
+        this.prefenceTotal2018 = prefenceTotal2018;
+    }
+
+    public String getPrefenceTop1_2020() {
+        return prefenceTop1_2020;
+    }
+
+    public void setPrefenceTop1_2020(String prefenceTop1_2020) {
+        this.prefenceTop1_2020 = prefenceTop1_2020;
+    }
+
+    public String getPrefenceTop1_2018() {
+        return prefenceTop1_2018;
+    }
+
+    public void setPrefenceTop1_2018(String prefenceTop1_2018) {
+        this.prefenceTop1_2018 = prefenceTop1_2018;
+    }
+
+    public String getPrefenceTop1_2017() {
+        return prefenceTop1_2017;
+    }
+
+    public void setPrefenceTop1_2017(String prefenceTop1_2017) {
+        this.prefenceTop1_2017 = prefenceTop1_2017;
+    }
+
+    public String getPrefenceTop1_2016() {
+        return prefenceTop1_2016;
+    }
+
+    public void setPrefenceTop1_2016(String prefenceTop1_2016) {
+        this.prefenceTop1_2016 = prefenceTop1_2016;
+    }
+
+    public String getPrefenceTop3_2020() {
+        return prefenceTop3_2020;
+    }
+
+    public void setPrefenceTop3_2020(String prefenceTop3_2020) {
+        this.prefenceTop3_2020 = prefenceTop3_2020;
+    }
+
+    public String getPrefenceTop3_2018() {
+        return prefenceTop3_2018;
+    }
+
+    public void setPrefenceTop3_2018(String prefenceTop3_2018) {
+        this.prefenceTop3_2018 = prefenceTop3_2018;
+    }
+
+    public String getPrefenceTop3_2017() {
+        return prefenceTop3_2017;
+    }
+
+    public void setPrefenceTop3_2017(String prefenceTop3_2017) {
+        this.prefenceTop3_2017 = prefenceTop3_2017;
+    }
+
+    public String getPrefenceTop3_2016() {
+        return prefenceTop3_2016;
+    }
+
+    public void setPrefenceTop3_2016(String prefenceTop3_2016) {
+        this.prefenceTop3_2016 = prefenceTop3_2016;
+    }
+
+    public String getPrefenceTop9_2020() {
+        return prefenceTop9_2020;
+    }
+
+    public void setPrefenceTop9_2020(String prefenceTop9_2020) {
+        this.prefenceTop9_2020 = prefenceTop9_2020;
+    }
+
+    public String getPrefenceTop9_2018() {
+        return prefenceTop9_2018;
+    }
+
+    public void setPrefenceTop9_2018(String prefenceTop9_2018) {
+        this.prefenceTop9_2018 = prefenceTop9_2018;
+    }
+
+    public String getPrefenceTop9_2017() {
+        return prefenceTop9_2017;
+    }
+
+    public void setPrefenceTop9_2017(String prefenceTop9_2017) {
+        this.prefenceTop9_2017 = prefenceTop9_2017;
+    }
+
+    public String getPrefenceTop9_2016() {
+        return prefenceTop9_2016;
+    }
+
+    public void setPrefenceTop9_2016(String prefenceTop9_2016) {
+        this.prefenceTop9_2016 = prefenceTop9_2016;
+    }
+
+    public String getMan2020() {
+        return man2020;
+    }
+
+    public void setMan2020(String man2020) {
+        this.man2020 = man2020;
+    }
+
+    public String getMan2019() {
+        return man2019;
+    }
+
+    public void setMan2019(String man2019) {
+        this.man2019 = man2019;
+    }
+
+    public String getMan2018() {
+        return man2018;
+    }
+
+    public void setMan2018(String man2018) {
+        this.man2018 = man2018;
+    }
+
+    public String getGirl2020() {
+        return girl2020;
+    }
+
+    public void setGirl2020(String girl2020) {
+        this.girl2020 = girl2020;
+    }
+
+    public String getGirl2019() {
+        return girl2019;
+    }
+
+    public void setGirl2019(String girl2019) {
+        this.girl2019 = girl2019;
+    }
+
+    public String getGirl2018() {
+        return girl2018;
+    }
+
+    public void setGirl2018(String girl2018) {
+        this.girl2018 = girl2018;
+    }
+
+    public String getHighSchool2020() {
+        return highSchool2020;
+    }
+
+    public void setHighSchool2020(String highSchool2020) {
+        this.highSchool2020 = highSchool2020;
+    }
+
+    public String getHighSchool2019() {
+        return highSchool2019;
+    }
+
+    public void setHighSchool2019(String highSchool2019) {
+        this.highSchool2019 = highSchool2019;
+    }
+
+    public String getHighSchool2018() {
+        return highSchool2018;
+    }
+
+    public void setHighSchool2018(String highSchool2018) {
+        this.highSchool2018 = highSchool2018;
+    }
+
+    public String getGraduate2020() {
+        return graduate2020;
+    }
+
+    public void setGraduate2020(String graduate2020) {
+        this.graduate2020 = graduate2020;
+    }
+
+    public String getGraduate2019() {
+        return graduate2019;
+    }
+
+    public void setGraduate2019(String graduate2019) {
+        this.graduate2019 = graduate2019;
+    }
+
+    public String getGraduate2018() {
+        return graduate2018;
+    }
+
+    public void setGraduate2018(String graduate2018) {
+        this.graduate2018 = graduate2018;
+    }
+
+    public String getCollageStudent2020() {
+        return collageStudent2020;
+    }
+
+    public void setCollageStudent2020(String collageStudent2020) {
+        this.collageStudent2020 = collageStudent2020;
+    }
+
+    public String getCollageStudent2019() {
+        return collageStudent2019;
+    }
+
+    public void setCollageStudent2019(String collageStudent2019) {
+        this.collageStudent2019 = collageStudent2019;
+    }
+
+    public String getCollageStudent2018() {
+        return collageStudent2018;
+    }
+
+    public void setCollageStudent2018(String collageStudent2018) {
+        this.collageStudent2018 = collageStudent2018;
+    }
+
+    public String getGraduateFromUniverstiy2020() {
+        return graduateFromUniverstiy2020;
+    }
+
+    public void setGraduateFromUniverstiy2020(String graduateFromUniverstiy2020) {
+        this.graduateFromUniverstiy2020 = graduateFromUniverstiy2020;
+    }
+
+    public String getGraduateFromUniverstiy2019() {
+        return graduateFromUniverstiy2019;
+    }
+
+    public void setGraduateFromUniverstiy2019(String graduateFromUniverstiy2019) {
+        this.graduateFromUniverstiy2019 = graduateFromUniverstiy2019;
+    }
+
+    public String getGraduateFromUniverstiy2018() {
+        return graduateFromUniverstiy2018;
+    }
+
+    public void setGraduateFromUniverstiy2018(String graduateFromUniverstiy2018) {
+        this.graduateFromUniverstiy2018 = graduateFromUniverstiy2018;
+    }
+
+    public String getTytPlacementPoint2018() {
+        return tytPlacementPoint2018;
+    }
+
+    public void setTytPlacementPoint2018(String tytPlacementPoint2018) {
+        this.tytPlacementPoint2018 = tytPlacementPoint2018;
+    }
+
+    public String getTytPlacementRanking2018() {
+        return tytPlacementRanking2018;
+    }
+
+    public void setTytPlacementRanking2018(String tytPlacementRanking2018) {
+        this.tytPlacementRanking2018 = tytPlacementRanking2018;
+    }
+
     public int getId() {
         return id;
     }
@@ -401,98 +887,27 @@ public class Department {
         this.placementRanking2018 = placementRanking2018;
     }
 
-    @Override
-    public String toString() {
-        return "Department{" +
-                "university='" + university + '\'' +
-                ", faculty='" + faculty + '\'' +
-                ", department='" + department + '\'' +
-                ", city='" + city + '\'' +
-                ", typeOfPoint='" + typeOfPoint + '\'' +
-                ", conditions='" + conditions + '\'' +
-                ", additionalInfo='" + additionalInfo + '\'' +
-                ", educationTime='" + educationTime + '\'' +
-                ", associate_degree='" + associate_degree + '\'' +
-                ", typeOfUniversity='" + typeOfUniversity + '\'' +
-                ", quota2021='" + quota2021 + '\'' +
-                ", quota2020='" + quota2020 + '\'' +
-                ", quota2019='" + quota2019 + '\'' +
-                ", quota2018='" + quota2018 + '\'' +
-                ", quota2017='" + quota2017 + '\'' +
-                ", quota2016='" + quota2016 + '\'' +
-                ", quota2015='" + quota2015 + '\'' +
-                ", winner2021='" + winner2021 + '\'' +
-                ", winner2020='" + winner2020 + '\'' +
-                ", winner2019='" + winner2019 + '\'' +
-                ", winner2018='" + winner2018 + '\'' +
-                ", placementPoint2021='" + placementPoint2021 + '\'' +
-                ", placementPoint2020='" + placementPoint2020 + '\'' +
-                ", placementPoint2019='" + placementPoint2019 + '\'' +
-                ", placementPoint2018='" + placementPoint2018 + '\'' +
-                ", placementPoint2017='" + placementPoint2017 + '\'' +
-                ", placementPoint2016='" + placementPoint2016 + '\'' +
-                ", placementPoint2015='" + placementPoint2015 + '\'' +
-                ", additionalQuota2020='" + additionalQuota2020 + '\'' +
-                ", additionalQuota2019='" + additionalQuota2019 + '\'' +
-                ", additionalQuota2018='" + additionalQuota2018 + '\'' +
-                ", firstWinner2021='" + firstWinner2021 + '\'' +
-                ", firstWinner2020='" + firstWinner2020 + '\'' +
-                ", firstWinner2019='" + firstWinner2019 + '\'' +
-                ", firstWinner2018='" + firstWinner2018 + '\'' +
-                ", maxPoint2021='" + maxPoint2021 + '\'' +
-                ", maxPoint2020='" + maxPoint2020 + '\'' +
-                ", firstWinnerPlacementRanking2021='" + firstWinnerPlacementRanking2021 + '\'' +
-                ", firstWinnerPlacementRanking2020='" + firstWinnerPlacementRanking2020 + '\'' +
-                ", firstWinnerPlacementRanking2018='" + firstWinnerPlacementRanking2018 + '\'' +
-                ", firstWinnerPlacementPoint2021='" + firstWinnerPlacementPoint2021 + '\'' +
-                ", firstWinnerPlacementPoint2020='" + firstWinnerPlacementPoint2020 + '\'' +
-                ", firstWinnerMaxPoint2021='" + firstWinnerMaxPoint2021 + '\'' +
-                ", firstWinnerMaxPoint2020='" + firstWinnerMaxPoint2020 + '\'' +
-                ", minPoint2018='" + minPoint2018 + '\'' +
-                ", prefence2017='" + prefence2017 + '\'' +
-                ", prefence2016='" + prefence2016 + '\'' +
-                ", prefenceTotal2020='" + prefenceTotal2020 + '\'' +
-                ", prefenceTotal2018='" + prefenceTotal2018 + '\'' +
-                ", prefenceTop1_2020='" + prefenceTop1_2020 + '\'' +
-                ", prefenceTop1_2018='" + prefenceTop1_2018 + '\'' +
-                ", prefenceTop1_2017='" + prefenceTop1_2017 + '\'' +
-                ", prefenceTop1_2016='" + prefenceTop1_2016 + '\'' +
-                ", prefenceTop3_2020='" + prefenceTop3_2020 + '\'' +
-                ", prefenceTop3_2018='" + prefenceTop3_2018 + '\'' +
-                ", prefenceTop3_2017='" + prefenceTop3_2017 + '\'' +
-                ", prefenceTop3_2016='" + prefenceTop3_2016 + '\'' +
-                ", prefenceTop9_2020='" + prefenceTop9_2020 + '\'' +
-                ", prefenceTop9_2018='" + prefenceTop9_2018 + '\'' +
-                ", prefenceTop9_2017='" + prefenceTop9_2017 + '\'' +
-                ", prefenceTop9_2016='" + prefenceTop9_2016 + '\'' +
-                ", man2020='" + man2020 + '\'' +
-                ", man2019='" + man2019 + '\'' +
-                ", man2018='" + man2018 + '\'' +
-                ", girl2020='" + girl2020 + '\'' +
-                ", girl2019='" + girl2019 + '\'' +
-                ", girl2018='" + girl2018 + '\'' +
-                ", highSchool2020='" + highSchool2020 + '\'' +
-                ", highSchool2019='" + highSchool2019 + '\'' +
-                ", highSchool2018='" + highSchool2018 + '\'' +
-                ", graduate2020='" + graduate2020 + '\'' +
-                ", graduate2019='" + graduate2019 + '\'' +
-                ", graduate2018='" + graduate2018 + '\'' +
-                ", collageStudent2020='" + collageStudent2020 + '\'' +
-                ", collageStudent2019='" + collageStudent2019 + '\'' +
-                ", collageStudent2018='" + collageStudent2018 + '\'' +
-                ", graduateFromUniverstiy2020='" + graduateFromUniverstiy2020 + '\'' +
-                ", graduateFromUniverstiy2019='" + graduateFromUniverstiy2019 + '\'' +
-                ", graduateFromUniverstiy2018='" + graduateFromUniverstiy2018 + '\'' +
-                ", tytPlacementPoint2018='" + tytPlacementPoint2018 + '\'' +
-                ", tytPlacementRanking2018='" + tytPlacementRanking2018 + '\'' +
-                ", id=" + id +
-                ", placementRanking2021=" + placementRanking2021 +
-                ", placementRanking2020=" + placementRanking2020 +
-                ", placementRanking2019=" + placementRanking2019 +
-                ", placementRanking2018=" + placementRanking2018 +
-                ", placementRanking2017=" + placementRanking2017 +
-                ", placementRanking2016=" + placementRanking2016 +
-                ", placementRanking2015=" + placementRanking2015 +
-                '}';
+    public int getPlacementRanking2017() {
+        return placementRanking2017;
+    }
+
+    public void setPlacementRanking2017(int placementRanking2017) {
+        this.placementRanking2017 = placementRanking2017;
+    }
+
+    public int getPlacementRanking2016() {
+        return placementRanking2016;
+    }
+
+    public void setPlacementRanking2016(int placementRanking2016) {
+        this.placementRanking2016 = placementRanking2016;
+    }
+
+    public int getPlacementRanking2015() {
+        return placementRanking2015;
+    }
+
+    public void setPlacementRanking2015(int placementRanking2015) {
+        this.placementRanking2015 = placementRanking2015;
     }
 }

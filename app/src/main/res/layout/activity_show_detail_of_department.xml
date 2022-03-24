@@ -54,26 +54,15 @@
                     app:layout_constraintTop_toBottomOf="@+id/showDetailOfDepartment_txtName" />
 
                 <TextView
-                    android:id="@+id/language"
+                    android:id="@+id/additionalInfo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Dil :"
+                    android:text="Ek Bilgi :"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/guideline8"
                     app:layout_constraintTop_toBottomOf="@+id/txtFaculty" />
-
-                <TextView
-                    android:id="@+id/typeOfDepartment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Bölüm Türü :"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/guideline8"
-                    app:layout_constraintTop_toBottomOf="@+id/language" />
 
                 <TextView
                     android:id="@+id/city"
@@ -84,7 +73,7 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/guideline8"
-                    app:layout_constraintTop_toBottomOf="@+id/typeOfDepartment" />
+                    app:layout_constraintTop_toBottomOf="@+id/additionalInfo" />
 
                 <TextView
                     android:id="@+id/educationTime"
@@ -115,24 +104,14 @@
                     app:layout_constraintStart_toEndOf="@+id/department" />
 
                 <TextView
-                    android:id="@+id/showDetailOfDepartment_txtLanguage"
+                    android:id="@+id/txtAdditionalInfo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:text="Türkçe"
+                    android:text=" "
                     android:textSize="18sp"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/language"
-                    app:layout_constraintStart_toEndOf="@+id/language" />
-
-                <TextView
-                    android:id="@+id/showDetailOfDepartment_txtTypeOfDepartment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:text="Burslu"
-                    android:textSize="18sp"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/typeOfDepartment"
-                    app:layout_constraintStart_toEndOf="@+id/typeOfDepartment" />
+                    app:layout_constraintBaseline_toBaselineOf="@+id/additionalInfo"
+                    app:layout_constraintStart_toEndOf="@+id/additionalInfo" />
 
                 <TextView
                     android:id="@+id/showDetailOfDepartment_txtCity"
@@ -221,25 +200,6 @@
                     app:layout_constraintBaseline_toBaselineOf="@+id/typeOfPoint"
                     app:layout_constraintStart_toEndOf="@+id/typeOfPoint" />
 
-                <TextView
-                    android:id="@+id/line"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="2dp"
-                    android:text="-"
-                    android:textSize="18sp"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/showDetailOfDepartment_txtTypeOfDepartment"
-                    app:layout_constraintStart_toEndOf="@+id/showDetailOfDepartment_txtTypeOfDepartment" />
-
-                <TextView
-                    android:id="@+id/showDetailOfDepartment_txtTypeOfDepartment2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="2dp"
-                    android:text="Örgün"
-                    android:textSize="18sp"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/line"
-                    app:layout_constraintStart_toEndOf="@+id/line" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.card.MaterialCardView>
@@ -258,6 +218,19 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/year2015"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="2015"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline9"
+                    app:layout_constraintTop_toBottomOf="@+id/year2016" />
 
                 <TextView
                     android:id="@+id/year2021"
@@ -297,13 +270,33 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
                     android:text="2018"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline9"
                     app:layout_constraintTop_toBottomOf="@+id/year2019" />
+
+                <TextView
+                    android:id="@+id/year2017"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="2017"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline9"
+                    app:layout_constraintTop_toBottomOf="@+id/year2018" />
+
+                <TextView
+                    android:id="@+id/year2016"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="2016"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline9"
+                    app:layout_constraintTop_toBottomOf="@+id/year2017" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline9"
@@ -350,7 +343,7 @@
                     android:id="@+id/txtPoint2020"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="447,58283"
+                    android:text="--- --- ---"
                     android:textSize="18sp"
                     app:layout_constraintBaseline_toBaselineOf="@+id/year2020"
                     app:layout_constraintEnd_toEndOf="@+id/txtPoint2021"
@@ -390,7 +383,7 @@
                     android:id="@+id/txtPlacementRanking2020"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="56600"
+                    android:text="--- --- ---"
                     android:textSize="18sp"
                     app:layout_constraintBaseline_toBaselineOf="@+id/txtPoint2020"
                     app:layout_constraintEnd_toEndOf="@+id/txtPlacementRanking2021"
@@ -415,6 +408,66 @@
                     app:layout_constraintBaseline_toBaselineOf="@+id/txtPoint2018"
                     app:layout_constraintEnd_toEndOf="@+id/txtPlacementRanking2019"
                     app:layout_constraintStart_toStartOf="@+id/txtPlacementRanking2019" />
+
+                <TextView
+                    android:id="@+id/txtPoint2017"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--- --- ---"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/year2017"
+                    app:layout_constraintEnd_toEndOf="@+id/txtPoint2018"
+                    app:layout_constraintStart_toStartOf="@+id/txtPoint2018" />
+
+                <TextView
+                    android:id="@+id/txtPoint2016"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--- --- ---"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/year2016"
+                    app:layout_constraintEnd_toEndOf="@+id/txtPoint2017"
+                    app:layout_constraintStart_toStartOf="@+id/txtPoint2017" />
+
+                <TextView
+                    android:id="@+id/txtPoint2015"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--- --- ---"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/year2015"
+                    app:layout_constraintEnd_toEndOf="@+id/txtPoint2016"
+                    app:layout_constraintStart_toStartOf="@+id/txtPoint2016" />
+
+                <TextView
+                    android:id="@+id/txtPlacementRanking2017"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--- --- ---"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/txtPoint2017"
+                    app:layout_constraintEnd_toEndOf="@+id/txtPlacementRanking2018"
+                    app:layout_constraintStart_toStartOf="@+id/txtPlacementRanking2018" />
+
+                <TextView
+                    android:id="@+id/txtPlacementRanking2016"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--- --- ---"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/txtPoint2016"
+                    app:layout_constraintEnd_toEndOf="@+id/txtPlacementRanking2017"
+                    app:layout_constraintStart_toStartOf="@+id/txtPlacementRanking2017" />
+
+                <TextView
+                    android:id="@+id/txtPlacementRanking2015"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--- --- ---"
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/txtPoint2015"
+                    app:layout_constraintEnd_toEndOf="@+id/txtPlacementRanking2016"
+                    app:layout_constraintStart_toStartOf="@+id/txtPlacementRanking2016" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -472,13 +525,47 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
                     android:text="2018"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline11"
+                    app:layout_constraintTop_toBottomOf="@+id/year2019_quota" />
+
+
+                <TextView
+                    android:id="@+id/year2017_quota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="2017"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline11"
+                    app:layout_constraintTop_toBottomOf="@+id/year2018_quota" />
+
+                <TextView
+                    android:id="@+id/year2016_quota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="2016"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline11"
+                    app:layout_constraintTop_toBottomOf="@+id/year2017_quota" />
+
+                <TextView
+                    android:id="@+id/year2015_quota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="2015"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline11"
-                    app:layout_constraintTop_toBottomOf="@+id/year2019_quota" />
+                    app:layout_constraintTop_toBottomOf="@+id/year2016_quota" />
 
                 <TextView
                     android:id="@+id/quota"
@@ -515,7 +602,7 @@
                     android:id="@+id/txtQuota2021"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="30"
+                    android:text=" "
                     android:textSize="18sp"
                     app:layout_constraintBaseline_toBaselineOf="@+id/year2021_quota"
                     app:layout_constraintEnd_toEndOf="@+id/quota"
@@ -525,7 +612,7 @@
                     android:id="@+id/txtQuota2020"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="25"
+                    android:text=" "
                     android:textSize="18sp"
                     app:layout_constraintBaseline_toBaselineOf="@+id/year2020_quota"
                     app:layout_constraintEnd_toEndOf="@+id/txtQuota2021"
@@ -535,7 +622,7 @@
                     android:id="@+id/txtQuota2019"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="10"
+                    android:text=" "
                     android:textSize="18sp"
                     app:layout_constraintBaseline_toBaselineOf="@+id/year2019_quota"
                     app:layout_constraintEnd_toEndOf="@+id/txtQuota2020"
@@ -545,17 +632,48 @@
                     android:id="@+id/txtQuota2018"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="32"
+                    android:text=" "
                     android:textSize="18sp"
                     app:layout_constraintBaseline_toBaselineOf="@+id/year2018_quota"
                     app:layout_constraintEnd_toEndOf="@+id/txtQuota2019"
                     app:layout_constraintStart_toStartOf="@+id/txtQuota2019" />
 
                 <TextView
+                    android:id="@+id/txtQuota2017"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/year2017_quota"
+                    app:layout_constraintEnd_toEndOf="@+id/txtQuota2019"
+                    app:layout_constraintStart_toStartOf="@+id/txtQuota2018" />
+
+                <TextView
+                    android:id="@+id/txtQuota2016"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/year2016_quota"
+                    app:layout_constraintEnd_toEndOf="@+id/txtQuota2019"
+                    app:layout_constraintStart_toStartOf="@+id/txtQuota2017" />
+
+                <TextView
+                    android:id="@+id/txtQuota2015"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/year2015_quota"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/txtQuota2019"
+                    app:layout_constraintStart_toStartOf="@+id/txtQuota2016" />
+
+                <TextView
                     android:id="@+id/txtWinner2021"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="29"
+                    android:text=" "
                     android:textSize="18sp"
                     app:layout_constraintBaseline_toBaselineOf="@+id/txtQuota2021"
                     app:layout_constraintEnd_toEndOf="@+id/winner"
@@ -565,7 +683,7 @@
                     android:id="@+id/txtWinner2020"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="20"
+                    android:text=" "
                     android:textSize="18sp"
                     app:layout_constraintBaseline_toBaselineOf="@+id/txtQuota2020"
                     app:layout_constraintEnd_toEndOf="@+id/txtWinner2021"
@@ -575,7 +693,7 @@
                     android:id="@+id/txtWinner2019"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="10"
+                    android:text=" "
                     android:textSize="18sp"
                     app:layout_constraintBaseline_toBaselineOf="@+id/txtQuota2019"
                     app:layout_constraintEnd_toEndOf="@+id/txtWinner2020"
@@ -585,11 +703,43 @@
                     android:id="@+id/txtWinner2018"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="35"
+                    android:text=" "
                     android:textSize="18sp"
                     app:layout_constraintBaseline_toBaselineOf="@+id/txtQuota2018"
                     app:layout_constraintEnd_toEndOf="@+id/txtWinner2019"
                     app:layout_constraintStart_toStartOf="@+id/txtWinner2019" />
+
+                <TextView
+                    android:id="@+id/txtWinner2017"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/txtQuota2017"
+                    app:layout_constraintEnd_toEndOf="@+id/txtWinner2019"
+                    app:layout_constraintStart_toStartOf="@+id/txtWinner2018" />
+
+                <TextView
+                    android:id="@+id/txtWinner2016"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/txtQuota2016"
+                    app:layout_constraintEnd_toEndOf="@+id/txtWinner2019"
+                    app:layout_constraintStart_toStartOf="@+id/txtWinner2017" />
+
+                <TextView
+                    android:id="@+id/txtWinner2015"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textSize="18sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/txtQuota2015"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/txtWinner2019"
+                    app:layout_constraintStart_toStartOf="@+id/txtWinner2016" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 

@@ -154,6 +154,7 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
                 checkBoxContent.add("Almanca");
                 checkBoxContent.add("Fransızca");
                 checkBoxContent.add("İspanyolca");
+                checkBoxContent.add("Arapça");
                 showAllert(checkBoxContent, "Dil",languageCheckedItems);
                 checkBoxContent.clear();
                 break;
@@ -275,14 +276,14 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
 
         if (!checkBoxAssociateDegree.isChecked()) {
 
-            queryString = sumQuery(queryString,"type_of_point NOT CONTAINS 'TYT'");
+            queryString = sumQuery(queryString,"type_of_point != 'TYT'");
 
 
         }
 
         if (!checkBoxDegree.isChecked()) {
 
-            queryString = sumQuery(queryString,"type_of_point NOT CONTAINS 'SAYISAL' AND 'EŞİT AĞIRLIK' AND 'DİL' AND 'SÖZEL'");
+            queryString = sumQuery(queryString,"type_of_point != 'SAYISAL' AND type_of_point != 'EŞİT AĞIRLIK' AND type_of_point != 'DİL' AND type_of_point != 'SÖZEL'");
 
 
 
@@ -290,14 +291,14 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
         //TODO status yok
         if (!checkBoxNew.isChecked()) {
 
-            queryString = sumQuery(queryString,"status != 'Yeni'");
+            queryString = sumQuery(queryString,"(quota2020 < 0 OR quota2020 is NULL) AND quota2021 > 0");
 
 
         }
         //TODO status yok
         if (!checkBoxNotFilled.isChecked()) {
 
-            queryString = sumQuery(queryString,"status != 'Dolmadı'");
+            queryString = sumQuery(queryString,"quota2021 != winner2021 AND quota2021 > winner2021");
 
         }
 
@@ -309,7 +310,7 @@ public class RobotActivity extends AppCompatActivity implements View.OnClickList
             ) {
 
 
-                queryString = sumQuery(queryString,"type_of_point !='" + x + "' AND additional_info NOT LIKE '" + x + "' AND type_of_university !='" + x.toUpperCase() + "'");
+                queryString = sumQuery(queryString,"type_of_point !='" + x + "' AND additional_info NOT LIKE '%(" + x + ")%' AND type_of_university !='" + x.toUpperCase() + "'");
 
 
 
